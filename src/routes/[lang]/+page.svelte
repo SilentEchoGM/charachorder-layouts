@@ -1,13 +1,20 @@
 <script lang="ts">
+  import { goto } from "$app/navigation";
   import type { PageData } from "./$types";
   import { possibleLanguages } from "./languages";
 
   export let data: PageData;
+
+  let currentLang: string = data.lang;
 </script>
 
 <div class="flex">
   <span>Language:</span>
-  <select bind:value={data.lang}>
+  <select
+    bind:value={currentLang}
+    on:change={() => {
+      goto(`/${currentLang}`);
+    }}>
     {#each possibleLanguages as language}
       <option value={language}>{language}</option>
     {/each}
