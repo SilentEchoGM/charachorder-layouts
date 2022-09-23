@@ -1,5 +1,5 @@
 export const possibleLanguages = [
-  "  ADLaM",
+  "ADLaM",
   "Albanian",
   "Arabic (101)",
   "Arabic (102)",
