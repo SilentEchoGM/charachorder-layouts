@@ -23,6 +23,10 @@
     if ($open && key === "Escape") {
       editModal.set({ ...$editModal, open: false });
     }
+    if ($open && key === "Enter") {
+      emit("save", $editModal);
+      editModal.set({ ...$editModal, open: false });
+    }
   }}>
   <div class="modal-bg" />
   <div
