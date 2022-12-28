@@ -18,23 +18,43 @@
   } from "$lib/schema/v1";
   import { editModal } from "$lib/stores";
   import { derived, writable } from "svelte/store";
+  import type { Language } from "$lib/data/languages";
+
+  import { readonlyArray as RA } from "fp-ts";
+  import { function as f } from "fp-ts";
+  import { array as A } from "fp-ts";
+  import { option as O } from "fp-ts";
+  import { either as E } from "fp-ts";
+  import { map as M } from "fp-ts";
+  import { task as T } from "fp-ts";
+  import { taskEither as TE } from "fp-ts";
+  import { ord as Ord } from "fp-ts";
+  import { eq as Eq } from "fp-ts";
+  import { record as R } from "fp-ts";
+  import { string as Str } from "fp-ts";
+  import { state as S } from "fp-ts";
+  import { set as FSet } from "fp-ts";
+  import { date as FDate } from "fp-ts";
+  import { langMap } from "$lib/data/languages";
+  import { isLanguage } from "../[lang]/languages";
+  import { parseLanguage } from "$lib/langUtils";
 
   const customData = persistent<LayoutData>(
     "customLayout",
     {
       _apiVersion: 1,
       createdBy: "",
-      createdOn: new Date(),
+      createdOn: new Date().toISOString(),
       name: "Custom",
       history: [
         {
           index: 0,
-          modifiedOn: new Date(),
+          modifiedOn: new Date().toISOString(),
           state: { ...defaultLayout } as Layout,
         },
       ],
     },
-    v1LayoutData.safeParse
+    { zod: v1LayoutData.safeParse }
   );
 
   const latest = derived(customData, ($customData) => {
@@ -44,12 +64,15 @@
   $: if ($customData.history.length === 0) {
     $customData.history.push({
       index: 0,
-      modifiedOn: new Date(),
+      modifiedOn: new Date().toISOString(),
       state: { ...defaultLayout },
     });
   }
 
   const selectedLayer = writable<DefaultLayer>("__base");
+  const selectedLanguage = persistent<Language>("selectedLanguage", "US", {
+    generic: isLanguage,
+  });
 
   const handleEditInput = ({
     detail,
@@ -93,7 +116,7 @@
             ...$customData.history,
             {
               index: $customData.history.length,
-              modifiedOn: new Date(),
+              modifiedOn: new Date().toISOString(),
               state: {
                 ...$customData.history[$customData.history.length - 1].state,
                 [$selectedLayer]: {
@@ -115,17 +138,21 @@
     });
   };
   const restoreDefault = () => {
-    if (confirm("Are you sure you want to restore the default layout?"))
+    if (
+      confirm(
+        `Are you sure you want to load the default layout for ${$selectedLanguage}?`
+      )
+    )
       $customData = {
         _apiVersion: 1,
         createdBy: "",
-        createdOn: new Date(),
+        createdOn: new Date().toISOString(),
         name: "Custom",
         history: [
           {
             index: 0,
-            modifiedOn: new Date(),
-            state: { ...defaultLayout } as Layout,
+            modifiedOn: new Date().toISOString(),
+            state: parseLanguage($selectedLanguage),
           },
         ],
       };
@@ -139,13 +166,52 @@
     a.download = "layout.json";
     a.click();
   };
+
+  const importData = () => {
+    if (
+      !confirm(
+        "Are you sure you want to import a layout? This will overwrite your current layout."
+      )
+    )
+      return;
+    const input = document.createElement("input");
+    input.type = "file";
+    input.accept = "application/json";
+    input.onchange = (e) => {
+      const file = (e.target as HTMLInputElement).files?.[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const text = e.target?.result;
+          if (text) {
+            const parsed = v1LayoutData.safeParse(JSON.parse(text as string));
+            if (parsed.success) {
+              $customData = parsed.data;
+            } else {
+              alert("Invalid file");
+              console.error(parsed.error);
+            }
+          }
+        };
+        reader.readAsText(file);
+      }
+    };
+    input.click();
+  };
 </script>
 
 <div class="container">
   <div class="data">
+    <select bind:value={$selectedLanguage}>
+      {#each R.keys(langMap) as lang}
+        <option value={lang}>{lang}</option>
+      {/each}
+    </select>
     <button on:click={restoreDefault}>Restore Default</button>
+    <button on:click={importData}>Import</button>
     <button on:click={exportData}>Export</button>
   </div>
+  <div class="divider" />
   <div class="layer-select">
     <button
       class:active={$selectedLayer === "__base"}
@@ -191,13 +257,26 @@
   .container {
     position: relative;
     min-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-  .layer-select {
+  .divider {
+    width: 150px;
+    background-color: #666;
+    height: 3px;
+    border-radius: 50%;
+  }
+  .layer-select,
+  .data {
+    padding: 0.5rem;
     display: flex;
     gap: 1rem;
     justify-content: center;
   }
-  button {
+  button,
+  select {
     padding: 0.5em;
     background-color: #444;
     color: #fff;

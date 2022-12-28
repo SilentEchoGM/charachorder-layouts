@@ -24,7 +24,10 @@ import type { z } from "zod";
 export const persistent = <T>(
   key: string,
   defaultValue: T,
-  guard: InstanceType<typeof z.ZodType<T>>["safeParse"]
+  guard: {
+    zod?: InstanceType<typeof z.ZodType<T>>["safeParse"];
+    generic?: (obj: any) => obj is T;
+  }
 ) => {
   const { set, subscribe } = writable<T>(defaultValue);
 
@@ -43,16 +46,31 @@ export const persistent = <T>(
       );
       load().then(() => save(value));
     }
-    const parsed = guard(value);
-    if (parsed.success) {
-      await setItem(prefix + key, parsed.data);
-      set(parsed.data);
-    } else {
-      console.warn("Invalid type for persistent store", {
-        key,
-        value,
-        defaultValue,
-      });
+    if (guard.zod) {
+      const parsed = guard.zod(value);
+      if (parsed.success) {
+        await setItem(prefix + key, parsed.data);
+        set(parsed.data);
+      } else {
+        console.warn("Invalid type for persistent store", {
+          key,
+          value,
+          defaultValue,
+        });
+      }
+    }
+
+    if (guard.generic) {
+      if (guard.generic(value)) {
+        await setItem(prefix + key, value);
+        set(value);
+      } else {
+        console.warn("Invalid type for persistent store", {
+          key,
+          value,
+          defaultValue,
+        });
+      }
     }
   };
 
@@ -64,21 +82,44 @@ export const persistent = <T>(
 
   const load = async () => {
     const value = await getItem(prefix + key);
-
-    const parsed = guard(value);
-    if (parsed.success) {
-      set(parsed.data);
-      loaded = true;
-      return parsed.data;
-    } else {
-      console.warn("Invalid type for persistent store, resetting to default", {
-        key,
-        parsed,
-        defaultValue,
-      });
-      await save(defaultValue);
-      set(defaultValue);
-      return defaultValue;
+    if (guard.zod) {
+      const parsed = guard.zod(value);
+      if (parsed.success) {
+        set(parsed.data);
+        loaded = true;
+        return parsed.data;
+      } else {
+        console.warn(
+          "Invalid type for persistent store, resetting to default",
+          {
+            key,
+            parsed,
+            defaultValue,
+          }
+        );
+        await save(defaultValue);
+        set(defaultValue);
+        return defaultValue;
+      }
+    }
+    if (guard.generic) {
+      if (guard.generic(value)) {
+        set(value);
+        loaded = true;
+        return value;
+      } else {
+        console.warn(
+          "Invalid type for persistent store, resetting to default",
+          {
+            key,
+            value,
+            defaultValue,
+          }
+        );
+        await save(defaultValue);
+        set(defaultValue);
+        return defaultValue;
+      }
     }
   };
 

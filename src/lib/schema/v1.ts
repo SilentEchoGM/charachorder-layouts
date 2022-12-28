@@ -39,30 +39,30 @@ export const v1Both = z.object({
   right: v1Half,
 });
 
-export const v1DefaultLayers = z.union([
-  z.literal("__base"),
-  z.literal("__shift"),
-  z.literal("__num-shift"),
-  z.literal("__shift-num-shift"),
-]);
+export const v1DefaultLayers = z.object({
+  __base: v1Both,
+  __shift: v1Both,
+  "__num-shift": v1Both,
+  "__shift-num-shift": v1Both,
+});
 
-export const v1Layout = z.record(v1DefaultLayers, v1Both);
+export const v1Layout = z.union([v1DefaultLayers, z.record(v1Both)]);
 
 export const v1LayoutData = z.object({
   _apiVersion: z.literal(1),
   createdBy: z.string(),
-  createdOn: z.date(),
+  createdOn: z.string(),
   name: z.string(),
   history: z.array(
     z.object({
-      modifiedOn: z.date(),
+      modifiedOn: z.string(),
       state: v1Layout,
       index: z.number(),
     })
   ),
 });
 
-export const defaultLayout: Layout = {
+export const defaultLayout: Layout = v1Layout.parse({
   __base: {
     left: {
       "ring-north": {
@@ -599,9 +599,8 @@ export const defaultLayout: Layout = {
       },
     },
   },
-};
+});
 
-//unicode left arrow
 export type JoystickDirection = "top" | "left" | "right" | "bottom";
 
 export type JoystickInput = JoystickDirection | "center";
@@ -614,4 +613,4 @@ export type Layout = z.infer<typeof v1Layout>;
 
 export type LayoutData = z.infer<typeof v1LayoutData>;
 
-export type DefaultLayer = z.infer<typeof v1DefaultLayers>;
+export type DefaultLayer = keyof z.infer<typeof v1DefaultLayers>;
