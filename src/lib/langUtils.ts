@@ -6,36 +6,8 @@ import {
   type Layout,
 } from "./schema/v1";
 
-import {
-  array as A,
-  date as FDate,
-  either as E,
-  eq as Eq,
-  function as f,
-  map as M,
-  option as O,
-  ord as Ord,
-  readonlyArray as RA,
-  record as R,
-  set as FSet,
-  state as S,
-  string as Str,
-  task as T,
-  taskEither as TE,
-} from "fp-ts";
+import { function as f, record as R } from "fp-ts";
 
-const fixedDefaults = [
-  "ctrl",
-  "alt",
-  "shift",
-  "win",
-  "bksp",
-  "del",
-  "space",
-  "M0",
-  "M1",
-  "esc",
-];
 export const parseLanguage = (language: Language): Layout => {
   if (!isLanguage(language)) {
     throw new Error(`Language ${language} not supported`);

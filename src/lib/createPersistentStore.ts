@@ -1,23 +1,5 @@
 import { get, writable } from "svelte/store";
 
-import {
-  array as A,
-  boolean,
-  date as FDate,
-  either as E,
-  eq as Eq,
-  function as f,
-  map as M,
-  option as O,
-  ord as Ord,
-  readonlyArray as RA,
-  record as R,
-  set as FSet,
-  state as S,
-  string as Str,
-  taskEither as TE,
-} from "fp-ts";
-
 import { getItem, setItem } from "localforage";
 import type { z } from "zod";
 

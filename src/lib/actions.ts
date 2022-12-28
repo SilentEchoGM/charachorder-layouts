@@ -1,5 +1,3 @@
-import { get, type Readable } from "svelte/store";
-
 type ClickHandler = Parameters<typeof window.addEventListener<"click">>[1];
 export const clickOutside = (
   node: HTMLElement,
