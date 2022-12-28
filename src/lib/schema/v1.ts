@@ -169,8 +169,8 @@ export const defaultLayout: Layout = v1Layout.parse({
       },
       pinky: {
         top: "alt",
-        left: "num-shift",
-        right: "shift",
+        left: "shift",
+        right: "num-shift",
         bottom: "mirror",
         center: "",
       },
@@ -303,8 +303,8 @@ export const defaultLayout: Layout = v1Layout.parse({
       },
       pinky: {
         top: "alt",
-        left: "num-shift",
-        right: "shift",
+        left: "shift",
+        right: "num-shift",
         bottom: "mirror",
         center: "",
       },
@@ -437,8 +437,8 @@ export const defaultLayout: Layout = v1Layout.parse({
       },
       pinky: {
         top: "alt",
-        left: "num-shift",
-        right: "shift",
+        left: "shift",
+        right: "num-shift",
         bottom: "mirror",
         center: "",
       },
@@ -571,8 +571,8 @@ export const defaultLayout: Layout = v1Layout.parse({
       },
       pinky: {
         top: "alt",
-        left: "num-shift",
-        right: "shift",
+        left: "shift",
+        right: "num-shift",
         bottom: "mirror",
         center: "",
       },
