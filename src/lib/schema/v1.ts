@@ -190,7 +190,7 @@ export const defaultLayout: Layout = v1Layout.parse({
       },
       "thumb-south": {
         top: "?",
-        left: "M1",
+        left: "M2",
         right: "win",
         bottom: "esc",
         center: "",
@@ -592,7 +592,7 @@ export const defaultLayout: Layout = v1Layout.parse({
       },
       "thumb-south": {
         top: "?",
-        left: "M1",
+        left: "M2",
         right: "",
         bottom: "esc",
         center: "",
