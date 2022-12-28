@@ -1,0 +1,33 @@
+:root {
+  --bg: #111;
+  --dark: #333;
+}
+
+html {
+  background-color: var(--bg);
+}
+
+circle {
+  fill: var(--dark);
+}
+
+circle.shaded {
+  fill: var(--bg);
+}
+
+a {
+  all: unset;
+}
+
+button,
+select,
+a {
+  display: block;
+  padding: 0.5em;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 0.5em;
+  font-size: 1rem;
+  cursor: default;
+}

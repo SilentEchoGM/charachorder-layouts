@@ -1,4 +1,4 @@
-import { isLanguage } from "./languages";
+import { isLanguage } from "$lib/data/languages";
 
 export const load: import("./$types").PageLoad = ({ params }) => {
   if (!isLanguage(params.lang)) {
@@ -9,3 +9,5 @@ export const load: import("./$types").PageLoad = ({ params }) => {
     lang: params.lang,
   };
 };
+
+export const ssr = false;
