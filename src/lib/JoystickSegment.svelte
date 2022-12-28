@@ -1,32 +1,17 @@
 <script lang="ts">
-  import { readonlyArray as RA } from "fp-ts";
-  import { function as f } from "fp-ts";
-  import { array as A } from "fp-ts";
-  import { option as O } from "fp-ts";
-  import { either as E } from "fp-ts";
-  import { map as M } from "fp-ts";
-  import { task as T } from "fp-ts";
-  import { taskEither as TE } from "fp-ts";
-  import { ord as Ord } from "fp-ts";
-  import { eq as Eq } from "fp-ts";
-  import { record as R } from "fp-ts";
-  import { string as Str } from "fp-ts";
-  import { state as S } from "fp-ts";
-  import { set as FSet } from "fp-ts";
-  import { date as FDate } from "fp-ts";
+  import { array as A, function as f } from "fp-ts";
 
-  import { fit, parent_style } from "@leveluptuts/svelte-fit";
-  import {
-    moveTo,
-    segmentBottom,
-    segmentTop,
-    simplePythagoras,
-    segmentLeft,
-    segmentRight,
-  } from "./svg";
-  import type { JoystickDirection } from "./schema/v1";
+  import { fit } from "@leveluptuts/svelte-fit";
   import { createEventDispatcher } from "svelte";
   import { mousePosition } from "./mousePos";
+  import type { JoystickDirection } from "./schema/v1";
+  import {
+    segmentBottom,
+    segmentLeft,
+    segmentRight,
+    segmentTop,
+    simplePythagoras,
+  } from "./svg";
 
   export let size = 150;
   export let direction: JoystickDirection = "top";

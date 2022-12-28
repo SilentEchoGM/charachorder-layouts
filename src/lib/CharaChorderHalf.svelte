@@ -3,10 +3,8 @@
   import Joystick from "./Joystick.svelte";
   import {
     sticks,
-    type DefaultLayer,
     type Half,
     type JoystickInput,
-    type Layout,
     type Stick,
   } from "./schema/v1";
 

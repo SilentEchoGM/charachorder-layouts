@@ -1,20 +1,4 @@
-import {
-  array as A,
-  date as FDate,
-  either as E,
-  eq as Eq,
-  function as f,
-  map as M,
-  option as O,
-  ord as Ord,
-  readonlyArray as RA,
-  record as R,
-  set as FSet,
-  state as S,
-  string as Str,
-  task as T,
-  taskEither as TE,
-} from "fp-ts";
+import { function as f } from "fp-ts";
 
 export const to =
   (action: "m" | "l") =>

@@ -1,44 +1,25 @@
 <script lang="ts">
   import CharaChorderLayout from "$lib/CharaChorderLayout.svelte";
   import { persistent } from "$lib/createPersistentStore";
+  import type { Language } from "$lib/data/languages";
   import EditInputModal from "$lib/EditInputModal.svelte";
-  import Joystick from "$lib/Joystick.svelte";
-  import JoystickCentre from "$lib/JoystickCentre.svelte";
-  import JoystickSegment from "$lib/JoystickSegment.svelte";
   import {
-    type DefaultLayer,
     defaultLayout,
-    v1LayoutData,
-    type LayoutData,
-    type JoystickInput,
-    type Stick,
-    type Layout,
-    v1Layout,
     v1Both,
+    v1LayoutData,
+    type DefaultLayer,
+    type JoystickInput,
+    type Layout,
+    type LayoutData,
+    type Stick,
   } from "$lib/schema/v1";
   import { editModal } from "$lib/stores";
   import { derived, writable } from "svelte/store";
-  import type { Language } from "$lib/data/languages";
 
-  import { readonlyArray as RA } from "fp-ts";
-  import { function as f } from "fp-ts";
-  import { array as A } from "fp-ts";
-  import { option as O } from "fp-ts";
-  import { either as E } from "fp-ts";
-  import { map as M } from "fp-ts";
-  import { task as T } from "fp-ts";
-  import { taskEither as TE } from "fp-ts";
-  import { ord as Ord } from "fp-ts";
-  import { eq as Eq } from "fp-ts";
-  import { record as R } from "fp-ts";
-  import { string as Str } from "fp-ts";
-  import { state as S } from "fp-ts";
-  import { set as FSet } from "fp-ts";
-  import { date as FDate } from "fp-ts";
-  import { langMap } from "$lib/data/languages";
-  import { isLanguage } from "$lib/data/languages";
-  import { parseLanguage } from "$lib/langUtils";
   import { goto } from "$app/navigation";
+  import { isLanguage, langMap } from "$lib/data/languages";
+  import { parseLanguage } from "$lib/langUtils";
+  import { record as R } from "fp-ts";
 
   const customData = persistent<LayoutData>(
     "customLayout",

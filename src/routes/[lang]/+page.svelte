@@ -1,24 +1,28 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
   import { persistent } from "$lib/createPersistentStore";
-  import type { DefaultLayer } from "$lib/schema/v1";
-  import { writable } from "svelte/store";
 
   import { isLanguage, languages, type Language } from "$lib/data/languages";
   import CharaChorderLayout from "$lib/CharaChorderLayout.svelte";
   import { parseLanguage } from "$lib/langUtils";
-
-  const selectedLanguage = persistent<Language>("selectedLanguage", "US", {
+  import type { PageData } from "./$types";
+  export let data: PageData;
+  const selectedLanguage = persistent<Language>("selectedLanguage", data.lang, {
     generic: isLanguage,
   });
+
+  const defaultLayers = [
+    "__base",
+    "__shift",
+    "__num-shift",
+    "__shift-num-shift",
+  ] as const;
+
+  $: goto(`/${$selectedLanguage}`);
 </script>
 
 <div class="flex">
-  <select
-    bind:value={$selectedLanguage}
-    on:change={() => {
-      goto(`/${$selectedLanguage}`);
-    }}>
+  <select bind:value={$selectedLanguage}>
     {#each languages as language}
       <option value={language}>{language}</option>
     {/each}
@@ -29,21 +33,14 @@
     }}>Custom Layouts</button>
 </div>
 <div class="flex">
-  <div>
-    <CharaChorderLayout layoutLayer={parseLanguage($selectedLanguage).__base} />
-  </div>
-  <div>
-    <CharaChorderLayout
-      layoutLayer={parseLanguage($selectedLanguage).__shift} />
-  </div>
-  <div>
-    <CharaChorderLayout
-      layoutLayer={parseLanguage($selectedLanguage)["__num-shift"]} />
-  </div>
-  <div>
-    <CharaChorderLayout
-      layoutLayer={parseLanguage($selectedLanguage)["__shift-num-shift"]} />
-  </div>
+  {#each defaultLayers as layer}
+    {#key $selectedLanguage}
+      <div>
+        <CharaChorderLayout
+          layoutLayer={parseLanguage($selectedLanguage)[layer]} />
+      </div>
+    {/key}
+  {/each}
 </div>
 
 <style>
