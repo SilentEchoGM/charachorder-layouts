@@ -1,0 +1,16 @@
+:root {
+  --bg: #111;
+  --dark: #333;
+}
+
+html {
+  background-color: var(--bg);
+}
+
+circle {
+  fill: var(--dark);
+}
+
+circle.shaded {
+  fill: var(--bg);
+}
