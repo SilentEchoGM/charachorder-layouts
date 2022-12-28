@@ -87,7 +87,6 @@ export const parseLanguage = (language: Language): Layout => {
         )
       )
     ),
-
     v1Layout.safeParse
   );
 

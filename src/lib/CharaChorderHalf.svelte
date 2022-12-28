@@ -26,7 +26,15 @@
 </script>
 
 <div class="half" class:right>
-  <svg viewBox="0 0 100 100">
+  <svg viewBox="0 0 98 52" width={520} height={620}>
+    <path
+      d="M 5 -20
+    A 34 36 0 0 1 70 84 
+  "
+      stroke="white"
+      stroke-width="1"
+      opacity="0.5"
+      fill="rgba(50,50,50,0.5)" />
     <path
       d="M 90 10
       A 30 50 0 0 0 62 84
@@ -35,14 +43,6 @@
       stroke-width="1"
       opacity="0.5"
       fill="none" />
-    <path
-      d="M 5 -20
-      A 34 36 0 0 1 70 84 
-    "
-      stroke="white"
-      stroke-width="1"
-      opacity="0.5"
-      fill="rgba(50,50,50,0.5)" />
   </svg>
   {#each sticks as stick}
     <div class={stick} class:right>
@@ -56,8 +56,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
   }
   .right svg {
     transform: scaleX(-1);
@@ -65,7 +63,7 @@
   .half {
     position: relative;
     width: 520px;
-    height: 875px;
+    height: 620px;
   }
 
   .half div:hover {

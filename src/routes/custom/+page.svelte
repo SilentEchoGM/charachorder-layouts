@@ -36,8 +36,9 @@
   import { set as FSet } from "fp-ts";
   import { date as FDate } from "fp-ts";
   import { langMap } from "$lib/data/languages";
-  import { isLanguage } from "../[lang]/languages";
+  import { isLanguage } from "$lib/data/languages";
   import { parseLanguage } from "$lib/langUtils";
+  import { goto } from "$app/navigation";
 
   const customData = persistent<LayoutData>(
     "customLayout",
@@ -210,6 +211,10 @@
     <button on:click={restoreDefault}>Restore Default</button>
     <button on:click={importData}>Import</button>
     <button on:click={exportData}>Export</button>
+    <button
+      on:click={() => {
+        goto("/");
+      }}>View Default Layouts</button>
   </div>
   <div class="divider" />
   <div class="layer-select">
@@ -274,15 +279,6 @@
     display: flex;
     gap: 1rem;
     justify-content: center;
-  }
-  button,
-  select {
-    padding: 0.5em;
-    background-color: #444;
-    color: #fff;
-    border: none;
-    border-radius: 0.5em;
-    font-size: 1rem;
   }
 
   .layer-select button.active {

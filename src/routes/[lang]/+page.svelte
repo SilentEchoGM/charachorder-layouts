@@ -1,41 +1,61 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
-  import type { PageData } from "./$types";
-  import { possibleLanguages } from "./languages";
+  import { persistent } from "$lib/createPersistentStore";
+  import type { DefaultLayer } from "$lib/schema/v1";
+  import { writable } from "svelte/store";
 
-  export let data: PageData;
+  import { isLanguage, languages, type Language } from "$lib/data/languages";
+  import CharaChorderLayout from "$lib/CharaChorderLayout.svelte";
+  import { parseLanguage } from "$lib/langUtils";
 
-  let currentLang: string = data.lang;
+  const selectedLanguage = persistent<Language>("selectedLanguage", "US", {
+    generic: isLanguage,
+  });
 </script>
 
 <div class="flex">
-  <span>Language:</span>
   <select
-    bind:value={currentLang}
+    bind:value={$selectedLanguage}
     on:change={() => {
-      goto(`/${currentLang}`);
+      goto(`/${$selectedLanguage}`);
     }}>
-    {#each possibleLanguages as language}
+    {#each languages as language}
       <option value={language}>{language}</option>
     {/each}
   </select>
+  <button
+    on:click={() => {
+      goto("/custom");
+    }}>Custom Layouts</button>
 </div>
 <div class="flex">
-  <img src="/images/{data.lang}--character-entry.png" alt="" />
-  <img src="/images/{data.lang}--shift-character-entry.png" alt="" />
-
-  <img src="/images/{data.lang}--numshift.png" alt="" />
-  <img src="/images/{data.lang}--shift-numshift.png" alt="" />
+  <div>
+    <CharaChorderLayout layoutLayer={parseLanguage($selectedLanguage).__base} />
+  </div>
+  <div>
+    <CharaChorderLayout
+      layoutLayer={parseLanguage($selectedLanguage).__shift} />
+  </div>
+  <div>
+    <CharaChorderLayout
+      layoutLayer={parseLanguage($selectedLanguage)["__num-shift"]} />
+  </div>
+  <div>
+    <CharaChorderLayout
+      layoutLayer={parseLanguage($selectedLanguage)["__shift-num-shift"]} />
+  </div>
 </div>
 
 <style>
   .flex {
     display: flex;
     gap: 1em;
-    max-width: 82em;
     flex-wrap: wrap;
+    margin: 1em 0.5em;
+    justify-content: center;
   }
-  img {
-    width: 40em;
+  .flex div {
+    background-color: hsl(0, 0%, 15%);
+    border-radius: 8em;
   }
 </style>
