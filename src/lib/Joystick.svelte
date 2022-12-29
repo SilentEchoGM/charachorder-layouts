@@ -21,41 +21,29 @@
       input,
     });
   };
+
+  const inputs: readonly JoystickDirection[] = [
+    "top",
+    "left",
+    "right",
+    "bottom",
+  ] as const;
 </script>
 
 <div class="container">
+  {#each inputs as input}
+    <div class={input}>
+      <JoystickSegment
+        direction={input}
+        text={data[input]}
+        {size}
+        on:edit-input={handleEditInput(input)} />
+    </div>
+  {/each}
   <div class="center">
     <JoystickCentre
       text={data.center}
       on:edit-input={handleEditInput("center")} />
-  </div>
-  <div class="left">
-    <JoystickSegment
-      direction="left"
-      text={data.left}
-      {size}
-      on:edit-input={handleEditInput("left")} />
-  </div>
-  <div class="right">
-    <JoystickSegment
-      direction="right"
-      text={data.right}
-      {size}
-      on:edit-input={handleEditInput("right")} />
-  </div>
-  <div class="top">
-    <JoystickSegment
-      direction="top"
-      text={data.top}
-      {size}
-      on:edit-input={handleEditInput("top")} />
-  </div>
-  <div class="bottom">
-    <JoystickSegment
-      direction="bottom"
-      text={data.bottom}
-      {size}
-      on:edit-input={handleEditInput("bottom")} />
   </div>
 </div>
 
