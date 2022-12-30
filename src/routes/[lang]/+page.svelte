@@ -1,58 +1,42 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
-  import { persistent } from "$lib/createPersistentStore";
-
-  import { isLanguage, languages, type Language } from "$lib/data/languages";
-  import CharaChorderLayout from "$lib/CharaChorderLayout.svelte";
-  import { parseLanguage } from "$lib/langUtils";
+  import { languages } from "$lib/data/languages";
   import type { PageData } from "./$types";
+
   export let data: PageData;
-  const selectedLanguage = persistent<Language>("selectedLanguage", data.lang, {
-    generic: isLanguage,
-  });
 
-  const defaultLayers = [
-    "__base",
-    "__shift",
-    "__num-shift",
-    "__shift-num-shift",
-  ] as const;
-
-  $: goto(`/${$selectedLanguage}`);
+  let currentLang: string = data.lang;
 </script>
 
 <div class="flex">
-  <select bind:value={$selectedLanguage}>
+  <span>Language:</span>
+  <select
+    bind:value={currentLang}
+    on:change={() => {
+      goto(`/${currentLang}`);
+    }}>
     {#each languages as language}
       <option value={language}>{language}</option>
     {/each}
   </select>
-  <button
-    on:click={() => {
-      goto("/custom");
-    }}>Custom Layouts</button>
 </div>
 <div class="flex">
-  {#each defaultLayers as layer}
-    {#key $selectedLanguage}
-      <div>
-        <CharaChorderLayout
-          layoutLayer={parseLanguage($selectedLanguage)[layer]} />
-      </div>
-    {/key}
-  {/each}
+  <img src="/images/{data.lang}--character-entry.png" alt="" />
+  <img src="/images/{data.lang}--shift-character-entry.png" alt="" />
+
+  <img src="/images/{data.lang}--numshift.png" alt="" />
+  <img src="/images/{data.lang}--shift-numshift.png" alt="" />
 </div>
 
 <style>
   .flex {
     display: flex;
     gap: 1em;
+    max-width: 82em;
     flex-wrap: wrap;
-    margin: 1em 0.5em;
-    justify-content: center;
+    margin-bottom: 0.5em;
   }
-  .flex div {
-    background-color: hsl(0, 0%, 15%);
-    border-radius: 8em;
+  img {
+    width: 40em;
   }
 </style>
