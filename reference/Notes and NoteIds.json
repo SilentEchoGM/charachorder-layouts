@@ -1,0 +1,722 @@
+[
+  {
+    "BYTE (DEC)": "01",
+    "BYTE (HEX)": "01",
+    "Position": "000000000000000001",
+    "CHORD (DEC)": "RH Thumb 3 Left",
+    "CHORD (SCI)": "1E00",
+    "CHORD (HEX)": "0000000000000001"
+  },
+  {
+    "BYTE (DEC)": "02",
+    "BYTE (HEX)": "02",
+    "Position": "000000000000000003",
+    "CHORD (DEC)": "RH Thumb 3 Down",
+    "CHORD (SCI)": "3E00",
+    "CHORD (HEX)": "0000000000000003"
+  },
+  {
+    "BYTE (DEC)": "03",
+    "BYTE (HEX)": "03",
+    "Position": "000000000000000005",
+    "CHORD (DEC)": "RH Thumb 3 Right",
+    "CHORD (SCI)": "5E00",
+    "CHORD (HEX)": "0000000000000005"
+  },
+  {
+    "BYTE (DEC)": "04",
+    "BYTE (HEX)": "04",
+    "Position": "000000000000000007",
+    "CHORD (DEC)": "RH Thumb 3 Up",
+    "CHORD (SCI)": "7E00",
+    "CHORD (HEX)": "0000000000000007"
+  },
+  {
+    "BYTE (DEC)": "05",
+    "BYTE (HEX)": "05",
+    "Position": "000000000000000009",
+    "CHORD (DEC)": "RH Thumb 3 Center",
+    "CHORD (SCI)": "9E00",
+    "CHORD (HEX)": "0000000000000009"
+  },
+  {
+    "BYTE (DEC)": "06",
+    "BYTE (HEX)": "06",
+    "Position": "000000000000000010",
+    "CHORD (DEC)": "RH Thumb 2 Left",
+    "CHORD (SCI)": "1E01",
+    "CHORD (HEX)": "000000000000000A"
+  },
+  {
+    "BYTE (DEC)": "07",
+    "BYTE (HEX)": "07",
+    "Position": "000000000000000030",
+    "CHORD (DEC)": "RH Thumb 2 Down",
+    "CHORD (SCI)": "3E01",
+    "CHORD (HEX)": "000000000000001E"
+  },
+  {
+    "BYTE (DEC)": "08",
+    "BYTE (HEX)": "08",
+    "Position": "000000000000000050",
+    "CHORD (DEC)": "RH Thumb 2 Right",
+    "CHORD (SCI)": "5E01",
+    "CHORD (HEX)": "0000000000000032"
+  },
+  {
+    "BYTE (DEC)": "09",
+    "BYTE (HEX)": "09",
+    "Position": "000000000000000070",
+    "CHORD (DEC)": "RH Thumb 2 Up",
+    "CHORD (SCI)": "7E01",
+    "CHORD (HEX)": "0000000000000046"
+  },
+  {
+    "BYTE (DEC)": "10",
+    "BYTE (HEX)": "0A",
+    "Position": "000000000000000090",
+    "CHORD (DEC)": "RH Thumb 2 Center",
+    "CHORD (SCI)": "9E01",
+    "CHORD (HEX)": "000000000000005A"
+  },
+  {
+    "BYTE (DEC)": "11",
+    "BYTE (HEX)": "0B",
+    "Position": "000000000000000100",
+    "CHORD (DEC)": "RH Thumb 1 Left",
+    "CHORD (SCI)": "1E02",
+    "CHORD (HEX)": "0000000000000064"
+  },
+  {
+    "BYTE (DEC)": "12",
+    "BYTE (HEX)": "0C",
+    "Position": "000000000000000300",
+    "CHORD (DEC)": "RH Thumb 1 Down",
+    "CHORD (SCI)": "3E02",
+    "CHORD (HEX)": "000000000000012C"
+  },
+  {
+    "BYTE (DEC)": "13",
+    "BYTE (HEX)": "0D",
+    "Position": "000000000000000500",
+    "CHORD (DEC)": "RH Thumb 1 Right",
+    "CHORD (SCI)": "5E02",
+    "CHORD (HEX)": "00000000000001F4"
+  },
+  {
+    "BYTE (DEC)": "14",
+    "BYTE (HEX)": "0E",
+    "Position": "000000000000000700",
+    "CHORD (DEC)": "RH Thumb 1 Up",
+    "CHORD (SCI)": "7E02",
+    "CHORD (HEX)": "00000000000002BC"
+  },
+  {
+    "BYTE (DEC)": "15",
+    "BYTE (HEX)": "0F",
+    "Position": "000000000000000900",
+    "CHORD (DEC)": "RH Thumb 1 Center",
+    "CHORD (SCI)": "9E02",
+    "CHORD (HEX)": "0000000000000384"
+  },
+  {
+    "BYTE (DEC)": "16",
+    "BYTE (HEX)": "10",
+    "Position": "000000000000001000",
+    "CHORD (DEC)": "RH Pinky Down",
+    "CHORD (SCI)": "1E03",
+    "CHORD (HEX)": "00000000000003E8"
+  },
+  {
+    "BYTE (DEC)": "17",
+    "BYTE (HEX)": "11",
+    "Position": "000000000000003000",
+    "CHORD (DEC)": "RH Pinky Right",
+    "CHORD (SCI)": "3E03",
+    "CHORD (HEX)": "0000000000000BB8"
+  },
+  {
+    "BYTE (DEC)": "18",
+    "BYTE (HEX)": "12",
+    "Position": "000000000000005000",
+    "CHORD (DEC)": "RH Pinky Up",
+    "CHORD (SCI)": "5E03",
+    "CHORD (HEX)": "0000000000001388"
+  },
+  {
+    "BYTE (DEC)": "19",
+    "BYTE (HEX)": "13",
+    "Position": "000000000000007000",
+    "CHORD (DEC)": "RH Pinky Left",
+    "CHORD (SCI)": "7E03",
+    "CHORD (HEX)": "0000000000001B58"
+  },
+  {
+    "BYTE (DEC)": "20",
+    "BYTE (HEX)": "14",
+    "Position": "000000000000009000",
+    "CHORD (DEC)": "RH Pinky Center",
+    "CHORD (SCI)": "9E03",
+    "CHORD (HEX)": "0000000000002328"
+  },
+  {
+    "BYTE (DEC)": "21",
+    "BYTE (HEX)": "15",
+    "Position": "000000000000010000",
+    "CHORD (DEC)": "RH Ring Secondary Down",
+    "CHORD (SCI)": "1E04",
+    "CHORD (HEX)": "0000000000002710"
+  },
+  {
+    "BYTE (DEC)": "22",
+    "BYTE (HEX)": "16",
+    "Position": "000000000000030000",
+    "CHORD (DEC)": "RH Ring Secondary Right",
+    "CHORD (SCI)": "3E04",
+    "CHORD (HEX)": "0000000000007530"
+  },
+  {
+    "BYTE (DEC)": "23",
+    "BYTE (HEX)": "17",
+    "Position": "000000000000050000",
+    "CHORD (DEC)": "RH Ring Secondary Up",
+    "CHORD (SCI)": "5E04",
+    "CHORD (HEX)": "000000000000C350"
+  },
+  {
+    "BYTE (DEC)": "24",
+    "BYTE (HEX)": "18",
+    "Position": "000000000000070000",
+    "CHORD (DEC)": "RH Ring Secondary Left",
+    "CHORD (SCI)": "7E04",
+    "CHORD (HEX)": "0000000000011170"
+  },
+  {
+    "BYTE (DEC)": "25",
+    "BYTE (HEX)": "19",
+    "Position": "000000000000090000",
+    "CHORD (DEC)": "RH Ring Secondary Center",
+    "CHORD (SCI)": "9E04",
+    "CHORD (HEX)": "0000000000015F90"
+  },
+  {
+    "BYTE (DEC)": "26",
+    "BYTE (HEX)": "1A",
+    "Position": "000000000000100000",
+    "CHORD (DEC)": "RH Ring Primary Down",
+    "CHORD (SCI)": "1E05",
+    "CHORD (HEX)": "00000000000186A0"
+  },
+  {
+    "BYTE (DEC)": "27",
+    "BYTE (HEX)": "1B",
+    "Position": "000000000000300000",
+    "CHORD (DEC)": "RH Ring Primary Right",
+    "CHORD (SCI)": "3E05",
+    "CHORD (HEX)": "00000000000493E0"
+  },
+  {
+    "BYTE (DEC)": "28",
+    "BYTE (HEX)": "1C",
+    "Position": "000000000000500000",
+    "CHORD (DEC)": "RH Ring Primary Up",
+    "CHORD (SCI)": "5E05",
+    "CHORD (HEX)": "000000000007A120"
+  },
+  {
+    "BYTE (DEC)": "29",
+    "BYTE (HEX)": "1D",
+    "Position": "000000000000700000",
+    "CHORD (DEC)": "RH Ring Primary Left",
+    "CHORD (SCI)": "7E05",
+    "CHORD (HEX)": "00000000000AAE60"
+  },
+  {
+    "BYTE (DEC)": "30",
+    "BYTE (HEX)": "1E",
+    "Position": "000000000000900000",
+    "CHORD (DEC)": "RH Ring Primary Center",
+    "CHORD (SCI)": "9E05",
+    "CHORD (HEX)": "00000000000DBBA0"
+  },
+  {
+    "BYTE (DEC)": "31",
+    "BYTE (HEX)": "1F",
+    "Position": "000000000001000000",
+    "CHORD (DEC)": "RH Middle Secondary Down",
+    "CHORD (SCI)": "1E06",
+    "CHORD (HEX)": "00000000000F4240"
+  },
+  {
+    "BYTE (DEC)": "32",
+    "BYTE (HEX)": "20",
+    "Position": "000000000003000000",
+    "CHORD (DEC)": "RH Middle Secondary Right",
+    "CHORD (SCI)": "3E06",
+    "CHORD (HEX)": "00000000002DC6C0"
+  },
+  {
+    "BYTE (DEC)": "33",
+    "BYTE (HEX)": "21",
+    "Position": "000000000005000000",
+    "CHORD (DEC)": "RH Middle Secondary Up",
+    "CHORD (SCI)": "5E06",
+    "CHORD (HEX)": "00000000004C4B40"
+  },
+  {
+    "BYTE (DEC)": "34",
+    "BYTE (HEX)": "22",
+    "Position": "000000000007000000",
+    "CHORD (DEC)": "RH Middle Secondary Left",
+    "CHORD (SCI)": "7E06",
+    "CHORD (HEX)": "00000000006ACFC0"
+  },
+  {
+    "BYTE (DEC)": "35",
+    "BYTE (HEX)": "23",
+    "Position": "000000000009000000",
+    "CHORD (DEC)": "RH Middle Secondary Center",
+    "CHORD (SCI)": "9E06",
+    "CHORD (HEX)": "0000000000895440"
+  },
+  {
+    "BYTE (DEC)": "36",
+    "BYTE (HEX)": "24",
+    "Position": "000000000010000000",
+    "CHORD (DEC)": "RH Middle Primary Down",
+    "CHORD (SCI)": "1E07",
+    "CHORD (HEX)": "0000000000989680"
+  },
+  {
+    "BYTE (DEC)": "37",
+    "BYTE (HEX)": "25",
+    "Position": "000000000030000000",
+    "CHORD (DEC)": "RH Middle Primary Right",
+    "CHORD (SCI)": "3E07",
+    "CHORD (HEX)": "0000000001C9C380"
+  },
+  {
+    "BYTE (DEC)": "38",
+    "BYTE (HEX)": "26",
+    "Position": "000000000050000000",
+    "CHORD (DEC)": "RH Middle Primary Up",
+    "CHORD (SCI)": "5E07",
+    "CHORD (HEX)": "0000000002FAF080"
+  },
+  {
+    "BYTE (DEC)": "39",
+    "BYTE (HEX)": "27",
+    "Position": "000000000070000000",
+    "CHORD (DEC)": "RH Middle Primary Left",
+    "CHORD (SCI)": "7E07",
+    "CHORD (HEX)": "00000000042C1D80"
+  },
+  {
+    "BYTE (DEC)": "40",
+    "BYTE (HEX)": "28",
+    "Position": "000000000090000000",
+    "CHORD (DEC)": "RH Middle Primary Center",
+    "CHORD (SCI)": "9E07",
+    "CHORD (HEX)": "00000000055D4A80"
+  },
+  {
+    "BYTE (DEC)": "41",
+    "BYTE (HEX)": "29",
+    "Position": "000000000100000000",
+    "CHORD (DEC)": "RH Index Down",
+    "CHORD (SCI)": "1E08",
+    "CHORD (HEX)": "0000000005F5E100"
+  },
+  {
+    "BYTE (DEC)": "42",
+    "BYTE (HEX)": "2A",
+    "Position": "000000000300000000",
+    "CHORD (DEC)": "RH Index Right",
+    "CHORD (SCI)": "3E08",
+    "CHORD (HEX)": "0000000011E1A300"
+  },
+  {
+    "BYTE (DEC)": "43",
+    "BYTE (HEX)": "2B",
+    "Position": "000000000500000000",
+    "CHORD (DEC)": "RH Index Up",
+    "CHORD (SCI)": "5E08",
+    "CHORD (HEX)": "000000001DCD6500"
+  },
+  {
+    "BYTE (DEC)": "44",
+    "BYTE (HEX)": "2C",
+    "Position": "000000000700000000",
+    "CHORD (DEC)": "RH Index Left",
+    "CHORD (SCI)": "7E08",
+    "CHORD (HEX)": "0000000029B92700"
+  },
+  {
+    "BYTE (DEC)": "45",
+    "BYTE (HEX)": "2D",
+    "Position": "000000000900000000",
+    "CHORD (DEC)": "RH Index Center",
+    "CHORD (SCI)": "9E08",
+    "CHORD (HEX)": "0000000035A4E900"
+  },
+  {
+    "BYTE (DEC)": "46",
+    "BYTE (HEX)": "2E",
+    "Position": "000000001000000000",
+    "CHORD (DEC)": "LH Thumb 3 Right",
+    "CHORD (SCI)": "1E09",
+    "CHORD (HEX)": "000000003B9ACA00"
+  },
+  {
+    "BYTE (DEC)": "47",
+    "BYTE (HEX)": "2F",
+    "Position": "000000003000000000",
+    "CHORD (DEC)": "LH Thumb 3 Up",
+    "CHORD (SCI)": "3E09",
+    "CHORD (HEX)": "00000000B2D05E00"
+  },
+  {
+    "BYTE (DEC)": "48",
+    "BYTE (HEX)": "30",
+    "Position": "000000005000000000",
+    "CHORD (DEC)": "LH Thumb 3 Left",
+    "CHORD (SCI)": "5E09",
+    "CHORD (HEX)": "000000012A05F200"
+  },
+  {
+    "BYTE (DEC)": "49",
+    "BYTE (HEX)": "31",
+    "Position": "000000007000000000",
+    "CHORD (DEC)": "LH Thumb 3 Down",
+    "CHORD (SCI)": "7E09",
+    "CHORD (HEX)": "00000001A13B8600"
+  },
+  {
+    "BYTE (DEC)": "50",
+    "BYTE (HEX)": "32",
+    "Position": "000000009000000000",
+    "CHORD (DEC)": "LH Thumb 3 Center",
+    "CHORD (SCI)": "9E09",
+    "CHORD (HEX)": "0000000218711A00"
+  },
+  {
+    "BYTE (DEC)": "51",
+    "BYTE (HEX)": "33",
+    "Position": "000000010000000000",
+    "CHORD (DEC)": "LH Thumb 2 Right",
+    "CHORD (SCI)": "1E10",
+    "CHORD (HEX)": "00000002540BE400"
+  },
+  {
+    "BYTE (DEC)": "52",
+    "BYTE (HEX)": "34",
+    "Position": "000000030000000000",
+    "CHORD (DEC)": "LH Thumb 2 Up",
+    "CHORD (SCI)": "3E10",
+    "CHORD (HEX)": "00000006FC23AC00"
+  },
+  {
+    "BYTE (DEC)": "53",
+    "BYTE (HEX)": "35",
+    "Position": "000000050000000000",
+    "CHORD (DEC)": "LH Thumb 2 Left",
+    "CHORD (SCI)": "5E10",
+    "CHORD (HEX)": "0000000BA43B7400"
+  },
+  {
+    "BYTE (DEC)": "54",
+    "BYTE (HEX)": "36",
+    "Position": "000000070000000000",
+    "CHORD (DEC)": "LH Thumb 2 Down",
+    "CHORD (SCI)": "7E10",
+    "CHORD (HEX)": "000000104C533C00"
+  },
+  {
+    "BYTE (DEC)": "55",
+    "BYTE (HEX)": "37",
+    "Position": "000000090000000000",
+    "CHORD (DEC)": "LH Thumb 2 Center",
+    "CHORD (SCI)": "9E10",
+    "CHORD (HEX)": "00000014F46B0400"
+  },
+  {
+    "BYTE (DEC)": "56",
+    "BYTE (HEX)": "38",
+    "Position": "000000100000000000",
+    "CHORD (DEC)": "LH Thumb 1 Right",
+    "CHORD (SCI)": "1E11",
+    "CHORD (HEX)": "000000174876E800"
+  },
+  {
+    "BYTE (DEC)": "57",
+    "BYTE (HEX)": "39",
+    "Position": "000000300000000000",
+    "CHORD (DEC)": "LH Thumb 1 Up",
+    "CHORD (SCI)": "3E11",
+    "CHORD (HEX)": "00000045D964B800"
+  },
+  {
+    "BYTE (DEC)": "58",
+    "BYTE (HEX)": "3A",
+    "Position": "000000500000000000",
+    "CHORD (DEC)": "LH Thumb 1 Left",
+    "CHORD (SCI)": "5E11",
+    "CHORD (HEX)": "000000746A528800"
+  },
+  {
+    "BYTE (DEC)": "59",
+    "BYTE (HEX)": "3B",
+    "Position": "000000700000000000",
+    "CHORD (DEC)": "LH Thumb 1 Down",
+    "CHORD (SCI)": "7E11",
+    "CHORD (HEX)": "000000A2FB405800"
+  },
+  {
+    "BYTE (DEC)": "60",
+    "BYTE (HEX)": "3C",
+    "Position": "000000900000000000",
+    "CHORD (DEC)": "LH Thumb 1 Center",
+    "CHORD (SCI)": "9E11",
+    "CHORD (HEX)": "000000D18C2E2800"
+  },
+  {
+    "BYTE (DEC)": "61",
+    "BYTE (HEX)": "3D",
+    "Position": "000001000000000000",
+    "CHORD (DEC)": "LH Pinky Down",
+    "CHORD (SCI)": "1E12",
+    "CHORD (HEX)": "000000E8D4A51000"
+  },
+  {
+    "BYTE (DEC)": "62",
+    "BYTE (HEX)": "3E",
+    "Position": "000003000000000000",
+    "CHORD (DEC)": "LH Pinky Right",
+    "CHORD (SCI)": "3E12",
+    "CHORD (HEX)": "000002BA7DEF3000"
+  },
+  {
+    "BYTE (DEC)": "63",
+    "BYTE (HEX)": "3F",
+    "Position": "000005000000000000",
+    "CHORD (DEC)": "LH Pinky Up",
+    "CHORD (SCI)": "5E12",
+    "CHORD (HEX)": "0000048C27395000"
+  },
+  {
+    "BYTE (DEC)": "64",
+    "BYTE (HEX)": "40",
+    "Position": "000007000000000000",
+    "CHORD (DEC)": "LH Pinky Left",
+    "CHORD (SCI)": "7E12",
+    "CHORD (HEX)": "0000065DD0837000"
+  },
+  {
+    "BYTE (DEC)": "65",
+    "BYTE (HEX)": "41",
+    "Position": "000009000000000000",
+    "CHORD (DEC)": "LH Pinky Center",
+    "CHORD (SCI)": "9E12",
+    "CHORD (HEX)": "0000082F79CD9000"
+  },
+  {
+    "BYTE (DEC)": "66",
+    "BYTE (HEX)": "42",
+    "Position": "000010000000000000",
+    "CHORD (DEC)": "LH Ring Secondary Down",
+    "CHORD (SCI)": "1E13",
+    "CHORD (HEX)": "000009184E72A000"
+  },
+  {
+    "BYTE (DEC)": "67",
+    "BYTE (HEX)": "43",
+    "Position": "000030000000000000",
+    "CHORD (DEC)": "LH Ring Secondary Right",
+    "CHORD (SCI)": "3E13",
+    "CHORD (HEX)": "00001B48EB57E000"
+  },
+  {
+    "BYTE (DEC)": "68",
+    "BYTE (HEX)": "44",
+    "Position": "000050000000000000",
+    "CHORD (DEC)": "LH Ring Secondary Up",
+    "CHORD (SCI)": "5E13",
+    "CHORD (HEX)": "00002D79883D2000"
+  },
+  {
+    "BYTE (DEC)": "69",
+    "BYTE (HEX)": "45",
+    "Position": "000070000000000000",
+    "CHORD (DEC)": "LH Ring Secondary Left",
+    "CHORD (SCI)": "7E13",
+    "CHORD (HEX)": "00003FAA25226000"
+  },
+  {
+    "BYTE (DEC)": "70",
+    "BYTE (HEX)": "46",
+    "Position": "000090000000000000",
+    "CHORD (DEC)": "LH Ring Secondary Center",
+    "CHORD (SCI)": "9E13",
+    "CHORD (HEX)": "000051DAC207A000"
+  },
+  {
+    "BYTE (DEC)": "71",
+    "BYTE (HEX)": "47",
+    "Position": "000100000000000000",
+    "CHORD (DEC)": "LH Ring Primary Down",
+    "CHORD (SCI)": "1E14",
+    "CHORD (HEX)": "00005AF3107A4000"
+  },
+  {
+    "BYTE (DEC)": "72",
+    "BYTE (HEX)": "48",
+    "Position": "000300000000000000",
+    "CHORD (DEC)": "LH Ring Primary Right",
+    "CHORD (SCI)": "3E14",
+    "CHORD (HEX)": "000110D9316EC000"
+  },
+  {
+    "BYTE (DEC)": "73",
+    "BYTE (HEX)": "49",
+    "Position": "000500000000000000",
+    "CHORD (DEC)": "LH Ring Primary Up",
+    "CHORD (SCI)": "5E14",
+    "CHORD (HEX)": "0001C6BF52634000"
+  },
+  {
+    "BYTE (DEC)": "74",
+    "BYTE (HEX)": "4A",
+    "Position": "000700000000000000",
+    "CHORD (DEC)": "LH Ring Primary Left",
+    "CHORD (SCI)": "7E14",
+    "CHORD (HEX)": "00027CA57357C000"
+  },
+  {
+    "BYTE (DEC)": "75",
+    "BYTE (HEX)": "4B",
+    "Position": "000900000000000000",
+    "CHORD (DEC)": "LH Ring Primary Center",
+    "CHORD (SCI)": "9E14",
+    "CHORD (HEX)": "0003328B944C4000"
+  },
+  {
+    "BYTE (DEC)": "76",
+    "BYTE (HEX)": "4C",
+    "Position": "001000000000000000",
+    "CHORD (DEC)": "LH Middle Secondary Down",
+    "CHORD (SCI)": "1E15",
+    "CHORD (HEX)": "00038D7EA4C68000"
+  },
+  {
+    "BYTE (DEC)": "77",
+    "BYTE (HEX)": "4D",
+    "Position": "003000000000000000",
+    "CHORD (DEC)": "LH Middle Secondary right",
+    "CHORD (SCI)": "3E15",
+    "CHORD (HEX)": "000AA87BEE538000"
+  },
+  {
+    "BYTE (DEC)": "78",
+    "BYTE (HEX)": "4E",
+    "Position": "005000000000000000",
+    "CHORD (DEC)": "LH Middle Secondary Up",
+    "CHORD (SCI)": "5E15",
+    "CHORD (HEX)": "0011C37937E08000"
+  },
+  {
+    "BYTE (DEC)": "79",
+    "BYTE (HEX)": "4F",
+    "Position": "007000000000000000",
+    "CHORD (DEC)": "LH Middle Secondary Left",
+    "CHORD (SCI)": "7E15",
+    "CHORD (HEX)": "0018DE76816D8000"
+  },
+  {
+    "BYTE (DEC)": "80",
+    "BYTE (HEX)": "50",
+    "Position": "009000000000000000",
+    "CHORD (DEC)": "LH Middle Secondary Center",
+    "CHORD (SCI)": "9E15",
+    "CHORD (HEX)": "001FF973CAFA8000"
+  },
+  {
+    "BYTE (DEC)": "81",
+    "BYTE (HEX)": "51",
+    "Position": "010000000000000000",
+    "CHORD (DEC)": "LH Middle Primary Down",
+    "CHORD (SCI)": "1E16",
+    "CHORD (HEX)": "002386F26FC10000"
+  },
+  {
+    "BYTE (DEC)": "82",
+    "BYTE (HEX)": "52",
+    "Position": "030000000000000000",
+    "CHORD (DEC)": "LH Middle Primary Right",
+    "CHORD (SCI)": "3E16",
+    "CHORD (HEX)": "006A94D74F430000"
+  },
+  {
+    "BYTE (DEC)": "83",
+    "BYTE (HEX)": "53",
+    "Position": "050000000000000000",
+    "CHORD (DEC)": "LH Middle Primary Up",
+    "CHORD (SCI)": "5E16",
+    "CHORD (HEX)": "00B1A2BC2EC50000"
+  },
+  {
+    "BYTE (DEC)": "84",
+    "BYTE (HEX)": "54",
+    "Position": "070000000000000000",
+    "CHORD (DEC)": "LH Middle Primary Left",
+    "CHORD (SCI)": "7E16",
+    "CHORD (HEX)": "00F8B0A10E470000"
+  },
+  {
+    "BYTE (DEC)": "85",
+    "BYTE (HEX)": "55",
+    "Position": "090000000000000000",
+    "CHORD (DEC)": "LH Middle Primary Center",
+    "CHORD (SCI)": "9E16",
+    "CHORD (HEX)": "013FBE85EDC90000"
+  },
+  {
+    "BYTE (DEC)": "86",
+    "BYTE (HEX)": "56",
+    "Position": "100000000000000000",
+    "CHORD (DEC)": "LH Index Down",
+    "CHORD (SCI)": "1E17",
+    "CHORD (HEX)": "016345785D8A0000"
+  },
+  {
+    "BYTE (DEC)": "87",
+    "BYTE (HEX)": "57",
+    "Position": "300000000000000000",
+    "CHORD (DEC)": "LH Index Right",
+    "CHORD (SCI)": "3E17",
+    "CHORD (HEX)": "0429D069189E0000"
+  },
+  {
+    "BYTE (DEC)": "88",
+    "BYTE (HEX)": "58",
+    "Position": "500000000000000000",
+    "CHORD (DEC)": "LH Index Up",
+    "CHORD (SCI)": "5E17",
+    "CHORD (HEX)": "06F05B59D3B20000"
+  },
+  {
+    "BYTE (DEC)": "89",
+    "BYTE (HEX)": "59",
+    "Position": "700000000000000000",
+    "CHORD (DEC)": "LH Index Left",
+    "CHORD (SCI)": "7E17",
+    "CHORD (HEX)": "09B6E64A8EC60000"
+  },
+  {
+    "BYTE (DEC)": "90",
+    "BYTE (HEX)": "5A",
+    "Position": "900000000000000000",
+    "CHORD (DEC)": "LH Index Center",
+    "CHORD (SCI)": "9E17",
+    "CHORD (HEX)": "0C7D713B49DA0000"
+  }
+]

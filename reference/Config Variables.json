@@ -1,0 +1,192 @@
+[
+  {
+    "byteId (DEC)": "00",
+    "byteId (HEX)": "0x00",
+    "Variable": "reserved",
+    "Description": "",
+    "Type": "",
+    "Range": "",
+    "Default Value": "",
+    "Default Encoded Value": ""
+  },
+  {
+    "byteId (DEC)": "01",
+    "byteId (HEX)": "0x01",
+    "Variable": "enable Serial UART LOG",
+    "Description": "enables/disables Serial UART output of LOG message",
+    "Type": "Boolean",
+    "Range": "0-1",
+    "Default Value": "False",
+    "Default Encoded Value": "0x00"
+  },
+  {
+    "byteId (DEC)": "02",
+    "byteId (HEX)": "0x02",
+    "Variable": "enable Serial UART RAW",
+    "Description": "enables/disables Serial UART output of RAW keywise values before/at chord detection in HEX format",
+    "Type": "Boolean",
+    "Range": "0-1",
+    "Default Value": "False",
+    "Default Encoded Value": "0x00"
+  },
+  {
+    "byteId (DEC)": "03",
+    "byteId (HEX)": "0x03",
+    "Variable": "enable Serial UART CHORD",
+    "Description": "enables/disables Serial UART output of CHORD keywise values at the time of chord detection in HEX format",
+    "Type": "Boolean",
+    "Range": "0-1",
+    "Default Value": "False",
+    "Default Encoded Value": "0x00"
+  },
+  {
+    "byteId (DEC)": "04",
+    "byteId (HEX)": "0x04",
+    "Variable": "enable Serial UART KEYBOARD",
+    "Description": "enables/disables Serial UART output of utf-8 keyboard characters and command bytes in HEX format",
+    "Type": "Boolean",
+    "Range": "0-1",
+    "Default Value": "False",
+    "Default Encoded Value": "0x00"
+  },
+  {
+    "byteId (DEC)": "05",
+    "byteId (HEX)": "0x05",
+    "Variable": "enable Serial UART MOUSE",
+    "Description": "enables/disables Serial UART output of mouse movements and clicks as string messages (format TBD)",
+    "Type": "Boolean",
+    "Range": "0-1",
+    "Default Value": "False",
+    "Default Encoded Value": "0x00"
+  },
+  {
+    "byteId (DEC)": "06",
+    "byteId (HEX)": "0x06",
+    "Variable": "enable Serial UART DEBUG",
+    "Description": "enables/disables Serial UART output of mouse movements and clicks as string messages (format TBD)",
+    "Type": "Boolean",
+    "Range": "0-1",
+    "Default Value": "False",
+    "Default Encoded Value": "0x00"
+  },
+  {
+    "byteId (DEC)": "07",
+    "byteId (HEX)": "0x07",
+    "Variable": "enable Serial UART HEADER",
+    "Description": "enables/disables Serial UART output of Header flags in front of all of the Serial UART outputs",
+    "Type": "Boolean",
+    "Range": "0-1",
+    "Default Value": "False",
+    "Default Encoded Value": "0x00"
+  },
+  {
+    "byteId (DEC)": "10",
+    "byteId (HEX)": "0x0A",
+    "Variable": "enableKeyboardHID",
+    "Description": "enables/disables HID keyboard output",
+    "Type": "Boolean",
+    "Range": "0-1",
+    "Default Value": "True",
+    "Default Encoded Value": "0x01"
+  },
+  {
+    "byteId (DEC)": "11",
+    "byteId (HEX)": "0x0B",
+    "Variable": "pressThreshold",
+    "Description": "",
+    "Type": "Integer",
+    "Range": "0-255",
+    "Default Value": "18",
+    "Default Encoded Value": "0x12"
+  },
+  {
+    "byteId (DEC)": "12",
+    "byteId (HEX)": "0x0C",
+    "Variable": "releaseThreshold",
+    "Description": "",
+    "Type": "Integer",
+    "Range": "0-255",
+    "Default Value": "18",
+    "Default Encoded Value": "0x12"
+  },
+  {
+    "byteId (DEC)": "20",
+    "byteId (HEX)": "0x14",
+    "Variable": "enableMouseHID",
+    "Description": "enables/disables HID mouse output",
+    "Type": "Boolean",
+    "Range": "0-1",
+    "Default Value": "True",
+    "Default Encoded Value": "0x01"
+  },
+  {
+    "byteId (DEC)": "21",
+    "byteId (HEX)": "0x15",
+    "Variable": "scrollDelay",
+    "Description": "",
+    "Type": "Integer",
+    "Range": "0-255",
+    "Default Value": "100",
+    "Default Encoded Value": "0x64"
+  },
+  {
+    "byteId (DEC)": "30",
+    "byteId (HEX)": "0x1E",
+    "Variable": "enableSpurring",
+    "Description": "",
+    "Type": "Boolean",
+    "Range": "0-1",
+    "Default Value": "True",
+    "Default Encoded Value": "0x01"
+  },
+  {
+    "byteId (DEC)": "31",
+    "byteId (HEX)": "0x1F",
+    "Variable": "spurKillerToggle",
+    "Description": "",
+    "Type": "Boolean",
+    "Range": "0-1",
+    "Default Value": "True",
+    "Default Encoded Value": "0x01"
+  },
+  {
+    "byteId (DEC)": "32",
+    "byteId (HEX)": "0x20",
+    "Variable": "spurKiller",
+    "Description": "",
+    "Type": "Integer",
+    "Range": "0-32767",
+    "Default Value": "10000",
+    "Default Encoded Value": "0x2710"
+  },
+  {
+    "byteId (DEC)": "40",
+    "byteId (HEX)": "0x28",
+    "Variable": "enableChording",
+    "Description": "",
+    "Type": "boolean",
+    "Range": "0-1",
+    "Default Value": "True",
+    "Default Encoded Value": "0x01"
+  },
+  {
+    "byteId (DEC)": "41",
+    "byteId (HEX)": "0x29",
+    "Variable": "charKillerToggle",
+    "Description": "",
+    "Type": "boolean",
+    "Range": "0-1",
+    "Default Value": "True",
+    "Default Encoded Value": "0x01"
+  },
+  {
+    "byteId (DEC)": "42",
+    "byteId (HEX)": "0x2A",
+    "Variable": "charCounterKiller",
+    "Description": "",
+    "Type": "Integer",
+    "Range": "0-32767",
+    "Default Value": "100",
+    "Default Encoded Value": "0x64"
+  }
+]
