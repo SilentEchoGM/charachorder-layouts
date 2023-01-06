@@ -1,7 +1,26 @@
+import { defaultMerge } from "$lib/utils";
 import { z } from "zod";
-import type { Layout } from "./v2";
+import type { v1 } from "./v1";
 
-export const v1Joystick = z.object({
+import {
+  array as A,
+  date as FDate,
+  either as E,
+  eq as Eq,
+  function as f,
+  map as M,
+  option as O,
+  ord as Ord,
+  readonlyArray as RA,
+  record as R,
+  set as FSet,
+  state as S,
+  string as Str,
+  task as T,
+  taskEither as TE,
+} from "fp-ts";
+
+export const v2Joystick = z.object({
   top: z.string(),
   left: z.string(),
   right: z.string(),
@@ -21,50 +40,58 @@ export const sticks = [
   "pinky",
 ] as const;
 
-export const v1Stick = z.enum(sticks);
+export const v2Stick = z.enum(sticks);
 
-export const v1Half = z.object({
-  "ring-north": v1Joystick,
-  "middle-north": v1Joystick,
-  index: v1Joystick,
-  "thumb-north": v1Joystick,
-  "thumb-middle": v1Joystick,
-  "thumb-south": v1Joystick,
-  "middle-south": v1Joystick,
-  "ring-south": v1Joystick,
-  pinky: v1Joystick,
+export const v2Half = z.object({
+  "ring-north": v2Joystick,
+  "middle-north": v2Joystick,
+  index: v2Joystick,
+  "thumb-north": v2Joystick,
+  "thumb-middle": v2Joystick,
+  "thumb-south": v2Joystick,
+  "middle-south": v2Joystick,
+  "ring-south": v2Joystick,
+  pinky: v2Joystick,
 });
 
-export const v1Both = z.object({
-  left: v1Half,
-  right: v1Half,
+export const v2Both = z.object({
+  left: v2Half,
+  right: v2Half,
 });
 
-export const v1DefaultLayers = z.object({
-  __base: v1Both,
-  __shift: v1Both,
-  "__num-shift": v1Both,
-  "__shift-num-shift": v1Both,
+export const v2DefaultLayers = z.object({
+  A1: v2Both,
+  A1_shift: v2Both,
+  A2: v2Both,
+  A2_shift: v2Both,
+  A3: v2Both,
+  A3_shift: v2Both,
 });
 
-export const v1Layout = z.union([v1DefaultLayers, z.record(v1Both)]);
+export const v2Layout = z.union([v2DefaultLayers, z.record(v2Both)]);
 
-export const v1LayoutData = z.object({
-  _apiVersion: z.literal(1),
+export const v2LayoutData = z.object({
+  _apiVersion: z.literal(2),
   createdBy: z.string(),
   createdOn: z.string(),
   name: z.string(),
   history: z.array(
     z.object({
       modifiedOn: z.string(),
-      state: v1Layout,
+      state: v2Layout,
       index: z.number(),
     })
   ),
 });
 
-export const defaultLayout: Layout = v1Layout.parse({
-  __base: {
+export const v2SwitchLocation = z.object({
+  hand: z.enum(["left", "right"]),
+  stick: v2Stick,
+  input: z.enum(["top", "left", "right", "bottom", "center"]),
+});
+
+export const defaultLayout: Layout = {
+  A1: {
     left: {
       "ring-north": {
         top: "ctrl",
@@ -198,7 +225,7 @@ export const defaultLayout: Layout = v1Layout.parse({
       },
     },
   },
-  "__num-shift": {
+  A2: {
     left: {
       "ring-north": {
         top: "ctrl",
@@ -332,7 +359,7 @@ export const defaultLayout: Layout = v1Layout.parse({
       },
     },
   },
-  "__shift-num-shift": {
+  A2_shift: {
     left: {
       "ring-north": {
         top: "ctrl",
@@ -466,7 +493,7 @@ export const defaultLayout: Layout = v1Layout.parse({
       },
     },
   },
-  __shift: {
+  A1_shift: {
     left: {
       "ring-north": {
         top: "ctrl",
@@ -600,19 +627,189 @@ export const defaultLayout: Layout = v1Layout.parse({
       },
     },
   },
-});
-export namespace v1 {
-  export type JoystickDirection = "top" | "left" | "right" | "bottom";
+  A3: {
+    left: {
+      "ring-north": {
+        top: "ctrl",
+        left: "=",
+        right: "`",
+        bottom: "|",
+        center: "",
+      },
 
-  export type JoystickInput = JoystickDirection | "center";
+      "middle-north": {
+        top: "del",
+        left: "6",
+        right: "4",
+        bottom: "5",
+        center: "",
+      },
+      index: {
+        top: "bksp",
+        left: "3",
+        right: "1",
+        bottom: "2",
+        center: "",
+      },
+      "middle-south": {
+        top: "scroll\u2191",
+        left: "\u2190",
+        right: "\u2192",
+        bottom: "scroll\u2193",
+        center: "",
+      },
+      "ring-south": {
+        top: "M\u2191",
+        left: "M\u2190",
+        right: "M\u2192",
+        bottom: "M\u2193",
+        center: "",
+      },
+      pinky: {
+        top: "alt",
+        left: "num-shift",
+        right: "shift",
+        bottom: "mirror",
+        center: "",
+      },
+      "thumb-middle": {
+        top: "F11",
+        left: "",
+        right: "F12",
+        bottom: "",
+        center: "",
+      },
+      "thumb-north": {
+        top: "F8",
+        left: "F9",
+        right: "F7",
+        bottom: "F10",
+        center: "",
+      },
+      "thumb-south": {
+        top: "~",
+        left: "win",
+        right: "\\",
+        bottom: "esc",
+        center: "",
+      },
+    },
+    right: {
+      "ring-north": {
+        top: "ctrl",
+        left: "=",
+        right: "?",
+        bottom: "",
+        center: "",
+      },
 
-  export type Stick = z.infer<typeof v1Stick>;
+      "middle-north": {
+        top: "tab",
+        left: "F4",
+        right: "F6",
+        bottom: "F5",
+        center: "",
+      },
+      index: {
+        top: "enter",
+        left: "F1",
+        right: "F3",
+        bottom: "F2",
+        center: "",
+      },
+      "middle-south": {
+        top: "",
+        left: "",
+        right: "",
+        bottom: "",
+        center: "",
+      },
+      "ring-south": {
+        top: "M\u2191",
+        left: "M\u2190",
+        right: "M\u2192",
+        bottom: "M\u2193",
+        center: "",
+      },
+      pinky: {
+        top: "alt",
+        left: "shift",
+        right: "num-shift",
+        bottom: "mirror",
+        center: "",
+      },
+      "thumb-middle": {
+        top: "F11",
+        left: "F12",
+        right: "",
+        bottom: "",
+        center: "",
+      },
+      "thumb-north": {
+        top: "F8",
+        left: "F7",
+        right: "F9",
+        bottom: "F10",
+        center: "",
+      },
+      "thumb-south": {
+        top: "",
+        left: "",
+        right: "win",
+        bottom: "esc",
+        center: "",
+      },
+    },
+  },
+};
 
-  export type Half = z.infer<typeof v1Half>;
+export type JoystickDirection = "top" | "left" | "right" | "bottom";
 
-  export type Layout = z.infer<typeof v1Layout>;
+export type JoystickInput = JoystickDirection | "center";
 
-  export type LayoutData = z.infer<typeof v1LayoutData>;
+export type Stick = z.infer<typeof v2Stick>;
 
-  export type DefaultLayer = keyof z.infer<typeof v1DefaultLayers>;
-}
+export type Half = z.infer<typeof v2Half>;
+
+export type Layout = z.infer<typeof v2Layout>;
+
+export type LayoutData = z.infer<typeof v2LayoutData>;
+
+export type DefaultLayer = keyof z.infer<typeof v2DefaultLayers>;
+
+export type SwitchLocation = z.infer<typeof v2SwitchLocation>;
+
+export const migrateLayoutFromV1 = (
+  v1: v1.Layout
+): z.SafeParseReturnType<Layout, Layout> => {
+  const keyMap: Record<v1.DefaultLayer, DefaultLayer> = {
+    __base: "A1",
+    "__num-shift": "A2",
+    "__shift-num-shift": "A2_shift",
+    __shift: "A1_shift",
+  } as const;
+
+  const prep = f.pipe(
+    keyMap,
+    R.keys,
+    A.reduce({} as Partial<Layout>, (acc, key) => ({
+      ...acc,
+      [keyMap[key]]: v1[key],
+    }))
+  );
+
+  const merged = defaultMerge<Layout>((v2) => v2Layout.safeParse(v2))(
+    defaultLayout,
+    { ...v1, ...prep, _apiVersion: 2 }
+  );
+
+  if (merged.success) return merged;
+
+  throw new Error("Failed to migrate from v1 to v2");
+};
+
+export const v2LayoutDataMerge = (a: LayoutData, b: any) => {
+  if (b._apiVersion === 1) return migrateLayoutFromV1(b);
+
+  return defaultMerge<LayoutData>(v2LayoutData.safeParse)(a, b);
+};
