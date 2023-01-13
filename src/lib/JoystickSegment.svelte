@@ -4,7 +4,7 @@
   import { fit } from "@leveluptuts/svelte-fit";
   import { createEventDispatcher } from "svelte";
   import { mousePosition } from "./mousePos";
-  import type { JoystickDirection } from "./schema/v1";
+  import type { JoystickDirection } from "./schema/v2";
   import {
     segmentBottom,
     segmentLeft,
@@ -118,11 +118,12 @@
     align-items: center;
   }
 
-  .left .text.long {
-    writing-mode: sideways-lr;
+  :is(.left, .right) .text.long {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
   }
   .right .text.long {
-    writing-mode: sideways-lr;
+    transform: rotate(0deg);
   }
 
   .text {
