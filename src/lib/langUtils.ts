@@ -1,12 +1,13 @@
 import { isLanguage, langMap, type Language } from "./data/languages";
 import {
   defaultLayout,
-  v1Layout,
+  v2Layout,
   type DefaultLayer,
   type Layout,
-} from "./schema/v1";
+} from "./schema/v2";
 
 import { function as f, record as R } from "fp-ts";
+import { v1Layout } from "./schema/v1";
 
 export const parseLanguage = (language: Language): Layout => {
   if (!isLanguage(language)) {
@@ -31,26 +32,31 @@ export const parseLanguage = (language: Language): Layout => {
                 value,
                 R.map((value) => {
                   switch (layer) {
-                    case "__base":
+                    case "A1":
                       return langMap[language][value] ?? value ?? "";
 
-                    case "__shift":
+                    case "A1_shift":
                       return (
                         langMap[language]["Shift + " + value.toLowerCase()] ??
                         value ??
                         ""
                       );
-                    case "__num-shift":
+                    case "A2":
                       return (
                         langMap[language][value.toLowerCase()] ?? value ?? ""
                       );
 
-                    case "__shift-num-shift":
+                    case "A2_shift":
                       return (
                         langMap[language]["Shift + " + value.toLowerCase()] ??
                         value ??
                         ""
                       );
+                    case "A3":
+                      return value;
+
+                    case "A3_shift":
+                      return value;
                   }
                 })
               )
