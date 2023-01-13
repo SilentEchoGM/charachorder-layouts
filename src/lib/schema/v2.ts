@@ -802,9 +802,10 @@ export const migrateLayoutFromV1 = (v1: v1.Layout): Layout => {
     }))
   );
 
+  console.log("migration prep", { prep, v1 });
   const merged = defaultMerge<Layout>((v2) => v2Layout.safeParse(v2))(
     defaultLayout,
-    { ...v1, ...prep, _apiVersion: 2 }
+    { ...prep, _apiVersion: 2 }
   );
 
   if (merged.success) return merged.data;
