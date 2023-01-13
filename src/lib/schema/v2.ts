@@ -65,7 +65,6 @@ export const v2DefaultLayers = z.object({
   A2: v2Both,
   A2_shift: v2Both,
   A3: v2Both,
-  A3_shift: v2Both,
 });
 
 export const v2Layout = z.union([v2DefaultLayers, z.record(v2Both)]);
@@ -827,12 +826,20 @@ export const migrateLayoutDataFromV1 = (b: v1.LayoutData) => {
         ...b,
         _apiVersion: 2,
         history: [
-          ...history.filter((h) => v2LayoutHistoryData.safeParse(h).success),
-          {
-            index: 0,
-            modifiedOn: new Date().toISOString(),
-            state: { ...defaultLayout } as Layout,
-          },
+          ...f.pipe(
+            history,
+            A.filter((h) => v2LayoutHistoryData.safeParse(h).success),
+            (arr) =>
+              arr.length > 0
+                ? arr
+                : [
+                    {
+                      index: 0,
+                      modifiedOn: new Date().toISOString(),
+                      state: { ...defaultLayout } as Layout,
+                    },
+                  ]
+          ),
         ],
         migration: {
           migrated: true,

@@ -54,9 +54,6 @@ export const parseLanguage = (language: Language): Layout => {
                       );
                     case "A3":
                       return value;
-
-                    case "A3_shift":
-                      return value;
                   }
                 })
               )
