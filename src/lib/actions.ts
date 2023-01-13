@@ -40,3 +40,27 @@ export const clickOutside = (
     update,
   };
 };
+
+export const fitToParent = (node: HTMLElement) => {
+  const resize = () => {
+    if (!node.parentElement) return;
+    const { width: parentWidth, height: parentHeight } =
+      node.parentElement.getBoundingClientRect();
+    const { width, height } = node.getBoundingClientRect();
+    const scale = Math.min(parentWidth / width, parentHeight / height);
+
+    console.log(
+      `Parent ${parentWidth}x${parentHeight}`,
+      `Child ${width}x${height}`,
+      scale
+    );
+
+    node.style.transform = `scale(${scale})`;
+  };
+  resize();
+  return {
+    update() {
+      resize();
+    },
+  };
+};
