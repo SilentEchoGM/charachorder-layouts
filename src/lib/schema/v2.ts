@@ -70,18 +70,22 @@ export const v2DefaultLayers = z.object({
 
 export const v2Layout = z.union([v2DefaultLayers, z.record(v2Both)]);
 
+export const v2LayoutHistoryData = z.object({
+  modifiedOn: z.string(),
+  state: v2Layout,
+  index: z.number(),
+});
+
 export const v2LayoutData = z.object({
   _apiVersion: z.literal(2),
   createdBy: z.string(),
   createdOn: z.string(),
   name: z.string(),
-  history: z.array(
-    z.object({
-      modifiedOn: z.string(),
-      state: v2Layout,
-      index: z.number(),
-    })
-  ),
+  history: z.array(v2LayoutHistoryData),
+  migration: z.object({
+    migrated: z.boolean(),
+    meta: z.string(),
+  }),
 });
 
 export const v2SwitchLocation = z.object({
@@ -773,15 +777,15 @@ export type Half = z.infer<typeof v2Half>;
 
 export type Layout = z.infer<typeof v2Layout>;
 
+export type LayoutHistoryData = z.infer<typeof v2LayoutHistoryData>;
+
 export type LayoutData = z.infer<typeof v2LayoutData>;
 
 export type DefaultLayer = keyof z.infer<typeof v2DefaultLayers>;
 
 export type SwitchLocation = z.infer<typeof v2SwitchLocation>;
 
-export const migrateLayoutFromV1 = (
-  v1: v1.Layout
-): z.SafeParseReturnType<Layout, Layout> => {
+export const migrateLayoutFromV1 = (v1: v1.Layout): Layout => {
   const keyMap: Record<v1.DefaultLayer, DefaultLayer> = {
     __base: "A1",
     "__num-shift": "A2",
@@ -803,13 +807,85 @@ export const migrateLayoutFromV1 = (
     { ...v1, ...prep, _apiVersion: 2 }
   );
 
-  if (merged.success) return merged;
+  if (merged.success) return merged.data;
 
   throw new Error("Failed to migrate from v1 to v2");
 };
 
-export const v2LayoutDataMerge = (a: LayoutData, b: any) => {
-  if (b._apiVersion === 1) return migrateLayoutFromV1(b);
+export const migrateLayoutDataFromV1 = (b: v1.LayoutData) => {
+  if (b?._apiVersion === 1) {
+    console.log("Migrating layout data from v1 to v2");
+    return f.pipe(
+      b.history,
+      A.map((historyState) => ({
+        ...historyState,
+        modifiedOn: new Date().toISOString(),
+        state: migrateLayoutFromV1(historyState.state),
+      })),
+      (history) => ({
+        ...b,
+        _apiVersion: 2,
+        history: [
+          ...history.filter((h) => v2LayoutHistoryData.safeParse(h).success),
+          {
+            index: 0,
+            modifiedOn: new Date().toISOString(),
+            state: { ...defaultLayout } as Layout,
+          },
+        ],
+        migration: {
+          migrated: true,
+          meta: "Migrated from v1 to v2",
+        },
+      }),
+      (value) => {
+        console.log(value);
+        return value;
+      },
+      v2LayoutData.safeParse
+    );
+  }
 
-  return defaultMerge<LayoutData>(v2LayoutData.safeParse)(a, b);
+  return v2LayoutData.safeParse({
+    _apiVersion: 2,
+    history: [
+      {
+        index: 0,
+        modifiedOn: new Date().toISOString(),
+        state: { ...defaultLayout } as Layout,
+      },
+    ] as LayoutData["history"],
+    createdOn: new Date().toISOString(),
+    createdBy: "default",
+    name: "default",
+    migration: {
+      migrated: false,
+      meta: "No migration needed",
+    },
+  });
+};
+
+export const mergeLayoutData = (
+  a: LayoutData,
+  b: v1.LayoutData | LayoutData
+): z.SafeParseReturnType<LayoutData, LayoutData> => {
+  const parsedB = v2LayoutData.safeParse(b);
+
+  if (parsedB.success) {
+    return defaultMerge<LayoutData>(v2LayoutData.safeParse)(a, parsedB.data);
+  } else {
+    if (b._apiVersion === 1) {
+      const migrated = migrateLayoutDataFromV1(b);
+
+      if (migrated.success) {
+        return defaultMerge<LayoutData>(v2LayoutData.safeParse)(
+          a,
+          migrated.data
+        );
+      }
+    }
+
+    console.log("Failed to merge layout data b, returning a", { a, b });
+    return v2LayoutData.safeParse(a);
+  }
 };
