@@ -1,30 +1,34 @@
 <script lang="ts">
   import CharaChorderLayout from "$lib/CharaChorderLayout.svelte";
-  import { persistent } from "$lib/createPersistentStore";
+  import { persistent, storePrefix } from "$lib/createPersistentStore";
   import type { Language } from "$lib/data/languages";
   import EditInputModal from "$lib/EditInputModal.svelte";
   import {
     defaultLayout,
-    v1Both,
-    v1LayoutData,
+    v2Both,
+    v2LayoutData,
     type DefaultLayer,
     type JoystickInput,
     type Layout,
     type LayoutData,
+    type LayoutHistoryData,
     type Stick,
-  } from "$lib/schema/v1";
+  } from "$lib/schema/v2";
   import { editModal } from "$lib/stores";
   import { derived, writable } from "svelte/store";
 
   import { goto } from "$app/navigation";
   import { isLanguage, langMap } from "$lib/data/languages";
   import { parseLanguage } from "$lib/langUtils";
+  import { migrateLayoutData } from "$lib/schema/migrations";
   import { record as R } from "fp-ts";
+  import { getItem } from "localforage";
+  import { onMount } from "svelte";
 
   const customData = persistent<LayoutData>(
-    "customLayout",
+    "v2:customLayout",
     {
-      _apiVersion: 1,
+      _apiVersion: 2,
       createdBy: "",
       createdOn: new Date().toISOString(),
       name: "Custom",
@@ -35,13 +39,45 @@
           state: { ...defaultLayout } as Layout,
         },
       ],
+      migration: {
+        migrated: false,
+        meta: "default",
+      },
     },
-    { zod: v1LayoutData.safeParse }
+    { zod: v2LayoutData.safeParse }
   );
 
-  const latest = derived(customData, ($customData) => {
-    return $customData.history[$customData.history.length - 1];
+  onMount(async () => {
+    await customData.load();
+
+    const migrate = async () => {
+      //version 1
+      const prevData = await getItem(storePrefix + "customLayout");
+
+      console.log("prevData", prevData);
+      const migrated = migrateLayoutData(1, 2, prevData);
+
+      if (migrated.success) {
+        console.log("Migrate data", migrated.data, prevData);
+        $customData = migrated.data;
+      } else {
+        console.error("Failed to migrate data", migrated.error);
+      }
+    };
+
+    if (!$customData.migration.migrated) {
+      migrate();
+    }
+    window.manualMigrate = migrate;
   });
+
+  const latest = derived<typeof customData, null | LayoutHistoryData>(
+    customData,
+    ($customData, set) => {
+      if (!$customData.history.length) set(null);
+      set($customData.history[$customData.history.length - 1]);
+    }
+  );
 
   $: if ($customData.history.length === 0) {
     $customData.history.push({
@@ -51,7 +87,7 @@
     });
   }
 
-  const selectedLayer = writable<DefaultLayer>("__base");
+  const selectedLayer = writable<DefaultLayer>("A1");
   const selectedLanguage = persistent<Language>("selectedLanguage", "US", {
     generic: isLanguage,
   });
@@ -63,7 +99,8 @@
     stick: Stick;
     half: "left" | "right";
   }>) => {
-    const parsed = v1Both.safeParse($latest.state[$selectedLayer]);
+    if (!$latest) return;
+    const parsed = v2Both.safeParse($latest.state[$selectedLayer]);
     if (parsed.success) {
       $editModal = {
         input: detail.input,
@@ -84,7 +121,7 @@
     value: string;
   }>) => {
     customData.update(($customData) => {
-      const parsed = v1Both.safeParse(
+      const parsed = v2Both.safeParse(
         $customData.history[$customData.history.length - 1].state[
           $selectedLayer
         ]
@@ -126,7 +163,7 @@
       )
     )
       $customData = {
-        _apiVersion: 1,
+        _apiVersion: 2,
         createdBy: "",
         createdOn: new Date().toISOString(),
         name: "Custom",
@@ -137,6 +174,10 @@
             state: parseLanguage($selectedLanguage),
           },
         ],
+        migration: {
+          migrated: true,
+          meta: "user restored to default",
+        },
       };
   };
 
@@ -166,12 +207,19 @@
         reader.onload = (e) => {
           const text = e.target?.result;
           if (text) {
-            const parsed = v1LayoutData.safeParse(JSON.parse(text as string));
+            const obj = JSON.parse(text as string);
+            console.log("importing data", obj);
+            const parsed = v2LayoutData.safeParse(obj);
             if (parsed.success) {
               $customData = parsed.data;
             } else {
-              alert("Invalid file");
-              console.error(parsed.error);
+              const parsed = migrateLayoutData(1, 2, obj);
+              if (parsed.success) {
+                $customData = parsed.data;
+              } else {
+                alert("Invalid file");
+                console.error(parsed.error);
+              }
             }
           }
         };
@@ -200,28 +248,33 @@
   <div class="divider" />
   <div class="layer-select">
     <button
-      class:active={$selectedLayer === "__base"}
+      class:active={$selectedLayer === "A1"}
       on:click={() => {
-        $selectedLayer = "__base";
+        $selectedLayer = "A1";
       }}>None</button
     ><button
-      class:active={$selectedLayer === "__shift"}
+      class:active={$selectedLayer === "A1_shift"}
       on:click={() => {
-        $selectedLayer = "__shift";
+        $selectedLayer = "A1_shift";
       }}>Shift</button>
     <button
-      class:active={$selectedLayer === "__num-shift"}
+      class:active={$selectedLayer === "A2"}
       on:click={() => {
-        $selectedLayer = "__num-shift";
+        $selectedLayer = "A2";
       }}>Num-shift</button>
     <button
-      class:active={$selectedLayer === "__shift-num-shift"}
+      class:active={$selectedLayer === "A2_shift"}
       on:click={() => {
-        $selectedLayer = "__shift-num-shift";
+        $selectedLayer = "A2_shift";
       }}>Shift & Num-shift</button>
+    <button
+      class:active={$selectedLayer === "A3"}
+      on:click={() => {
+        $selectedLayer = "A3";
+      }}>Fn</button>
   </div>
 
-  {#if $customData.history.length > 0}
+  {#if $latest}
     {#key $latest}
       <CharaChorderLayout
         on:edit-input={handleEditInput}
