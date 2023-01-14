@@ -11,7 +11,7 @@ export const clickOutside = (
 ) => {
   let waiting = true;
   const handleClick: ClickHandler = (e) => {
-    console.log("click outside1");
+    console.log("click outside1", e.target);
     if (!e.target) return;
     console.log("click outside2");
 

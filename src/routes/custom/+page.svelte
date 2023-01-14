@@ -123,7 +123,7 @@
       $editModal = {
         input: detail.input,
         stick: detail.stick,
-        half: detail.half,
+        hand: detail.half,
         open: true,
         value: parsed.data[detail.half][detail.stick][detail.input],
       };
@@ -333,9 +333,11 @@
 
   {#if $latest}
     {#key $latest}
-      <CharaChorderLayout
-        on:edit-input={handleEditInput}
-        layoutLayer={$latest.state[$selectedLayer]} />
+      {#key $selectedLayer}
+        <CharaChorderLayout
+          on:edit-input={handleEditInput}
+          layoutLayer={$latest.state[$selectedLayer]} />
+      {/key}
     {/key}
   {/if}
 
@@ -378,8 +380,5 @@
   .layer-select button.active {
     background-color: #fff;
     color: #444;
-  }
-  .layer-select div {
-    min-height: 25px;
   }
 </style>
