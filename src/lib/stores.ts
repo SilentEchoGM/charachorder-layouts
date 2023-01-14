@@ -2,13 +2,13 @@ import { writable } from "svelte/store";
 import type { JoystickInput, Stick } from "./schema/v2";
 
 export const editModal = writable<{
-  half: "left" | "right";
+  hand: "left" | "right";
   stick: Stick;
   input: JoystickInput;
   open: boolean;
   value: string;
 }>({
-  half: "left",
+  hand: "left",
   stick: "index",
   input: "bottom",
   open: false,
