@@ -867,8 +867,8 @@ export const migrateLayoutDataFromV1 = (b: v1.LayoutData) => {
     createdBy: "default",
     name: "default",
     migration: {
-      migrated: false,
-      meta: "No migration needed",
+      migrated: true,
+      meta: "No migration performed",
     },
   });
 };
