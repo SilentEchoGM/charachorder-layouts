@@ -1,10 +1,5 @@
 import { isLanguage, langMap, type Language } from "./data/languages";
-import {
-  defaultLayout,
-  v2Layout,
-  type DefaultLayer,
-  type Layout,
-} from "./schema/v2";
+import { defaultLayout, type DefaultLayer, type Layout } from "./schema/v2";
 
 import { function as f, record as R } from "fp-ts";
 import { v1Layout } from "./schema/v1";

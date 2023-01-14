@@ -1,5 +1,5 @@
 import { writable } from "svelte/store";
-import type { JoystickInput, Stick } from "./schema/v1";
+import type { JoystickInput, Stick } from "./schema/v2";
 
 export const editModal = writable<{
   half: "left" | "right";

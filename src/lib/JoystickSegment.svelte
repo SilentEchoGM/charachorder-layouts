@@ -119,7 +119,7 @@
   }
 
   :is(.left, .right) .text.long {
-    writing-mode: vertical-lr;
+    writing-mode: vertical-rl;
     transform: rotate(180deg);
   }
   .right .text.long {
