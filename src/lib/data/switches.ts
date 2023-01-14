@@ -102,7 +102,7 @@ const getStickStartNumber = ({
 const getHandStartNumber = ({
   hand,
 }: SwitchLocation): E.Either<string, number> =>
-  hand === "left" ? E.right(0) : E.right(44);
+  hand === "left" ? E.right(0) : E.right(45);
 
 const getStickInputNumber = ({ input, hand }: SwitchLocation) =>
   f.pipe(
@@ -115,6 +115,10 @@ export const getSwitchNumber = (location: SwitchLocation) =>
   f.pipe(
     [getStickStartNumber, getHandStartNumber, getStickInputNumber],
     RA.map((f) => f(location)),
+    (v) => {
+      console.log(v);
+      return v;
+    },
     E.sequenceArray,
     E.map(RA.reduce(0, (a, b) => a + b)),
     E.getOrElseW((e) => {
