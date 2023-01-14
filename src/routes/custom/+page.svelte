@@ -123,7 +123,7 @@
       $editModal = {
         input: detail.input,
         stick: detail.stick,
-        hand: detail.half,
+        half: detail.half,
         open: true,
         value: parsed.data[detail.half][detail.stick][detail.input],
       };
