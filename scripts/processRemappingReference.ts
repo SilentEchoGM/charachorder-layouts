@@ -28,17 +28,19 @@ const trace = <T>(value: T): T => {
   return value;
 };
 
-const filename = "remappingReference.csv";
+const filename = "CCOS Key Remapping Reference Guide - Action Codes(1).csv";
 const path = join("./reference", filename);
 
 const defaultLayout = f.pipe(
   fs.readFileSync(path, "utf8"),
   (str) => str.split("\n"),
   RA.map((str) => str.split(",")),
-  RA.map(([byte, ascii, action]) => ({
-    byte,
-    ascii,
-    action,
+  RA.map(([codeId, type, utf8, description, notes]) => ({
+    codeId,
+    type,
+    utf8,
+    description,
+    notes,
   })),
   ([_, ...rest]) => rest,
   saveJson(`./static/data/${filename}.json`)
