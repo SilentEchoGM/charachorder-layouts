@@ -67,11 +67,11 @@ const getSwitchInput = (num: number) =>
       () => `getSwitchInput:invalid switch number: ${num}`
     ),
     E.chain((num) => getSwitchHand(num)),
-    E.chain((hand) =>
+    E.chain((half) =>
       E.fromNullable(
         `getSwitchInput:switch not found in input map: ${(num % 45) % 5}`
       )(
-        hand === "left"
+        half === "left"
           ? leftHandStickInputMap[(num % 45) % 5]
           : rightHandStickInputMap[(num % 45) % 5]
       )
@@ -83,7 +83,7 @@ export const getSwitchInputLocation = (num: number) =>
     [getSwitchHand, getSwitchStick, getSwitchInput],
     RA.map((f) => f(num)),
     E.sequenceArray,
-    E.map(([hand, stick, input]) => ({ hand, stick, input })),
+    E.map(([half, stick, input]) => ({ half, stick, input })),
     E.getOrElseW((e) => {
       throw new Error(e);
     })
@@ -100,13 +100,13 @@ const getStickStartNumber = ({
   );
 
 const getHandStartNumber = ({
-  hand,
+  half,
 }: SwitchLocation): E.Either<string, number> =>
-  hand === "left" ? E.right(0) : E.right(45);
+  half === "left" ? E.right(0) : E.right(45);
 
-const getStickInputNumber = ({ input, hand }: SwitchLocation) =>
+const getStickInputNumber = ({ input, half }: SwitchLocation) =>
   f.pipe(
-    hand === "left" ? leftHandStickInputMap : rightHandStickInputMap,
+    half === "left" ? leftHandStickInputMap : rightHandStickInputMap,
     RA.findIndex((a) => input === a),
     E.fromOption(() => `getStickInputNumber:input not found: ${input}`)
   );

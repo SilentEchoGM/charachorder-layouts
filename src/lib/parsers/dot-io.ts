@@ -22,7 +22,7 @@ import type { z } from "zod";
 
 const getCSVEntry = ({
   layer,
-  hand,
+  half,
   stick,
   input,
   value,
@@ -31,7 +31,7 @@ const getCSVEntry = ({
   value: string;
 }) =>
   `${layer},${getSwitchNumber({
-    hand,
+    half,
     stick,
     input,
   })},${getCodeFromUTF8(value)}`;
@@ -45,15 +45,15 @@ export const parseDotIoImportCSV = (
     RA.map((str) => str.split(",")),
     RA.reduce(defaultLayout, (acc, [layer, switchInput, value]) => {
       console.log("Parsing", layer, switchInput, value);
-      const { hand, stick, input } = getSwitchInputLocation(
+      const { half, stick, input } = getSwitchInputLocation(
         parseInt(switchInput)
       );
       const parsedLayer = v2DefaultLayers.keyof().safeParse(layer);
-      const parsedHand = v2Both.keyof().safeParse(hand);
+      const parsedHand = v2Both.keyof().safeParse(half);
       const parsedStick = v2Half.keyof().safeParse(stick);
       if (!parsedLayer.success || !parsedHand.success || !parsedStick.success) {
         throw new Error(
-          `Failed to parse layer ${layer} hand ${hand} stick ${stick}`
+          `Failed to parse layer ${layer} half ${half} stick ${stick}`
         );
       }
 
@@ -65,7 +65,7 @@ export const parseDotIoImportCSV = (
         ...acc,
         [parsedLayer.data]: {
           ...acc[parsedLayer.data],
-          [hand]: {
+          [half]: {
             ...acc[parsedLayer.data][parsedHand.data],
             [stick]: {
               ...acc[parsedLayer.data][parsedHand.data][parsedStick.data],
@@ -90,7 +90,7 @@ export const exportDotIoCSV = (layout: Layout): string => {
             value,
             R.reduceWithIndex(Ord.trivial)(
               "",
-              (hand: "left" | "right", _, value) =>
+              (half: "left" | "right", _, value) =>
                 f.pipe(
                   value,
                   R.reduceWithIndex(Ord.trivial)("", (stick, _, value) =>
@@ -102,7 +102,7 @@ export const exportDotIoCSV = (layout: Layout): string => {
                           (out +=
                             getCSVEntry({
                               layer,
-                              hand,
+                              half,
                               stick,
                               input,
                               value,

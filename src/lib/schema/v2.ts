@@ -88,7 +88,7 @@ export const v2LayoutData = z.object({
 });
 
 export const v2SwitchLocation = z.object({
-  hand: z.enum(["left", "right"]),
+  half: z.enum(["left", "right"]),
   stick: v2Stick,
   input: z.enum(["top", "left", "right", "bottom", "center"]),
 });
