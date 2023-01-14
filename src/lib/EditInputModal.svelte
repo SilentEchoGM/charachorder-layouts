@@ -191,6 +191,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     overflow-y: auto;
+    max-height: 100%;
   }
   button.suggestion {
     width: unset;

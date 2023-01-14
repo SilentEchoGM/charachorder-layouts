@@ -20,7 +20,14 @@ export const clickOutside = (
       return;
     }
     if (!node.contains(e.target as Node) && enabled) {
+      console.log(
+        "click outside3",
+        node,
+        e.target,
+        node.contains(e.target as Node)
+      );
       handler(e);
+    } else {
     }
   };
 
