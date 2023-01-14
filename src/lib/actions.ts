@@ -56,12 +56,6 @@ export const fitToParent = (node: HTMLElement) => {
     const { width, height } = node.getBoundingClientRect();
     const scale = Math.min(parentWidth / width, parentHeight / height);
 
-    console.log(
-      `Parent ${parentWidth}x${parentHeight}`,
-      `Child ${width}x${height}`,
-      scale
-    );
-
     node.style.transform = `scale(${scale})`;
   };
   resize();
