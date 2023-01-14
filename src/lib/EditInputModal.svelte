@@ -40,6 +40,7 @@
     }}>
     <div class="path">
       {$editModal.half}-half/{$editModal.stick}-stick/{$editModal.input}-input
+      ()
     </div>
 
     <div>
