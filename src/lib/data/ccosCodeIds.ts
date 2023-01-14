@@ -1,3 +1,5 @@
+import { function as f, option as O, readonlyArray as RA } from "fp-ts";
+
 export const ccosCodeIds = [
   {
     codeId: "0",
@@ -7170,3 +7172,19 @@ export const ccosCodeIds = [
     notes: "",
   },
 ] as const;
+
+export const getUTF8FromCode = (code: number) =>
+  f.pipe(
+    ccosCodeIds,
+    RA.findFirst((c) => c.codeId === code.toString()),
+    O.map((c) => c.utf8),
+    O.getOrElse(() => "")
+  );
+
+export const getCodeFromUTF8 = (utf8: string) =>
+  f.pipe(
+    ccosCodeIds,
+    RA.findFirst((c) => c.utf8 === utf8),
+    O.map((c) => parseInt(c.codeId)),
+    O.getOrElse(() => 0)
+  );
