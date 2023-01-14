@@ -1,3 +1,4 @@
+import { compareTwoStrings } from "string-similarity";
 import { default as merge } from "ts-deepmerge";
 import type { z } from "zod";
 
@@ -17,3 +18,18 @@ export const defaultMerge =
     }
     return guard(a);
   };
+
+export const memoize = <T extends (...args: any[]) => any>(fn: T) => {
+  const cache = new Map();
+  return ((...args: any[]) => {
+    const key = JSON.stringify(args);
+    if (cache.has(key)) {
+      return cache.get(key);
+    }
+    const result = fn(...args);
+    cache.set(key, result);
+    return result;
+  }) as T;
+};
+
+export const mCompareTwoStrings = memoize(compareTwoStrings);
