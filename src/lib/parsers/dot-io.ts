@@ -10,13 +10,16 @@ import {
 import { defaultMerge } from "$lib/utils";
 
 import { function as f, readonlyArray as RA } from "fp-ts";
+import type { z } from "zod";
 
-export const parseDotIoImportCSV = (csv: string): Layout =>
+export const parseDotIoImportCSV = (
+  csv: string
+): z.SafeParseReturnType<Layout, Layout> =>
   f.pipe(
     csv,
     (str) => str.split("\n"),
     RA.map((str) => str.split(",")),
-    RA.reduce({} as Layout, (acc, [layer, switchInput, value]) => {
+    RA.reduce(defaultLayout, (acc, [layer, switchInput, value]) => {
       const { hand, stick, input } = getSwitchInputLocation(
         parseInt(switchInput)
       );
@@ -43,15 +46,5 @@ export const parseDotIoImportCSV = (csv: string): Layout =>
         },
       };
     }),
-    (layout) => {
-      const merged = defaultMerge(v2Layout.safeParse)(defaultLayout, layout);
-      const parsed = v2Layout.safeParse(merged);
-
-      if (parsed.success) {
-        return parsed.data;
-      } else {
-        console.log(parsed.error);
-        throw new Error("Failed to parse layout");
-      }
-    }
+    v2Layout.safeParse
   );
