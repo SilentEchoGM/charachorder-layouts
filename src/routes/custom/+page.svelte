@@ -15,7 +15,7 @@
     type Stick,
   } from "$lib/schema/v2";
   import { editModal } from "$lib/stores";
-  import { derived, writable } from "svelte/store";
+  import { derived, writable, type Readable } from "svelte/store";
 
   import { goto } from "$app/navigation";
   import { isLanguage, langMap } from "$lib/data/languages";
@@ -24,7 +24,7 @@
   import { record as R } from "fp-ts";
   import { getItem } from "localforage";
   import { onMount } from "svelte";
-  import { parseDotIoImportCSV } from "$lib/parsers/dot-io";
+  import { exportDotIoCSV, parseDotIoImportCSV } from "$lib/parsers/dot-io";
 
   const customData = persistent<LayoutData>(
     "v2:customLayout",
@@ -88,7 +88,20 @@
     });
   }
 
-  const selectedLayer = writable<DefaultLayer>("A1");
+  const selectedKeymap = writable<DefaultLayer>("A1");
+  const selectedModifiers = writable<Set<"shift" | "alt-gr">>(new Set());
+
+  const selectedLayer: Readable<DefaultLayer> = derived(
+    [selectedModifiers, selectedKeymap],
+    ([$mods, $map]) => {
+      if ($mods.has("shift")) {
+        return ($map + "_shift") as DefaultLayer;
+      } else {
+        return $map;
+      }
+    }
+  );
+
   const selectedLanguage = persistent<Language>("selectedLanguage", "US", {
     generic: isLanguage,
   });
@@ -151,7 +164,7 @@
                 },
               },
             },
-          ],
+          ].slice(-20),
         };
       }
       return $customData;
@@ -182,12 +195,20 @@
       };
   };
 
-  const exportData = () => {
+  const exportData = (type: "self" | "dot-io") => () => {
     const a = document.createElement("a");
-    a.href =
-      "data:text/json;charset=utf-8," +
-      encodeURIComponent(JSON.stringify($customData, null, 2));
-    a.download = "layout.json";
+    if (type === "self") {
+      a.href =
+        "data:text/json;charset=utf-8," +
+        encodeURIComponent(JSON.stringify($customData, null, 2));
+      a.download = "cc-layouts-export.json";
+    } else {
+      if (!$latest) return;
+      a.href =
+        "data:text/csv;charset=utf-8," +
+        encodeURIComponent(exportDotIoCSV($latest.state));
+      a.download = "cc-layouts-export.csv";
+    }
     a.click();
   };
 
@@ -260,8 +281,9 @@
     </select>
     <button on:click={restoreDefault}>Restore Default</button>
     <button on:click={importData("self")}>Import CC-Layouts File</button>
-    <button on:click={exportData}>Export CC-Layouts File</button>
+    <button on:click={exportData("self")}>Export CC-Layouts File</button>
     <button on:click={importData("dot-io")}>Import CCOS CSV File</button>
+    <button on:click={exportData("dot-io")}>Export CCOS CSV File</button>
     <button
       on:click={() => {
         goto("/");
@@ -270,31 +292,40 @@
   <div class="divider" />
   <div class="layer-select">
     <button
-      class:active={$selectedLayer === "A1"}
+      class:active={$selectedKeymap === "A1"}
       on:click={() => {
-        $selectedLayer = "A1";
-      }}>None</button
-    ><button
-      class:active={$selectedLayer === "A1_shift"}
-      on:click={() => {
-        $selectedLayer = "A1_shift";
-      }}>Shift</button>
+        $selectedKeymap = "A1";
+      }}>Alpha</button>
     <button
-      class:active={$selectedLayer === "A2"}
+      class:active={$selectedKeymap === "A2"}
       on:click={() => {
-        $selectedLayer = "A2";
-      }}>Num-shift</button>
+        $selectedKeymap = "A2";
+      }}>Num</button>
+
     <button
-      class:active={$selectedLayer === "A2_shift"}
+      class:active={$selectedKeymap === "A3"}
       on:click={() => {
-        $selectedLayer = "A2_shift";
-      }}>Shift & Num-shift</button>
-    <button
-      class:active={$selectedLayer === "A3"}
-      on:click={() => {
-        $selectedLayer = "A3";
+        $selectedKeymap = "A3";
+        $selectedModifiers = new Set();
       }}>Fn</button>
   </div>
+  <!-- <div class="divider" />
+  <div class="layer-select">
+    {#if $selectedKeymap !== "A3"}
+      <button
+        class:active={$selectedModifiers.has("shift")}
+        on:click={() => {
+          if ($selectedModifiers.has("shift")) {
+            $selectedModifiers.delete("shift");
+          } else {
+            $selectedModifiers.add("shift");
+          }
+
+          $selectedModifiers = $selectedModifiers;
+        }}>Shift</button
+      >{:else}
+      <div />{/if}
+  </div> -->
 
   {#if $latest}
     {#key $latest}
@@ -336,9 +367,15 @@
     gap: 1rem;
     justify-content: center;
   }
+  .layer-select {
+    z-index: 100;
+  }
 
   .layer-select button.active {
     background-color: #fff;
     color: #444;
+  }
+  .layer-select div {
+    min-height: 25px;
   }
 </style>
