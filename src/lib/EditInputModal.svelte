@@ -108,7 +108,7 @@
       </div>
       <div class="suggestions">
         {#if $editModal.value.length > 0}
-          {#each $suggestions as suggestion}
+          {#each $suggestions as suggestion (suggestion.codeId)}
             <button
               class="suggestion"
               style:background-color="hsl(110, {100 * suggestion.sort}%, {10 +
