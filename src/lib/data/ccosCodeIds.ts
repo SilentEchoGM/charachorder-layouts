@@ -312,9 +312,9 @@ export const ccosCodeIds = [
   {
     codeId: "44",
     type: "ASCII",
-    utf8: '"',
-    description: '"',
-    notes: "Comma",
+    utf8: ",",
+    description: "Comma",
+    notes: "",
   },
   {
     codeId: "45",
