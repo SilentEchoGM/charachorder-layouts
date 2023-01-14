@@ -24,6 +24,7 @@
   import { record as R } from "fp-ts";
   import { getItem } from "localforage";
   import { onMount } from "svelte";
+  import { parseDotIoImportCSV } from "$lib/parsers/dot-io";
 
   const customData = persistent<LayoutData>(
     "v2:customLayout",
@@ -190,7 +191,7 @@
     a.click();
   };
 
-  const importData = () => {
+  const importData = (type: "self" | "dot-io") => () => {
     if (
       !confirm(
         "Are you sure you want to import a layout? This will overwrite your current layout."
@@ -199,14 +200,14 @@
       return;
     const input = document.createElement("input");
     input.type = "file";
-    input.accept = "application/json";
+    input.accept = type === "self" ? "application/json" : "text/csv";
     input.onchange = (e) => {
       const file = (e.target as HTMLInputElement).files?.[0];
       if (file) {
         const reader = new FileReader();
         reader.onload = (e) => {
           const text = e.target?.result;
-          if (text) {
+          if (text && type === "self") {
             const obj = JSON.parse(text as string);
             console.log("importing data", obj);
             const parsed = v2LayoutData.safeParse(obj);
@@ -220,6 +221,26 @@
                 alert("Invalid file");
                 console.error(parsed.error);
               }
+            }
+          }
+
+          if (text && type === "dot-io") {
+            const parsed = parseDotIoImportCSV(text.toString());
+            if (parsed.success) {
+              $customData = {
+                ...$customData,
+                history: [
+                  ...$customData.history,
+                  {
+                    index: $customData.history.length,
+                    modifiedOn: new Date().toISOString(),
+                    state: parsed.data,
+                  },
+                ],
+              };
+            } else {
+              alert("Invalid file");
+              console.error(parsed.error);
             }
           }
         };
@@ -238,8 +259,9 @@
       {/each}
     </select>
     <button on:click={restoreDefault}>Restore Default</button>
-    <button on:click={importData}>Import</button>
-    <button on:click={exportData}>Export</button>
+    <button on:click={importData("self")}>Import CC-Layouts File</button>
+    <button on:click={exportData}>Export CC-Layouts File</button>
+    <button on:click={importData("dot-io")}>Import CCOS CSV File</button>
     <button
       on:click={() => {
         goto("/");
