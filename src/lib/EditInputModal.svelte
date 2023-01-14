@@ -21,9 +21,9 @@
   import { date as FDate } from "fp-ts";
   import { number as FNumber } from "fp-ts";
 
-  import { compareTwoStrings } from "string-similarity";
   import { editModal } from "./stores";
   import { ccosCodeIds } from "./data/ccosCodeIds";
+  import { mCompareTwoStrings } from "./utils";
 
   const emit = createEventDispatcher();
 
@@ -41,7 +41,7 @@
       ccosCodeIds,
       RA.map((code) => ({
         ...code,
-        sort: compareTwoStrings(code.utf8.toLowerCase(), value.toLowerCase()),
+        sort: mCompareTwoStrings(code.utf8.toLowerCase(), value.toLowerCase()),
       })),
       RA.filter(
         (code) =>
