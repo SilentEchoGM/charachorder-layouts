@@ -18,9 +18,6 @@
       });
     };
 
-  let container: HTMLDivElement;
-  let child: HTMLDivElement;
-
   const handleResize = (node: HTMLElement) => {
     const resize = () => {
       if (!node.parentElement) return;
@@ -28,12 +25,6 @@
         node.parentElement.getBoundingClientRect();
       const { width, height } = node.getBoundingClientRect();
       const scale = Math.min(parentWidth / width, parentHeight / height);
-
-      console.log(
-        `Parent ${parentWidth}x${parentHeight}`,
-        `Child ${width}x${height}`,
-        scale
-      );
 
       node.style.transform = `scale(${scale})`;
     };
