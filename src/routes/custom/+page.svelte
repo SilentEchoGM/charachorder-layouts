@@ -17,6 +17,7 @@
   import { editModal } from "$lib/stores";
   import { derived, writable, type Readable } from "svelte/store";
 
+  import { dev } from "$app/environment";
   import { goto } from "$app/navigation";
   import { isLanguage, langMap } from "$lib/data/languages";
   import { parseLanguage } from "$lib/langUtils";
@@ -24,7 +25,7 @@
   import { record as R } from "fp-ts";
   import { getItem } from "localforage";
   import { onMount } from "svelte";
-  import { exportDotIoCSV, parseDotIoImportCSV } from "$lib/parsers/dot-io";
+  import { exportData, handleSave, importData } from "./io";
 
   const customData = persistent<LayoutData>(
     "v2:customLayout",
@@ -49,9 +50,10 @@
   );
 
   onMount(async () => {
-    alert(
-      "This is a work in progress. Please report any bugs you find to SilentEcho#0001 on Discord and keep copies of your data. Upload a CCOS CSV to get started."
-    );
+    !dev &&
+      alert(
+        "This is a work in progress. Please report any bugs you find to SilentEcho#0001 on Discord and keep copies of your data. Upload a CCOS CSV to get started."
+      );
 
     await customData.load();
 
@@ -130,50 +132,6 @@
     }
   };
 
-  const handleSave = ({
-    detail,
-  }: CustomEvent<{
-    input: JoystickInput;
-    stick: Stick;
-    half: "left" | "right";
-    value: string;
-  }>) => {
-    customData.update(($customData) => {
-      const parsed = v2Both.safeParse(
-        $customData.history[$customData.history.length - 1].state[
-          $selectedLayer
-        ]
-      );
-
-      if (parsed.success) {
-        console.log("Saving", detail);
-        return {
-          ...$customData,
-          history: [
-            ...$customData.history,
-            {
-              index: $customData.history.length,
-              modifiedOn: new Date().toISOString(),
-              state: {
-                ...$customData.history[$customData.history.length - 1].state,
-                [$selectedLayer]: {
-                  ...parsed.data,
-                  [detail.half]: {
-                    ...parsed.data[detail.half],
-                    [detail.stick]: {
-                      ...parsed.data[detail.half][detail.stick],
-                      [detail.input]: detail.value,
-                    },
-                  },
-                },
-              },
-            },
-          ].slice(-20),
-        };
-      }
-      return $customData;
-    });
-  };
   const restoreDefault = () => {
     if (
       confirm(
@@ -198,82 +156,6 @@
         },
       };
   };
-
-  const exportData = (type: "self" | "dot-io") => () => {
-    const a = document.createElement("a");
-    if (type === "self") {
-      a.href =
-        "data:text/json;charset=utf-8," +
-        encodeURIComponent(JSON.stringify($customData, null, 2));
-      a.download = "cc-layouts-export.json";
-    } else {
-      if (!$latest) return;
-      a.href =
-        "data:text/csv;charset=utf-8," +
-        encodeURIComponent(exportDotIoCSV($latest.state));
-      a.download = "cc-layouts-export.csv";
-    }
-    a.click();
-  };
-
-  const importData = (type: "self" | "dot-io") => () => {
-    if (
-      !confirm(
-        "Are you sure you want to import a layout? This will overwrite your current layout."
-      )
-    )
-      return;
-    const input = document.createElement("input");
-    input.type = "file";
-    input.accept = type === "self" ? "application/json" : "text/csv";
-    input.onchange = (e) => {
-      const file = (e.target as HTMLInputElement).files?.[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          const text = e.target?.result;
-          if (text && type === "self") {
-            const obj = JSON.parse(text as string);
-            console.log("importing data", obj);
-            const parsed = v2LayoutData.safeParse(obj);
-            if (parsed.success) {
-              $customData = parsed.data;
-            } else {
-              const parsed = migrateLayoutData(1, 2, obj);
-              if (parsed.success) {
-                $customData = parsed.data;
-              } else {
-                alert("Invalid file");
-                console.error(parsed.error);
-              }
-            }
-          }
-
-          if (text && type === "dot-io") {
-            const parsed = parseDotIoImportCSV(text.toString());
-            if (parsed.success) {
-              $customData = {
-                ...$customData,
-                history: [
-                  ...$customData.history,
-                  {
-                    index: $customData.history.length,
-                    modifiedOn: new Date().toISOString(),
-                    state: parsed.data,
-                  },
-                ],
-              };
-            } else {
-              alert("Invalid file");
-              console.error(parsed.error);
-            }
-          }
-        };
-        reader.readAsText(file);
-      }
-    };
-    input.click();
-  };
 </script>
 
 <div class="container">
@@ -284,10 +166,14 @@
       {/each}
     </select>
     <button on:click={restoreDefault}>Restore Default</button>
-    <button on:click={importData("self")}>Import CC-Layouts File</button>
-    <button on:click={exportData("self")}>Export CC-Layouts File</button>
-    <button on:click={importData("dot-io")}>Import CCOS CSV File</button>
-    <button on:click={exportData("dot-io")}>Export CCOS CSV File</button>
+    <button on:click={() => importData("self", $customData)}
+      >Import CC-Layouts File</button>
+    <button on:click={() => exportData("self", $customData, $latest)}
+      >Export CC-Layouts File</button>
+    <button on:click={() => importData("dot-io", $customData)}
+      >Import CCOS CSV File</button>
+    <button on:click={() => exportData("dot-io", $customData, $latest)}
+      >Export CCOS CSV File</button>
     <button
       on:click={() => {
         goto("/");
@@ -342,7 +228,8 @@
   {/if}
 
   {#if $editModal.open}
-    <EditInputModal on:save={handleSave} />
+    <EditInputModal
+      on:save={(detail) => handleSave(detail, customData, $selectedLayer)} />
   {/if}
 </div>
 
