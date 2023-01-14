@@ -49,11 +49,12 @@
   );
 
   onMount(async () => {
-    await customData.load();
-
     alert(
       "This is a work in progress. Please report any bugs you find to SilentEcho#0001 on Discord and keep copies of your data. Upload a CCOS CSV to get started."
     );
+
+    await customData.load();
+
     const migrate = async () => {
       //version 1
       const prevData = await getItem(storePrefix + "customLayout");
