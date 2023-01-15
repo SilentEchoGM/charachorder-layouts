@@ -166,11 +166,11 @@
       {/each}
     </select>
     <button on:click={restoreDefault}>Restore Default</button>
-    <button on:click={() => importData("self", $customData)}
+    <button on:click={() => importData("self", customData)}
       >Import CC-Layouts File</button>
     <button on:click={() => exportData("self", $customData, $latest)}
       >Export CC-Layouts File</button>
-    <button on:click={() => importData("dot-io", $customData)}
+    <button on:click={() => importData("dot-io", customData)}
       >Import CCOS CSV File</button>
     <button on:click={() => exportData("dot-io", $customData, $latest)}
       >Export CCOS CSV File</button>

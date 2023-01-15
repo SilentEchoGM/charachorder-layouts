@@ -8,7 +8,7 @@ import {
   type LayoutData,
   type Stick,
 } from "$lib/schema/v2";
-import type { Writable } from "svelte/store";
+import { get, type Writable } from "svelte/store";
 
 export const exportData = (
   type: "self" | "dot-io",
@@ -31,13 +31,17 @@ export const exportData = (
   a.click();
 };
 
-export const importData = (type: "self" | "dot-io", customData: LayoutData) => {
+export const importData = (
+  type: "self" | "dot-io",
+  customData: Writable<LayoutData>
+) => {
   if (
     !confirm(
       "Are you sure you want to import a layout? This will overwrite your current layout."
     )
   )
     return;
+  const $customData = get(customData);
   const input = document.createElement("input");
   input.type = "file";
   input.accept = type === "self" ? "application/json" : "text/csv";
@@ -52,11 +56,11 @@ export const importData = (type: "self" | "dot-io", customData: LayoutData) => {
           console.log("importing data", obj);
           const parsed = v2LayoutData.safeParse(obj);
           if (parsed.success) {
-            customData = parsed.data;
+            customData.set(parsed.data);
           } else {
             const parsed = migrateLayoutData(1, 2, obj);
             if (parsed.success) {
-              customData = parsed.data;
+              customData.set(parsed.data);
             } else {
               alert("Invalid file");
               console.error(parsed.error);
@@ -67,17 +71,17 @@ export const importData = (type: "self" | "dot-io", customData: LayoutData) => {
         if (text && type === "dot-io") {
           const parsed = parseDotIoImportCSV(text.toString());
           if (parsed.success) {
-            customData = {
-              ...customData,
+            customData.set({
+              ...$customData,
               history: [
-                ...customData.history,
+                ...$customData.history,
                 {
-                  index: customData.history.length,
+                  index: $customData.history.length,
                   modifiedOn: new Date().toISOString(),
                   state: parsed.data,
                 },
               ],
-            };
+            });
           } else {
             alert("Invalid file");
             console.error(parsed.error);
