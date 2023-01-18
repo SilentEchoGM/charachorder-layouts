@@ -4,25 +4,15 @@
   import { clickOutside } from "./actions";
   import { getSwitchNumber } from "./data/switches";
 
-  import { readonlyArray as RA } from "fp-ts";
-  import { function as f } from "fp-ts";
-  import { array as A } from "fp-ts";
-  import { option as O } from "fp-ts";
-  import { either as E } from "fp-ts";
-  import { map as M } from "fp-ts";
-  import { task as T } from "fp-ts";
-  import { taskEither as TE } from "fp-ts";
-  import { ord as Ord } from "fp-ts";
-  import { eq as Eq } from "fp-ts";
-  import { record as R } from "fp-ts";
-  import { string as Str } from "fp-ts";
-  import { state as S } from "fp-ts";
-  import { set as FSet } from "fp-ts";
-  import { date as FDate } from "fp-ts";
-  import { number as FNumber } from "fp-ts";
+  import {
+    function as f,
+    number as FNumber,
+    ord as Ord,
+    readonlyArray as RA,
+  } from "fp-ts";
 
-  import { editModal } from "./stores";
   import { ccosCodeIds } from "./data/ccosCodeIds";
+  import { editModal } from "./stores";
   import { mCompareTwoStrings } from "./utils";
 
   const emit = createEventDispatcher();
