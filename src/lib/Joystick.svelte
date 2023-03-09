@@ -1,8 +1,9 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
+  import { fitToParent } from "./actions";
   import JoystickCentre from "./JoystickCentre.svelte";
   import JoystickSegment from "./JoystickSegment.svelte";
-  import type { JoystickDirection, JoystickInput } from "./schema/v1";
+  import type { JoystickDirection, JoystickInput } from "./schema/v2";
 
   export let data: Record<JoystickDirection | "center", string> = {
     top: "Backspace",
@@ -30,7 +31,7 @@
   ] as const;
 </script>
 
-<div class="container">
+<div class="container" use:fitToParent>
   {#each inputs as input}
     <div class={input}>
       <JoystickSegment
@@ -55,6 +56,8 @@
     grid-template-rows: repeat(3, 35px);
     align-items: center;
     justify-items: center;
+    width: 105px;
+    height: 105px;
   }
   .container div {
     width: 100%;

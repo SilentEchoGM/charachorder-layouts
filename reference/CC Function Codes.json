@@ -1,0 +1,980 @@
+[
+  {
+    "MVP": "",
+    "BYTE (DEC)": "00",
+    "BYTE (HEX)": "00",
+    "Description": "Reset Controller"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "01",
+    "BYTE (HEX)": "01",
+    "Description": "Delay 1ms"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "02",
+    "BYTE (HEX)": "02",
+    "Description": "Delay 10ms"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "03",
+    "BYTE (HEX)": "03",
+    "Description": "Delay 100ms"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "04",
+    "BYTE (HEX)": "04",
+    "Description": "Delay 1000ms"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "15",
+    "BYTE (HEX)": "0F",
+    "Description": "Impulse"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "16",
+    "BYTE (HEX)": "10",
+    "Description": "Left AmbiThrow"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "17",
+    "BYTE (HEX)": "11",
+    "Description": "Right AmbiThrow"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "18",
+    "BYTE (HEX)": "12",
+    "Description": "Left Num-Shift"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "20",
+    "BYTE (HEX)": "14",
+    "Description": "Right Num-Shift"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "19",
+    "BYTE (HEX)": "13",
+    "Description": "Spur Toggle"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "21",
+    "BYTE (HEX)": "15",
+    "Description": "Repeat Last Note"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "22",
+    "BYTE (HEX)": "16",
+    "Description": "Internal Firmware Based Impulse Toggle"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "61",
+    "BYTE (HEX)": "3D",
+    "Description": "Mouse Left Button Press-and-Release"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "62",
+    "BYTE (HEX)": "3E",
+    "Description": "Mouse Right Button Press-and-Release"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "63",
+    "BYTE (HEX)": "3F",
+    "Description": "Mouse Middle Button Press-and-Release"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "64",
+    "BYTE (HEX)": "40",
+    "Description": "Mouse Left Button Toggle"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "65",
+    "BYTE (HEX)": "41",
+    "Description": "Mouse Right Button Toggle"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "66",
+    "BYTE (HEX)": "42",
+    "Description": "Mouse Middle Button Toggle"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "67",
+    "BYTE (HEX)": "43",
+    "Description": "Mouse Left Button Press"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "68",
+    "BYTE (HEX)": "44",
+    "Description": "Mouse Right Button Press"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "69",
+    "BYTE (HEX)": "45",
+    "Description": "Mouse Middle Button Press"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "70",
+    "BYTE (HEX)": "46",
+    "Description": "Mouse Left Button Release"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "71",
+    "BYTE (HEX)": "47",
+    "Description": "Mouse Right Button Release"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "72",
+    "BYTE (HEX)": "48",
+    "Description": "Mouse Middle Button Release"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "73",
+    "BYTE (HEX)": "49",
+    "Description": "Mouse Move Down"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "74",
+    "BYTE (HEX)": "4A",
+    "Description": "Mouse Move Right"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "75",
+    "BYTE (HEX)": "4B",
+    "Description": "Mouse Move Up"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "76",
+    "BYTE (HEX)": "4C",
+    "Description": "Mouse Move Left"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "77",
+    "BYTE (HEX)": "4D",
+    "Description": "Mouse Scroll Coast Down"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "78",
+    "BYTE (HEX)": "4E",
+    "Description": "Mouse Scroll Coast Right"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "79",
+    "BYTE (HEX)": "4F",
+    "Description": "Mouse Scroll Coast Up"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "80",
+    "BYTE (HEX)": "50",
+    "Description": "Mouse Scroll Coast Left"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "102",
+    "BYTE (HEX)": "66",
+    "Description": "Power Key"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "127",
+    "BYTE (HEX)": "F7",
+    "Description": "Release All Modifier Keys"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "128",
+    "BYTE (HEX)": "80",
+    "Description": "Left Control Key"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "129",
+    "BYTE (HEX)": "81",
+    "Description": "Left Shift Key"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "130",
+    "BYTE (HEX)": "82",
+    "Description": "Left Alt Key"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "131",
+    "BYTE (HEX)": "83",
+    "Description": "Left GUI Key"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "132",
+    "BYTE (HEX)": "84",
+    "Description": "Right Control Key"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "133",
+    "BYTE (HEX)": "85",
+    "Description": "Right Shift Key"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "134",
+    "BYTE (HEX)": "86",
+    "Description": "Right Alt Key"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "135",
+    "BYTE (HEX)": "87",
+    "Description": "Right GUI Key"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "136",
+    "BYTE (HEX)": "88",
+    "Description": "Caps Lock Toggle"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "137",
+    "BYTE (HEX)": "89",
+    "Description": "F1"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "138",
+    "BYTE (HEX)": "8A",
+    "Description": "F2"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "139",
+    "BYTE (HEX)": "8B",
+    "Description": "F3"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "140",
+    "BYTE (HEX)": "8C",
+    "Description": "F4"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "141",
+    "BYTE (HEX)": "8D",
+    "Description": "F5"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "142",
+    "BYTE (HEX)": "8E",
+    "Description": "F6"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "143",
+    "BYTE (HEX)": "8F",
+    "Description": "F7"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "145",
+    "BYTE (HEX)": "91",
+    "Description": "F9"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "144",
+    "BYTE (HEX)": "90",
+    "Description": "F8"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "146",
+    "BYTE (HEX)": "92",
+    "Description": "F10"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "147",
+    "BYTE (HEX)": "93",
+    "Description": "F11"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "148",
+    "BYTE (HEX)": "94",
+    "Description": "F12"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "149",
+    "BYTE (HEX)": "95",
+    "Description": "Print Screen"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "150",
+    "BYTE (HEX)": "96",
+    "Description": "Scroll Lock Toggle"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "151",
+    "BYTE (HEX)": "97",
+    "Description": "Pause"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "152",
+    "BYTE (HEX)": "98",
+    "Description": "Insert"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "153",
+    "BYTE (HEX)": "99",
+    "Description": "Home"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "154",
+    "BYTE (HEX)": "9A",
+    "Description": "Page Up"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "155",
+    "BYTE (HEX)": "9B",
+    "Description": "Delete Forward"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "156",
+    "BYTE (HEX)": "9C",
+    "Description": "End"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "157",
+    "BYTE (HEX)": "9D",
+    "Description": "Page Down"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "158",
+    "BYTE (HEX)": "9E",
+    "Description": "Right Arrow"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "159",
+    "BYTE (HEX)": "9F",
+    "Description": "Left Arrow"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "160",
+    "BYTE (HEX)": "A0",
+    "Description": "Down Arrow"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "161",
+    "BYTE (HEX)": "A1",
+    "Description": "Up Arrow"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "162",
+    "BYTE (HEX)": "A2",
+    "Description": "Num Lock Toggle"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "163",
+    "BYTE (HEX)": "A3",
+    "Description": "F13"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "164",
+    "BYTE (HEX)": "A4",
+    "Description": "F14"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "165",
+    "BYTE (HEX)": "A5",
+    "Description": "F15"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "166",
+    "BYTE (HEX)": "A6",
+    "Description": "F16"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "167",
+    "BYTE (HEX)": "A7",
+    "Description": "F17"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "168",
+    "BYTE (HEX)": "A8",
+    "Description": "F18"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "169",
+    "BYTE (HEX)": "A9",
+    "Description": "F19"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "170",
+    "BYTE (HEX)": "AA",
+    "Description": "F20"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "171",
+    "BYTE (HEX)": "AB",
+    "Description": "F21"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "172",
+    "BYTE (HEX)": "AC",
+    "Description": "F22"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "173",
+    "BYTE (HEX)": "AD",
+    "Description": "F23"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "174",
+    "BYTE (HEX)": "AE",
+    "Description": "F24"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "175",
+    "BYTE (HEX)": "AF",
+    "Description": "Execute"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "176",
+    "BYTE (HEX)": "B0",
+    "Description": "Help"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "177",
+    "BYTE (HEX)": "B1",
+    "Description": "Menu"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "178",
+    "BYTE (HEX)": "B2",
+    "Description": "Select"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "179",
+    "BYTE (HEX)": "B3",
+    "Description": "Stop"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "180",
+    "BYTE (HEX)": "B4",
+    "Description": "Again"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "181",
+    "BYTE (HEX)": "B5",
+    "Description": "Undo"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "182",
+    "BYTE (HEX)": "B6",
+    "Description": "Cut"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "183",
+    "BYTE (HEX)": "B7",
+    "Description": "Copy"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "184",
+    "BYTE (HEX)": "B8",
+    "Description": "Paste"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "185",
+    "BYTE (HEX)": "B9",
+    "Description": "Find"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "186",
+    "BYTE (HEX)": "BA",
+    "Description": "Mute"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "187",
+    "BYTE (HEX)": "BB",
+    "Description": "Volume Up"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "188",
+    "BYTE (HEX)": "BC",
+    "Description": "Volume Down"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "189",
+    "BYTE (HEX)": "BD",
+    "Description": "International1"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "190",
+    "BYTE (HEX)": "BE",
+    "Description": "International2"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "191",
+    "BYTE (HEX)": "BF",
+    "Description": "International3"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "192",
+    "BYTE (HEX)": "C0",
+    "Description": "International4"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "193",
+    "BYTE (HEX)": "C1",
+    "Description": "International5"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "194",
+    "BYTE (HEX)": "C2",
+    "Description": "International6"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "195",
+    "BYTE (HEX)": "C3",
+    "Description": "International7"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "196",
+    "BYTE (HEX)": "C4",
+    "Description": "International8"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "197",
+    "BYTE (HEX)": "C5",
+    "Description": "International9"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "198",
+    "BYTE (HEX)": "C6",
+    "Description": "LANG1"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "199",
+    "BYTE (HEX)": "C7",
+    "Description": "LANG2"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "200",
+    "BYTE (HEX)": "C8",
+    "Description": "LANG3"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "201",
+    "BYTE (HEX)": "C9",
+    "Description": "LANG4"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "202",
+    "BYTE (HEX)": "CA",
+    "Description": "LANG5"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "203",
+    "BYTE (HEX)": "CB",
+    "Description": "LANG6"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "204",
+    "BYTE (HEX)": "CC",
+    "Description": "LANG7"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "205",
+    "BYTE (HEX)": "CD",
+    "Description": "LANG8"
+  },
+  {
+    "MVP": "true",
+    "BYTE (DEC)": "206",
+    "BYTE (HEX)": "CE",
+    "Description": "LANG9"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "207",
+    "BYTE (HEX)": "CF",
+    "Description": "Alternate Erase"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "208",
+    "BYTE (HEX)": "D0",
+    "Description": "SysReq/Attention"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "209",
+    "BYTE (HEX)": "D1",
+    "Description": "Cancel"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "210",
+    "BYTE (HEX)": "D2",
+    "Description": "Clear"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "211",
+    "BYTE (HEX)": "D3",
+    "Description": "Prior"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "212",
+    "BYTE (HEX)": "D4",
+    "Description": "Return"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "213",
+    "BYTE (HEX)": "D5",
+    "Description": "Separator"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "214",
+    "BYTE (HEX)": "D6",
+    "Description": "Out"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "215",
+    "BYTE (HEX)": "D7",
+    "Description": "Oper"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "216",
+    "BYTE (HEX)": "D8",
+    "Description": "Clear/Again"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "217",
+    "BYTE (HEX)": "D9",
+    "Description": "CrSel/Props"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "218",
+    "BYTE (HEX)": "DA",
+    "Description": "ExSel"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "219",
+    "BYTE (HEX)": "DB",
+    "Description": "Thousands Separator"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "220",
+    "BYTE (HEX)": "DC",
+    "Description": "Decimal Separator"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "221",
+    "BYTE (HEX)": "DD",
+    "Description": "Currency Unit"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "222",
+    "BYTE (HEX)": "DE",
+    "Description": "Currency Sub-unit"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "223",
+    "BYTE (HEX)": "DF",
+    "Description": "Keypad Memory Store"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "224",
+    "BYTE (HEX)": "E0",
+    "Description": "Keypad Memory Recall"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "225",
+    "BYTE (HEX)": "E1",
+    "Description": "Keypad Memory Clear"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "226",
+    "BYTE (HEX)": "E2",
+    "Description": "Keypad Memory Add"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "227",
+    "BYTE (HEX)": "E3",
+    "Description": "Keypad Memory Subtract"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "228",
+    "BYTE (HEX)": "E4",
+    "Description": "Keypad Memory Multiply"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "229",
+    "BYTE (HEX)": "E5",
+    "Description": "Keypad Memory Divide"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "230",
+    "BYTE (HEX)": "E6",
+    "Description": "Keypad +/-"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "231",
+    "BYTE (HEX)": "E7",
+    "Description": "Keypad Clear"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "232",
+    "BYTE (HEX)": "E8",
+    "Description": "Keypad Clear Entry"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "233",
+    "BYTE (HEX)": "E9",
+    "Description": "Keypad Binary"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "234",
+    "BYTE (HEX)": "EA",
+    "Description": "Keypad Octal"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "235",
+    "BYTE (HEX)": "EB",
+    "Description": "Keypad Decimal"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "236",
+    "BYTE (HEX)": "EC",
+    "Description": "Keypad Hexadecimal"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "237",
+    "BYTE (HEX)": "ED",
+    "Description": "Key Media Play Pause"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "238",
+    "BYTE (HEX)": "EE",
+    "Description": "Key Media Stop CD"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "239",
+    "BYTE (HEX)": "EF",
+    "Description": "Key Media Previous Song"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "240",
+    "BYTE (HEX)": "F0",
+    "Description": "Key Media Next Song"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "241",
+    "BYTE (HEX)": "F1",
+    "Description": "Key Media Eject CD"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "242",
+    "BYTE (HEX)": "F2",
+    "Description": "Key Media Volume Up"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "243",
+    "BYTE (HEX)": "F3",
+    "Description": "Key Media Volume Down"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "244",
+    "BYTE (HEX)": "F4",
+    "Description": "Key Media Mute"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "245",
+    "BYTE (HEX)": "F5",
+    "Description": "Key Media WWW"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "246",
+    "BYTE (HEX)": "F6",
+    "Description": "Key Media Back"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "247",
+    "BYTE (HEX)": "F7",
+    "Description": "Key Media Forward"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "248",
+    "BYTE (HEX)": "F8",
+    "Description": "Key Media Stop"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "249",
+    "BYTE (HEX)": "F9",
+    "Description": "Key Media Find"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "250",
+    "BYTE (HEX)": "FA",
+    "Description": "Key Media Scroll Up"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "251",
+    "BYTE (HEX)": "FB",
+    "Description": "Key Media Scroll Down"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "252",
+    "BYTE (HEX)": "FC",
+    "Description": "Key Media Edit"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "253",
+    "BYTE (HEX)": "FD",
+    "Description": "Key Media Sleep"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "254",
+    "BYTE (HEX)": "FE",
+    "Description": "Key Media Coffee"
+  },
+  {
+    "MVP": "",
+    "BYTE (DEC)": "255",
+    "BYTE (HEX)": "FF",
+    "Description": "Key Media Refresh"
+  }
+]

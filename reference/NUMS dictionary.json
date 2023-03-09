@@ -1,0 +1,632 @@
+[
+  {
+    "byteId (DEC)": "01",
+    "byteId (HEX)": "01",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "02",
+    "byteId (HEX)": "02",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "03",
+    "byteId (HEX)": "03",
+    "Description": "Right GUI Key",
+    "value (ASCII)": "",
+    "value (HEX)": "0x0187"
+  },
+  {
+    "byteId (DEC)": "04",
+    "byteId (HEX)": "04",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "05",
+    "byteId (HEX)": "05",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "06",
+    "byteId (HEX)": "06",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "07",
+    "byteId (HEX)": "07",
+    "Description": "",
+    "value (ASCII)": "]",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "08",
+    "byteId (HEX)": "08",
+    "Description": "",
+    "value (ASCII)": "[",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "09",
+    "byteId (HEX)": "09",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "10",
+    "byteId (HEX)": "0A",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "11",
+    "byteId (HEX)": "0B",
+    "Description": "",
+    "value (ASCII)": "7",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "12",
+    "byteId (HEX)": "0C",
+    "Description": "",
+    "value (ASCII)": "0",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "13",
+    "byteId (HEX)": "0D",
+    "Description": "",
+    "value (ASCII)": "9",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "14",
+    "byteId (HEX)": "0E",
+    "Description": "",
+    "value (ASCII)": "8",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "15",
+    "byteId (HEX)": "0F",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "16",
+    "byteId (HEX)": "10",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "17",
+    "byteId (HEX)": "11",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "18",
+    "byteId (HEX)": "12",
+    "Description": "Right Alt Key",
+    "value (ASCII)": "",
+    "value (HEX)": "0x0186"
+  },
+  {
+    "byteId (DEC)": "19",
+    "byteId (HEX)": "13",
+    "Description": "Right Shift Key",
+    "value (ASCII)": "",
+    "value (HEX)": "0x0185"
+  },
+  {
+    "byteId (DEC)": "20",
+    "byteId (HEX)": "14",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "21",
+    "byteId (HEX)": "15",
+    "Description": "Mouse Move Down",
+    "value (ASCII)": "",
+    "value (HEX)": "0x0149"
+  },
+  {
+    "byteId (DEC)": "22",
+    "byteId (HEX)": "16",
+    "Description": "Mouse Move Right",
+    "value (ASCII)": "",
+    "value (HEX)": "0x014A"
+  },
+  {
+    "byteId (DEC)": "23",
+    "byteId (HEX)": "17",
+    "Description": "Mouse Move Up",
+    "value (ASCII)": "",
+    "value (HEX)": "0x014B"
+  },
+  {
+    "byteId (DEC)": "24",
+    "byteId (HEX)": "18",
+    "Description": "Mouse Move Left",
+    "value (ASCII)": "",
+    "value (HEX)": "0x014C"
+  },
+  {
+    "byteId (DEC)": "25",
+    "byteId (HEX)": "19",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "26",
+    "byteId (HEX)": "1A",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "27",
+    "byteId (HEX)": "1B",
+    "Description": "",
+    "value (ASCII)": "?",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "28",
+    "byteId (HEX)": "1C",
+    "Description": "Right Control Key",
+    "value (ASCII)": "",
+    "value (HEX)": "0x0184"
+  },
+  {
+    "byteId (DEC)": "29",
+    "byteId (HEX)": "1D",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "30",
+    "byteId (HEX)": "1E",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "31",
+    "byteId (HEX)": "1F",
+    "Description": "Down Arrow",
+    "value (ASCII)": "",
+    "value (HEX)": "0x01A0"
+  },
+  {
+    "byteId (DEC)": "32",
+    "byteId (HEX)": "20",
+    "Description": "Right Arrow",
+    "value (ASCII)": "",
+    "value (HEX)": "0x019E"
+  },
+  {
+    "byteId (DEC)": "33",
+    "byteId (HEX)": "21",
+    "Description": "Up Arrow",
+    "value (ASCII)": "",
+    "value (HEX)": "0x01A1"
+  },
+  {
+    "byteId (DEC)": "34",
+    "byteId (HEX)": "22",
+    "Description": "Left Arrow",
+    "value (ASCII)": "",
+    "value (HEX)": "0x019F"
+  },
+  {
+    "byteId (DEC)": "35",
+    "byteId (HEX)": "23",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "36",
+    "byteId (HEX)": "24",
+    "Description": "",
+    "value (ASCII)": "5",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "37",
+    "byteId (HEX)": "25",
+    "Description": "",
+    "value (ASCII)": "6",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "38",
+    "byteId (HEX)": "26",
+    "Description": "Tab",
+    "value (ASCII)": "",
+    "value (HEX)": "0x0009"
+  },
+  {
+    "byteId (DEC)": "39",
+    "byteId (HEX)": "27",
+    "Description": "",
+    "value (ASCII)": "4",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "40",
+    "byteId (HEX)": "28",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "41",
+    "byteId (HEX)": "29",
+    "Description": "",
+    "value (ASCII)": "2",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "42",
+    "byteId (HEX)": "2A",
+    "Description": "",
+    "value (ASCII)": "3",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "43",
+    "byteId (HEX)": "2B",
+    "Description": "Enter (LF)",
+    "value (ASCII)": "",
+    "value (HEX)": "0x000A"
+  },
+  {
+    "byteId (DEC)": "44",
+    "byteId (HEX)": "2C",
+    "Description": "",
+    "value (ASCII)": "1",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "45",
+    "byteId (HEX)": "2D",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "46",
+    "byteId (HEX)": "2E",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "47",
+    "byteId (HEX)": "2F",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "48",
+    "byteId (HEX)": "30",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "49",
+    "byteId (HEX)": "31",
+    "Description": "Left GUI Key",
+    "value (ASCII)": "",
+    "value (HEX)": "0x0183"
+  },
+  {
+    "byteId (DEC)": "50",
+    "byteId (HEX)": "32",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "51",
+    "byteId (HEX)": "33",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "52",
+    "byteId (HEX)": "34",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "53",
+    "byteId (HEX)": "35",
+    "Description": "",
+    "value (ASCII)": "[",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "54",
+    "byteId (HEX)": "36",
+    "Description": "",
+    "value (ASCII)": "]",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "55",
+    "byteId (HEX)": "37",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "56",
+    "byteId (HEX)": "38",
+    "Description": "",
+    "value (ASCII)": "7",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "57",
+    "byteId (HEX)": "39",
+    "Description": "",
+    "value (ASCII)": "8",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "58",
+    "byteId (HEX)": "3A",
+    "Description": "",
+    "value (ASCII)": "9",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "59",
+    "byteId (HEX)": "3B",
+    "Description": "",
+    "value (ASCII)": "0",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "60",
+    "byteId (HEX)": "3C",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "61",
+    "byteId (HEX)": "3D",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "62",
+    "byteId (HEX)": "3E",
+    "Description": "Left Shift Key",
+    "value (ASCII)": "",
+    "value (HEX)": "0x0181"
+  },
+  {
+    "byteId (DEC)": "63",
+    "byteId (HEX)": "3F",
+    "Description": "Left Alt Key",
+    "value (ASCII)": "",
+    "value (HEX)": "0x0182"
+  },
+  {
+    "byteId (DEC)": "64",
+    "byteId (HEX)": "40",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "65",
+    "byteId (HEX)": "41",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "66",
+    "byteId (HEX)": "42",
+    "Description": "Mouse Move Down",
+    "value (ASCII)": "",
+    "value (HEX)": "0x0149"
+  },
+  {
+    "byteId (DEC)": "67",
+    "byteId (HEX)": "43",
+    "Description": "Mouse Move Right",
+    "value (ASCII)": "",
+    "value (HEX)": "0x014A"
+  },
+  {
+    "byteId (DEC)": "68",
+    "byteId (HEX)": "44",
+    "Description": "Mouse Move Up",
+    "value (ASCII)": "",
+    "value (HEX)": "0x014B"
+  },
+  {
+    "byteId (DEC)": "69",
+    "byteId (HEX)": "45",
+    "Description": "Mouse Move Left",
+    "value (ASCII)": "",
+    "value (HEX)": "0x014C"
+  },
+  {
+    "byteId (DEC)": "70",
+    "byteId (HEX)": "46",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "71",
+    "byteId (HEX)": "47",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "72",
+    "byteId (HEX)": "48",
+    "Description": "Single Quote",
+    "value (ASCII)": "'",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "73",
+    "byteId (HEX)": "49",
+    "Description": "Left Control Key",
+    "value (ASCII)": "",
+    "value (HEX)": "0x0180"
+  },
+  {
+    "byteId (DEC)": "74",
+    "byteId (HEX)": "4A",
+    "Description": "",
+    "value (ASCII)": ",",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "75",
+    "byteId (HEX)": "4B",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "76",
+    "byteId (HEX)": "4C",
+    "Description": "Down Arrow",
+    "value (ASCII)": "",
+    "value (HEX)": "0x01A0"
+  },
+  {
+    "byteId (DEC)": "77",
+    "byteId (HEX)": "4D",
+    "Description": "Right Arrow",
+    "value (ASCII)": "",
+    "value (HEX)": "0x019E"
+  },
+  {
+    "byteId (DEC)": "79",
+    "byteId (HEX)": "4F",
+    "Description": "Left Arrow",
+    "value (ASCII)": "",
+    "value (HEX)": "0x019F"
+  },
+  {
+    "byteId (DEC)": "78",
+    "byteId (HEX)": "4E",
+    "Description": "Up Arrow",
+    "value (ASCII)": "",
+    "value (HEX)": "0x01A1"
+  },
+  {
+    "byteId (DEC)": "80",
+    "byteId (HEX)": "50",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "81",
+    "byteId (HEX)": "51",
+    "Description": "",
+    "value (ASCII)": "5",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "82",
+    "byteId (HEX)": "52",
+    "Description": "",
+    "value (ASCII)": "4",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "83",
+    "byteId (HEX)": "53",
+    "Description": "Delete (forward)",
+    "value (ASCII)": "",
+    "value (HEX)": "0x007F"
+  },
+  {
+    "byteId (DEC)": "84",
+    "byteId (HEX)": "54",
+    "Description": "",
+    "value (ASCII)": "6",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "85",
+    "byteId (HEX)": "55",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "86",
+    "byteId (HEX)": "56",
+    "Description": "",
+    "value (ASCII)": "2",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "87",
+    "byteId (HEX)": "57",
+    "Description": "",
+    "value (ASCII)": "1",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "88",
+    "byteId (HEX)": "58",
+    "Description": "Backspace",
+    "value (ASCII)": "",
+    "value (HEX)": "0x0008"
+  },
+  {
+    "byteId (DEC)": "89",
+    "byteId (HEX)": "59",
+    "Description": "",
+    "value (ASCII)": "3",
+    "value (HEX)": ""
+  },
+  {
+    "byteId (DEC)": "90",
+    "byteId (HEX)": "5A",
+    "Description": "",
+    "value (ASCII)": "",
+    "value (HEX)": ""
+  }
+]

@@ -11,7 +11,7 @@ export const clickOutside = (
 ) => {
   let waiting = true;
   const handleClick: ClickHandler = (e) => {
-    console.log("click outside1");
+    console.log("click outside1", e.target);
     if (!e.target) return;
     console.log("click outside2");
 
@@ -20,7 +20,14 @@ export const clickOutside = (
       return;
     }
     if (!node.contains(e.target as Node) && enabled) {
+      console.log(
+        "click outside3",
+        node,
+        e.target,
+        node.contains(e.target as Node)
+      );
       handler(e);
+    } else {
     }
   };
 
@@ -38,5 +45,23 @@ export const clickOutside = (
       window.removeEventListener("click", handleClick);
     },
     update,
+  };
+};
+
+export const fitToParent = (node: HTMLElement) => {
+  const resize = () => {
+    if (!node.parentElement) return;
+    const { width: parentWidth, height: parentHeight } =
+      node.parentElement.getBoundingClientRect();
+    const { width, height } = node.getBoundingClientRect();
+    const scale = Math.min(parentWidth / width, parentHeight / height);
+
+    node.style.transform = `scale(${scale})`;
+  };
+  resize();
+  return {
+    update() {
+      resize();
+    },
   };
 };

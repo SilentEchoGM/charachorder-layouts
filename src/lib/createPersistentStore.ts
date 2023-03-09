@@ -2,7 +2,7 @@ import { get, writable } from "svelte/store";
 
 import { getItem, setItem } from "localforage";
 import type { z } from "zod";
-
+export const storePrefix = "__persistent";
 export const persistent = <T>(
   key: string,
   defaultValue: T,
@@ -15,7 +15,6 @@ export const persistent = <T>(
 
   let loaded = false;
 
-  const prefix = "__persistent";
   const save = async (value: T) => {
     if (!loaded) {
       console.warn(
@@ -31,7 +30,7 @@ export const persistent = <T>(
     if (guard.zod) {
       const parsed = guard.zod(value);
       if (parsed.success) {
-        await setItem(prefix + key, parsed.data);
+        await setItem(storePrefix + key, parsed.data);
         set(parsed.data);
       } else {
         console.warn("Invalid type for persistent store", {
@@ -44,7 +43,7 @@ export const persistent = <T>(
 
     if (guard.generic) {
       if (guard.generic(value)) {
-        await setItem(prefix + key, value);
+        await setItem(storePrefix + key, value);
         set(value);
       } else {
         console.warn("Invalid type for persistent store", {
@@ -63,7 +62,7 @@ export const persistent = <T>(
   };
 
   const load = async () => {
-    const value = await getItem(prefix + key);
+    const value = await getItem(storePrefix + key);
     if (guard.zod) {
       const parsed = guard.zod(value);
       if (parsed.success) {
