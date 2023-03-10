@@ -1,0 +1,2567 @@
+[
+  {
+    "byte": "0",
+    "ascii": "",
+    "action": "Ignore\r"
+  },
+  {
+    "byte": "1",
+    "ascii": "",
+    "action": "10-bit Action Codes 0x01\r"
+  },
+  {
+    "byte": "2",
+    "ascii": "",
+    "action": "10-bit Action Codes 0x02\r"
+  },
+  {
+    "byte": "3",
+    "ascii": "",
+    "action": "10-bit Action Codes 0x03\r"
+  },
+  {
+    "byte": "4",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "5",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "6",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "7",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "8",
+    "ascii": "BAC",
+    "action": "Backspace\r"
+  },
+  {
+    "byte": "9",
+    "ascii": "TAB",
+    "action": "Horizontal Tabulation\r"
+  },
+  {
+    "byte": "10",
+    "ascii": "LF",
+    "action": "\"Line Feed"
+  },
+  {
+    "byte": "11",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "12",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "13",
+    "ascii": "CR",
+    "action": "Carriage Return\r"
+  },
+  {
+    "byte": "14",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "15",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "16",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "17",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "18",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "19",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "20",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "21",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "22",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "23",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "24",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "25",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "26",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "27",
+    "ascii": "ESC",
+    "action": "Escape\r"
+  },
+  {
+    "byte": "28",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "29",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "30",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "31",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "32",
+    "ascii": " ",
+    "action": "Space\r"
+  },
+  {
+    "byte": "33",
+    "ascii": "!",
+    "action": "Exclamation Point\r"
+  },
+  {
+    "byte": "34",
+    "ascii": "\"\"\"\"",
+    "action": "Double Quote\r"
+  },
+  {
+    "byte": "35",
+    "ascii": "#",
+    "action": "Hash Symbol\r"
+  },
+  {
+    "byte": "36",
+    "ascii": "$",
+    "action": "Dollar Sign\r"
+  },
+  {
+    "byte": "37",
+    "ascii": "%",
+    "action": "Percent\r"
+  },
+  {
+    "byte": "38",
+    "ascii": "&",
+    "action": "Amperstand\r"
+  },
+  {
+    "byte": "39",
+    "ascii": "'",
+    "action": "Single Quote\r"
+  },
+  {
+    "byte": "40",
+    "ascii": "(",
+    "action": "Left Parenthesis\r"
+  },
+  {
+    "byte": "41",
+    "ascii": ")",
+    "action": "Right Parenthesis\r"
+  },
+  {
+    "byte": "42",
+    "ascii": "*",
+    "action": "Asterisk\r"
+  },
+  {
+    "byte": "43",
+    "ascii": "+",
+    "action": "Plus\r"
+  },
+  {
+    "byte": "44",
+    "ascii": "\"",
+    "action": "\""
+  },
+  {
+    "byte": "45",
+    "ascii": "-",
+    "action": "Minus\r"
+  },
+  {
+    "byte": "46",
+    "ascii": ".",
+    "action": "Period\r"
+  },
+  {
+    "byte": "47",
+    "ascii": "/",
+    "action": "Forward Slash\r"
+  },
+  {
+    "byte": "48",
+    "ascii": "0",
+    "action": "Zero\r"
+  },
+  {
+    "byte": "49",
+    "ascii": "1",
+    "action": "One\r"
+  },
+  {
+    "byte": "50",
+    "ascii": "2",
+    "action": "Two\r"
+  },
+  {
+    "byte": "51",
+    "ascii": "3",
+    "action": "Three\r"
+  },
+  {
+    "byte": "52",
+    "ascii": "4",
+    "action": "Four\r"
+  },
+  {
+    "byte": "53",
+    "ascii": "5",
+    "action": "Five\r"
+  },
+  {
+    "byte": "54",
+    "ascii": "6",
+    "action": "Six\r"
+  },
+  {
+    "byte": "55",
+    "ascii": "7",
+    "action": "Seven\r"
+  },
+  {
+    "byte": "56",
+    "ascii": "8",
+    "action": "Eight\r"
+  },
+  {
+    "byte": "57",
+    "ascii": "9",
+    "action": "Nine\r"
+  },
+  {
+    "byte": "58",
+    "ascii": ":",
+    "action": "Colon\r"
+  },
+  {
+    "byte": "59",
+    "ascii": ";",
+    "action": "Semicolon\r"
+  },
+  {
+    "byte": "60",
+    "ascii": "<",
+    "action": "Less Than\r"
+  },
+  {
+    "byte": "61",
+    "ascii": "=",
+    "action": "Equals\r"
+  },
+  {
+    "byte": "62",
+    "ascii": ">",
+    "action": "Greater Than\r"
+  },
+  {
+    "byte": "63",
+    "ascii": "?",
+    "action": "Question Mark\r"
+  },
+  {
+    "byte": "64",
+    "ascii": "@",
+    "action": "At Symbol\r"
+  },
+  {
+    "byte": "65",
+    "ascii": "A",
+    "action": "Uppercase A\r"
+  },
+  {
+    "byte": "66",
+    "ascii": "B",
+    "action": "Uppercase B\r"
+  },
+  {
+    "byte": "67",
+    "ascii": "C",
+    "action": "Uppercase C\r"
+  },
+  {
+    "byte": "68",
+    "ascii": "D",
+    "action": "Uppercase D\r"
+  },
+  {
+    "byte": "69",
+    "ascii": "E",
+    "action": "Uppercase E\r"
+  },
+  {
+    "byte": "70",
+    "ascii": "F",
+    "action": "Uppercase F\r"
+  },
+  {
+    "byte": "71",
+    "ascii": "G",
+    "action": "Uppercase G\r"
+  },
+  {
+    "byte": "72",
+    "ascii": "H",
+    "action": "Uppercase H\r"
+  },
+  {
+    "byte": "73",
+    "ascii": "I",
+    "action": "Uppercase I\r"
+  },
+  {
+    "byte": "74",
+    "ascii": "J",
+    "action": "Uppercase J\r"
+  },
+  {
+    "byte": "75",
+    "ascii": "K",
+    "action": "Uppercase K\r"
+  },
+  {
+    "byte": "76",
+    "ascii": "L",
+    "action": "Uppercase L\r"
+  },
+  {
+    "byte": "77",
+    "ascii": "M",
+    "action": "Uppercase M\r"
+  },
+  {
+    "byte": "78",
+    "ascii": "N",
+    "action": "Uppercase N\r"
+  },
+  {
+    "byte": "79",
+    "ascii": "O",
+    "action": "Uppercase O\r"
+  },
+  {
+    "byte": "80",
+    "ascii": "P",
+    "action": "Uppercase P\r"
+  },
+  {
+    "byte": "81",
+    "ascii": "Q",
+    "action": "Uppercase Q\r"
+  },
+  {
+    "byte": "82",
+    "ascii": "R",
+    "action": "Uppercase R\r"
+  },
+  {
+    "byte": "83",
+    "ascii": "S",
+    "action": "Uppercase S\r"
+  },
+  {
+    "byte": "84",
+    "ascii": "T",
+    "action": "Uppercase T\r"
+  },
+  {
+    "byte": "85",
+    "ascii": "U",
+    "action": "Uppercase U\r"
+  },
+  {
+    "byte": "86",
+    "ascii": "V",
+    "action": "Uppercase V\r"
+  },
+  {
+    "byte": "87",
+    "ascii": "W",
+    "action": "Uppercase W\r"
+  },
+  {
+    "byte": "88",
+    "ascii": "X",
+    "action": "Uppercase X\r"
+  },
+  {
+    "byte": "89",
+    "ascii": "Y",
+    "action": "Uppercase Y\r"
+  },
+  {
+    "byte": "90",
+    "ascii": "Z",
+    "action": "Uppercase Z\r"
+  },
+  {
+    "byte": "91",
+    "ascii": "[",
+    "action": "Left Bracket\r"
+  },
+  {
+    "byte": "92",
+    "ascii": "\\",
+    "action": "Backslash\r"
+  },
+  {
+    "byte": "93",
+    "ascii": "]",
+    "action": "Right Bracket\r"
+  },
+  {
+    "byte": "94",
+    "ascii": "^",
+    "action": "Carrot\r"
+  },
+  {
+    "byte": "95",
+    "ascii": "_",
+    "action": "Underscore\r"
+  },
+  {
+    "byte": "96",
+    "ascii": "`",
+    "action": "Grave Mark\r"
+  },
+  {
+    "byte": "97",
+    "ascii": "a",
+    "action": "Lowercase a\r"
+  },
+  {
+    "byte": "98",
+    "ascii": "b",
+    "action": "Lowercase b\r"
+  },
+  {
+    "byte": "99",
+    "ascii": "c",
+    "action": "Lowercase c\r"
+  },
+  {
+    "byte": "100",
+    "ascii": "d",
+    "action": "Lowercase d\r"
+  },
+  {
+    "byte": "101",
+    "ascii": "e",
+    "action": "Lowercase e\r"
+  },
+  {
+    "byte": "102",
+    "ascii": "f",
+    "action": "Lowercase f\r"
+  },
+  {
+    "byte": "103",
+    "ascii": "g",
+    "action": "Lowercase g\r"
+  },
+  {
+    "byte": "104",
+    "ascii": "h",
+    "action": "Lowercase h\r"
+  },
+  {
+    "byte": "105",
+    "ascii": "i",
+    "action": "Lowercase i\r"
+  },
+  {
+    "byte": "106",
+    "ascii": "j",
+    "action": "Lowercase j\r"
+  },
+  {
+    "byte": "107",
+    "ascii": "k",
+    "action": "Lowercase k\r"
+  },
+  {
+    "byte": "108",
+    "ascii": "l",
+    "action": "Lowercase l\r"
+  },
+  {
+    "byte": "109",
+    "ascii": "m",
+    "action": "Lowercase m\r"
+  },
+  {
+    "byte": "110",
+    "ascii": "n",
+    "action": "Lowercase n\r"
+  },
+  {
+    "byte": "111",
+    "ascii": "o",
+    "action": "Lowercase o\r"
+  },
+  {
+    "byte": "112",
+    "ascii": "p",
+    "action": "Lowercase p\r"
+  },
+  {
+    "byte": "113",
+    "ascii": "q",
+    "action": "Lowercase q\r"
+  },
+  {
+    "byte": "114",
+    "ascii": "r",
+    "action": "Lowercase r\r"
+  },
+  {
+    "byte": "115",
+    "ascii": "s",
+    "action": "Lowercase s\r"
+  },
+  {
+    "byte": "116",
+    "ascii": "t",
+    "action": "Lowercase t\r"
+  },
+  {
+    "byte": "117",
+    "ascii": "u",
+    "action": "Lowercase u\r"
+  },
+  {
+    "byte": "118",
+    "ascii": "v",
+    "action": "Lowercase v\r"
+  },
+  {
+    "byte": "119",
+    "ascii": "w",
+    "action": "Lowercase w\r"
+  },
+  {
+    "byte": "120",
+    "ascii": "x",
+    "action": "Lowercase x\r"
+  },
+  {
+    "byte": "121",
+    "ascii": "y",
+    "action": "Lowercase y\r"
+  },
+  {
+    "byte": "122",
+    "ascii": "z",
+    "action": "Lowercase z\r"
+  },
+  {
+    "byte": "123",
+    "ascii": "{",
+    "action": "Left Curly Brace\r"
+  },
+  {
+    "byte": "124",
+    "ascii": "|",
+    "action": "Pipe\r"
+  },
+  {
+    "byte": "125",
+    "ascii": "}",
+    "action": "Right Curly Brace\r"
+  },
+  {
+    "byte": "126",
+    "ascii": "~",
+    "action": "Tilde\r"
+  },
+  {
+    "byte": "127",
+    "ascii": "DEL",
+    "action": "Delete\r"
+  },
+  {
+    "byte": "128",
+    "ascii": "€",
+    "action": "Uppercase cedilla\r"
+  },
+  {
+    "byte": "129",
+    "ascii": "HOP",
+    "action": "High Octed Preset\r"
+  },
+  {
+    "byte": "130",
+    "ascii": "‚",
+    "action": "\r"
+  },
+  {
+    "byte": "131",
+    "ascii": "ƒ",
+    "action": "\r"
+  },
+  {
+    "byte": "132",
+    "ascii": "„",
+    "action": "\r"
+  },
+  {
+    "byte": "133",
+    "ascii": "…",
+    "action": "\r"
+  },
+  {
+    "byte": "134",
+    "ascii": "†",
+    "action": "\r"
+  },
+  {
+    "byte": "135",
+    "ascii": "‡",
+    "action": "\r"
+  },
+  {
+    "byte": "136",
+    "ascii": "ˆ",
+    "action": "\r"
+  },
+  {
+    "byte": "137",
+    "ascii": "‰",
+    "action": "\r"
+  },
+  {
+    "byte": "138",
+    "ascii": "Š",
+    "action": "\r"
+  },
+  {
+    "byte": "139",
+    "ascii": "‹",
+    "action": "\r"
+  },
+  {
+    "byte": "140",
+    "ascii": "Œ",
+    "action": "\r"
+  },
+  {
+    "byte": "141",
+    "ascii": "RI",
+    "action": "Reverse Line Feed\r"
+  },
+  {
+    "byte": "142",
+    "ascii": "Ž",
+    "action": "\r"
+  },
+  {
+    "byte": "143",
+    "ascii": "SS3",
+    "action": "Single Shift Three\r"
+  },
+  {
+    "byte": "144",
+    "ascii": "DCS",
+    "action": "Device Control String\r"
+  },
+  {
+    "byte": "145",
+    "ascii": "‘",
+    "action": "\r"
+  },
+  {
+    "byte": "146",
+    "ascii": "’",
+    "action": "\r"
+  },
+  {
+    "byte": "147",
+    "ascii": "“",
+    "action": "\r"
+  },
+  {
+    "byte": "148",
+    "ascii": "”",
+    "action": "\r"
+  },
+  {
+    "byte": "149",
+    "ascii": "•",
+    "action": "\r"
+  },
+  {
+    "byte": "150",
+    "ascii": "–",
+    "action": "\r"
+  },
+  {
+    "byte": "151",
+    "ascii": "—",
+    "action": "\r"
+  },
+  {
+    "byte": "152",
+    "ascii": "˜",
+    "action": "\r"
+  },
+  {
+    "byte": "153",
+    "ascii": "™",
+    "action": "\r"
+  },
+  {
+    "byte": "154",
+    "ascii": "š",
+    "action": "\r"
+  },
+  {
+    "byte": "155",
+    "ascii": "›",
+    "action": "\r"
+  },
+  {
+    "byte": "156",
+    "ascii": "œ",
+    "action": "\r"
+  },
+  {
+    "byte": "157",
+    "ascii": "OSC",
+    "action": "Operating System Command\r"
+  },
+  {
+    "byte": "158",
+    "ascii": "ž",
+    "action": "\r"
+  },
+  {
+    "byte": "159",
+    "ascii": "Ÿ",
+    "action": "\r"
+  },
+  {
+    "byte": "160",
+    "ascii": " ",
+    "action": "\r"
+  },
+  {
+    "byte": "161",
+    "ascii": "¡",
+    "action": "\r"
+  },
+  {
+    "byte": "162",
+    "ascii": "¢",
+    "action": "\r"
+  },
+  {
+    "byte": "163",
+    "ascii": "£",
+    "action": "\r"
+  },
+  {
+    "byte": "164",
+    "ascii": "¤",
+    "action": "\r"
+  },
+  {
+    "byte": "165",
+    "ascii": "¥",
+    "action": "\r"
+  },
+  {
+    "byte": "166",
+    "ascii": "¦",
+    "action": "\r"
+  },
+  {
+    "byte": "167",
+    "ascii": "§",
+    "action": "\r"
+  },
+  {
+    "byte": "168",
+    "ascii": "¨",
+    "action": "\r"
+  },
+  {
+    "byte": "169",
+    "ascii": "©",
+    "action": "\r"
+  },
+  {
+    "byte": "170",
+    "ascii": "ª",
+    "action": "\r"
+  },
+  {
+    "byte": "171",
+    "ascii": "«",
+    "action": "\r"
+  },
+  {
+    "byte": "172",
+    "ascii": "¬",
+    "action": "\r"
+  },
+  {
+    "byte": "173",
+    "ascii": "­",
+    "action": "\r"
+  },
+  {
+    "byte": "174",
+    "ascii": "®",
+    "action": "\r"
+  },
+  {
+    "byte": "175",
+    "ascii": "¯",
+    "action": "\r"
+  },
+  {
+    "byte": "176",
+    "ascii": "°",
+    "action": "\r"
+  },
+  {
+    "byte": "177",
+    "ascii": "±",
+    "action": "\r"
+  },
+  {
+    "byte": "178",
+    "ascii": "²",
+    "action": "\r"
+  },
+  {
+    "byte": "179",
+    "ascii": "³",
+    "action": "\r"
+  },
+  {
+    "byte": "180",
+    "ascii": "´",
+    "action": "\r"
+  },
+  {
+    "byte": "181",
+    "ascii": "µ",
+    "action": "\r"
+  },
+  {
+    "byte": "182",
+    "ascii": "¶",
+    "action": "\r"
+  },
+  {
+    "byte": "183",
+    "ascii": "·",
+    "action": "\r"
+  },
+  {
+    "byte": "184",
+    "ascii": "¸",
+    "action": "\r"
+  },
+  {
+    "byte": "185",
+    "ascii": "¹",
+    "action": "\r"
+  },
+  {
+    "byte": "186",
+    "ascii": "º",
+    "action": "\r"
+  },
+  {
+    "byte": "187",
+    "ascii": "»",
+    "action": "\r"
+  },
+  {
+    "byte": "188",
+    "ascii": "¼",
+    "action": "\r"
+  },
+  {
+    "byte": "189",
+    "ascii": "½",
+    "action": "\r"
+  },
+  {
+    "byte": "190",
+    "ascii": "¾",
+    "action": "\r"
+  },
+  {
+    "byte": "191",
+    "ascii": "¿",
+    "action": "\r"
+  },
+  {
+    "byte": "192",
+    "ascii": "À",
+    "action": "\r"
+  },
+  {
+    "byte": "193",
+    "ascii": "Á",
+    "action": "\r"
+  },
+  {
+    "byte": "194",
+    "ascii": "Â",
+    "action": "\r"
+  },
+  {
+    "byte": "195",
+    "ascii": "Ã",
+    "action": "\r"
+  },
+  {
+    "byte": "196",
+    "ascii": "Ä",
+    "action": "\r"
+  },
+  {
+    "byte": "197",
+    "ascii": "Å",
+    "action": "\r"
+  },
+  {
+    "byte": "198",
+    "ascii": "Æ",
+    "action": "\r"
+  },
+  {
+    "byte": "199",
+    "ascii": "Ç",
+    "action": "\r"
+  },
+  {
+    "byte": "200",
+    "ascii": "È",
+    "action": "\r"
+  },
+  {
+    "byte": "201",
+    "ascii": "É",
+    "action": "\r"
+  },
+  {
+    "byte": "202",
+    "ascii": "Ê",
+    "action": "\r"
+  },
+  {
+    "byte": "203",
+    "ascii": "Ë",
+    "action": "\r"
+  },
+  {
+    "byte": "204",
+    "ascii": "Ì",
+    "action": "\r"
+  },
+  {
+    "byte": "205",
+    "ascii": "Í",
+    "action": "\r"
+  },
+  {
+    "byte": "206",
+    "ascii": "Î",
+    "action": "\r"
+  },
+  {
+    "byte": "207",
+    "ascii": "Ï",
+    "action": "\r"
+  },
+  {
+    "byte": "208",
+    "ascii": "Ð",
+    "action": "\r"
+  },
+  {
+    "byte": "209",
+    "ascii": "Ñ",
+    "action": "\r"
+  },
+  {
+    "byte": "210",
+    "ascii": "Ò",
+    "action": "\r"
+  },
+  {
+    "byte": "211",
+    "ascii": "Ó",
+    "action": "\r"
+  },
+  {
+    "byte": "212",
+    "ascii": "Ô",
+    "action": "\r"
+  },
+  {
+    "byte": "213",
+    "ascii": "Õ",
+    "action": "\r"
+  },
+  {
+    "byte": "214",
+    "ascii": "Ö",
+    "action": "\r"
+  },
+  {
+    "byte": "215",
+    "ascii": "×",
+    "action": "\r"
+  },
+  {
+    "byte": "216",
+    "ascii": "Ø",
+    "action": "\r"
+  },
+  {
+    "byte": "217",
+    "ascii": "Ù",
+    "action": "\r"
+  },
+  {
+    "byte": "218",
+    "ascii": "Ú",
+    "action": "\r"
+  },
+  {
+    "byte": "219",
+    "ascii": "Û",
+    "action": "\r"
+  },
+  {
+    "byte": "220",
+    "ascii": "Ü",
+    "action": "\r"
+  },
+  {
+    "byte": "221",
+    "ascii": "Ý",
+    "action": "\r"
+  },
+  {
+    "byte": "222",
+    "ascii": "Þ",
+    "action": "\r"
+  },
+  {
+    "byte": "223",
+    "ascii": "ß",
+    "action": "\r"
+  },
+  {
+    "byte": "224",
+    "ascii": "à",
+    "action": "\r"
+  },
+  {
+    "byte": "225",
+    "ascii": "á",
+    "action": "\r"
+  },
+  {
+    "byte": "226",
+    "ascii": "â",
+    "action": "\r"
+  },
+  {
+    "byte": "227",
+    "ascii": "ã",
+    "action": "\r"
+  },
+  {
+    "byte": "228",
+    "ascii": "ä",
+    "action": "\r"
+  },
+  {
+    "byte": "229",
+    "ascii": "å",
+    "action": "\r"
+  },
+  {
+    "byte": "230",
+    "ascii": "æ",
+    "action": "\r"
+  },
+  {
+    "byte": "231",
+    "ascii": "ç",
+    "action": "\r"
+  },
+  {
+    "byte": "232",
+    "ascii": "è",
+    "action": "\r"
+  },
+  {
+    "byte": "233",
+    "ascii": "é",
+    "action": "\r"
+  },
+  {
+    "byte": "234",
+    "ascii": "ê",
+    "action": "\r"
+  },
+  {
+    "byte": "235",
+    "ascii": "ë",
+    "action": "\r"
+  },
+  {
+    "byte": "236",
+    "ascii": "ì",
+    "action": "\r"
+  },
+  {
+    "byte": "237",
+    "ascii": "í",
+    "action": "\r"
+  },
+  {
+    "byte": "238",
+    "ascii": "î",
+    "action": "\r"
+  },
+  {
+    "byte": "239",
+    "ascii": "ï",
+    "action": "\r"
+  },
+  {
+    "byte": "240",
+    "ascii": "ð",
+    "action": "\r"
+  },
+  {
+    "byte": "241",
+    "ascii": "ñ",
+    "action": "\r"
+  },
+  {
+    "byte": "242",
+    "ascii": "ò",
+    "action": "\r"
+  },
+  {
+    "byte": "243",
+    "ascii": "ó",
+    "action": "\r"
+  },
+  {
+    "byte": "244",
+    "ascii": "ô",
+    "action": "\r"
+  },
+  {
+    "byte": "245",
+    "ascii": "õ",
+    "action": "\r"
+  },
+  {
+    "byte": "246",
+    "ascii": "ö",
+    "action": "\r"
+  },
+  {
+    "byte": "247",
+    "ascii": "÷",
+    "action": "\r"
+  },
+  {
+    "byte": "248",
+    "ascii": "ø",
+    "action": "\r"
+  },
+  {
+    "byte": "249",
+    "ascii": "ù",
+    "action": "\r"
+  },
+  {
+    "byte": "250",
+    "ascii": "ú",
+    "action": "\r"
+  },
+  {
+    "byte": "251",
+    "ascii": "û",
+    "action": "\r"
+  },
+  {
+    "byte": "252",
+    "ascii": "ü",
+    "action": "\r"
+  },
+  {
+    "byte": "253",
+    "ascii": "ý",
+    "action": "\r"
+  },
+  {
+    "byte": "254",
+    "ascii": "þ",
+    "action": "\r"
+  },
+  {
+    "byte": "255",
+    "ascii": "ÿ",
+    "action": "\r"
+  },
+  {
+    "byte": "256",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "257",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "258",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "259",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "260",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "261",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "262",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "263",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "264",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "265",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "266",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "267",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "268",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "269",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "270",
+    "ascii": "BOOT",
+    "action": "Bootloader Mode\r"
+  },
+  {
+    "byte": "271",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "272",
+    "ascii": "AMBILEFT",
+    "action": "AmbiThrow (left)\r"
+  },
+  {
+    "byte": "273",
+    "ascii": "AMBIRIGHT",
+    "action": "AmbiThrow (right)\r"
+  },
+  {
+    "byte": "274",
+    "ascii": "SECLEFT",
+    "action": "Number KeyMap(left)\r"
+  },
+  {
+    "byte": "275",
+    "ascii": "SECRIGHT",
+    "action": "Number KeyMap(right)\r"
+  },
+  {
+    "byte": "276",
+    "ascii": "SPURTOGGLE",
+    "action": "Spur Toggle\r"
+  },
+  {
+    "byte": "277",
+    "ascii": "DUP",
+    "action": "Repeat Last Note\r"
+  },
+  {
+    "byte": "278",
+    "ascii": "IMPULSETOGGLE",
+    "action": "Toggle Impulse Function in Firmware\r"
+  },
+  {
+    "byte": "279",
+    "ascii": "GTM",
+    "action": "GTM Toggle\r"
+  },
+  {
+    "byte": "280",
+    "ascii": "TERLEFT",
+    "action": "Tertiary Keymap (left)\r"
+  },
+  {
+    "byte": "281",
+    "ascii": "TERRIGHT",
+    "action": "Tertiary Keymap (right)\r"
+  },
+  {
+    "byte": "282",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "283",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "284",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "285",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "286",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "287",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "288",
+    "ascii": "SPACERIGHT",
+    "action": "Right spacebar\r"
+  },
+  {
+    "byte": "289",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "290",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "291",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "292",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "293",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "294",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "295",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "296",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "297",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "298",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "299",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "300",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "301",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "302",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "303",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "304",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "305",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "306",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "307",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "308",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "309",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "310",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "311",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "312",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "313",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "314",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "315",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "316",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "317",
+    "ascii": "M_CLICK",
+    "action": "Mouse Left Button Press and Release\r"
+  },
+  {
+    "byte": "318",
+    "ascii": "M_RCLICK",
+    "action": "Mouse Right Button Press and Release\r"
+  },
+  {
+    "byte": "319",
+    "ascii": "M_MCLICK",
+    "action": "Mouse Middle Button Press and Release\r"
+  },
+  {
+    "byte": "320",
+    "ascii": "M_MRIGHT",
+    "action": "Mouse Move Right\r"
+  },
+  {
+    "byte": "321",
+    "ascii": "M_MOVELEFT",
+    "action": "Mouse Move Left\r"
+  },
+  {
+    "byte": "322",
+    "ascii": "M_MDOWN",
+    "action": "Mouse Move Down\r"
+  },
+  {
+    "byte": "323",
+    "ascii": "M_MOVEUP",
+    "action": "Mouse Move Up\r"
+  },
+  {
+    "byte": "324",
+    "ascii": "M_SCROLLRIGHT",
+    "action": "Mouse Scroll Coast Right\r"
+  },
+  {
+    "byte": "325",
+    "ascii": "M_SCROLLLEFT",
+    "action": "Mouse Scroll Coast Left\r"
+  },
+  {
+    "byte": "326",
+    "ascii": "M_SCROLLDOWN",
+    "action": "Mouse Scroll Coast Down\r"
+  },
+  {
+    "byte": "327",
+    "ascii": "M_SCROLLUP",
+    "action": "Mouse Scroll Coast Up\r"
+  },
+  {
+    "byte": "328",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "329",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "330",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "331",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "332",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "333",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "334",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "335",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "336",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "337",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "338",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "339",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "340",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "341",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "342",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "343",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "344",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "345",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "346",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "347",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "348",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "349",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "350",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "351",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "352",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "353",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "354",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "355",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "356",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "357",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "358",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "359",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "360",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "361",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "362",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "363",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "364",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "365",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "366",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "367",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "368",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "369",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "370",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "371",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "372",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "373",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "374",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "375",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "376",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "377",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "378",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "379",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "380",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "381",
+    "ascii": "",
+    "action": "\r"
+  },
+  {
+    "byte": "382",
+    "ascii": "RELEASEMODS",
+    "action": "Release All Modifier Keys\r"
+  },
+  {
+    "byte": "383",
+    "ascii": "RELEASEALL",
+    "action": "Release All Keys\r"
+  },
+  {
+    "byte": "384",
+    "ascii": "LEFTCONTROL",
+    "action": "LeftControl\r"
+  },
+  {
+    "byte": "385",
+    "ascii": "LEFTSHIFT",
+    "action": "LeftShift\r"
+  },
+  {
+    "byte": "386",
+    "ascii": "LEFTALT",
+    "action": "LeftAlt\r"
+  },
+  {
+    "byte": "387",
+    "ascii": "LEFTGUI",
+    "action": "Left GUI\r"
+  },
+  {
+    "byte": "388",
+    "ascii": "RIGHTCONTROL",
+    "action": "RightControl\r"
+  },
+  {
+    "byte": "389",
+    "ascii": "RIGHTSHIFT",
+    "action": "RightShift\r"
+  },
+  {
+    "byte": "390",
+    "ascii": "RIGHTALT",
+    "action": "RightAlt\r"
+  },
+  {
+    "byte": "391",
+    "ascii": "RIGHTGUI",
+    "action": "RightGUI\r"
+  },
+  {
+    "byte": "392",
+    "ascii": "CAPS",
+    "action": "Caps Lock\r"
+  },
+  {
+    "byte": "393",
+    "ascii": "F1",
+    "action": "F1\r"
+  },
+  {
+    "byte": "394",
+    "ascii": "F2",
+    "action": "F2\r"
+  },
+  {
+    "byte": "395",
+    "ascii": "F3",
+    "action": "F3\r"
+  },
+  {
+    "byte": "396",
+    "ascii": "F4",
+    "action": "F4\r"
+  },
+  {
+    "byte": "397",
+    "ascii": "F5",
+    "action": "F5\r"
+  },
+  {
+    "byte": "398",
+    "ascii": "F6",
+    "action": "F6\r"
+  },
+  {
+    "byte": "399",
+    "ascii": "F7",
+    "action": "F7\r"
+  },
+  {
+    "byte": "400",
+    "ascii": "F8",
+    "action": "F8\r"
+  },
+  {
+    "byte": "401",
+    "ascii": "F9",
+    "action": "F9\r"
+  },
+  {
+    "byte": "402",
+    "ascii": "F10",
+    "action": "F10\r"
+  },
+  {
+    "byte": "403",
+    "ascii": "F11",
+    "action": "F11\r"
+  },
+  {
+    "byte": "404",
+    "ascii": "F12",
+    "action": "F12\r"
+  },
+  {
+    "byte": "405",
+    "ascii": "PRINTSCREEN",
+    "action": "PrintScreen\r"
+  },
+  {
+    "byte": "406",
+    "ascii": "SCROLLLOCK",
+    "action": "Scroll Lock\r"
+  },
+  {
+    "byte": "407",
+    "ascii": "PAUSE",
+    "action": "Pause\r"
+  },
+  {
+    "byte": "408",
+    "ascii": "INSERT",
+    "action": "Insert\r"
+  },
+  {
+    "byte": "409",
+    "ascii": "HOME",
+    "action": "Home\r"
+  },
+  {
+    "byte": "410",
+    "ascii": "PAGEUP",
+    "action": "PageUp\r"
+  },
+  {
+    "byte": "411",
+    "ascii": "DELETEFORWARD",
+    "action": "Delete Forward\r"
+  },
+  {
+    "byte": "412",
+    "ascii": "END",
+    "action": "End\r"
+  },
+  {
+    "byte": "413",
+    "ascii": "PAGEDOWN",
+    "action": "PageDown\r"
+  },
+  {
+    "byte": "414",
+    "ascii": "RIGHTARROW",
+    "action": "RightArrow\r"
+  },
+  {
+    "byte": "415",
+    "ascii": "LEFTARROW",
+    "action": "LeftArrow\r"
+  },
+  {
+    "byte": "416",
+    "ascii": "DOWNARROW",
+    "action": "DownArrow\r"
+  },
+  {
+    "byte": "417",
+    "ascii": "UPARROW",
+    "action": "UpArrow\r"
+  },
+  {
+    "byte": "418",
+    "ascii": "NUMLOCK",
+    "action": "Num Lock and Clear\r"
+  },
+  {
+    "byte": "419",
+    "ascii": "F13",
+    "action": "F13\r"
+  },
+  {
+    "byte": "420",
+    "ascii": "F14",
+    "action": "F14\r"
+  },
+  {
+    "byte": "421",
+    "ascii": "F15",
+    "action": "F15\r"
+  },
+  {
+    "byte": "422",
+    "ascii": "F16",
+    "action": "F16\r"
+  },
+  {
+    "byte": "423",
+    "ascii": "F17",
+    "action": "F17\r"
+  },
+  {
+    "byte": "424",
+    "ascii": "F18",
+    "action": "F18\r"
+  },
+  {
+    "byte": "425",
+    "ascii": "F19",
+    "action": "F19\r"
+  },
+  {
+    "byte": "426",
+    "ascii": "F20",
+    "action": "F20\r"
+  },
+  {
+    "byte": "427",
+    "ascii": "F21",
+    "action": "F21\r"
+  },
+  {
+    "byte": "428",
+    "ascii": "F22",
+    "action": "F22\r"
+  },
+  {
+    "byte": "429",
+    "ascii": "F23",
+    "action": "F23\r"
+  },
+  {
+    "byte": "430",
+    "ascii": "F24",
+    "action": "F24\r"
+  },
+  {
+    "byte": "431",
+    "ascii": "EXECUTE",
+    "action": "Execute\r"
+  },
+  {
+    "byte": "432",
+    "ascii": "HELP",
+    "action": "Help\r"
+  },
+  {
+    "byte": "433",
+    "ascii": "MENU",
+    "action": "Menu\r"
+  },
+  {
+    "byte": "434",
+    "ascii": "SELECT",
+    "action": "Select\r"
+  },
+  {
+    "byte": "435",
+    "ascii": "STOP",
+    "action": "Stop\r"
+  },
+  {
+    "byte": "436",
+    "ascii": "AGAIN",
+    "action": "Again\r"
+  },
+  {
+    "byte": "437",
+    "ascii": "UNDO",
+    "action": "Undo\r"
+  },
+  {
+    "byte": "438",
+    "ascii": "CUT",
+    "action": "Cut\r"
+  },
+  {
+    "byte": "439",
+    "ascii": "COPY",
+    "action": "Copy\r"
+  },
+  {
+    "byte": "440",
+    "ascii": "PASTE",
+    "action": "Paste\r"
+  },
+  {
+    "byte": "441",
+    "ascii": "FIND",
+    "action": "Find\r"
+  },
+  {
+    "byte": "442",
+    "ascii": "MUTE",
+    "action": "Mute\r"
+  },
+  {
+    "byte": "443",
+    "ascii": "VOLUP",
+    "action": "Volume Up\r"
+  },
+  {
+    "byte": "444",
+    "ascii": "VOLDOWN",
+    "action": "Volume Down\r"
+  },
+  {
+    "byte": "445",
+    "ascii": "INTL1",
+    "action": "International1\r"
+  },
+  {
+    "byte": "446",
+    "ascii": "INTL2",
+    "action": "International2\r"
+  },
+  {
+    "byte": "447",
+    "ascii": "INTL3",
+    "action": "International3\r"
+  },
+  {
+    "byte": "448",
+    "ascii": "INTL4",
+    "action": "International4\r"
+  },
+  {
+    "byte": "449",
+    "ascii": "INTL5",
+    "action": "International5\r"
+  },
+  {
+    "byte": "450",
+    "ascii": "INTL6",
+    "action": "International6\r"
+  },
+  {
+    "byte": "451",
+    "ascii": "INTL7",
+    "action": "International7\r"
+  },
+  {
+    "byte": "452",
+    "ascii": "INTL8",
+    "action": "International8\r"
+  },
+  {
+    "byte": "453",
+    "ascii": "INTL9",
+    "action": "International9\r"
+  },
+  {
+    "byte": "454",
+    "ascii": "LANG1",
+    "action": "LANG1\r"
+  },
+  {
+    "byte": "455",
+    "ascii": "LANG2",
+    "action": "LANG2\r"
+  },
+  {
+    "byte": "456",
+    "ascii": "LANG3",
+    "action": "LANG3\r"
+  },
+  {
+    "byte": "457",
+    "ascii": "LANG4",
+    "action": "LANG4\r"
+  },
+  {
+    "byte": "458",
+    "ascii": "LANG5",
+    "action": "LANG5\r"
+  },
+  {
+    "byte": "459",
+    "ascii": "LANG6",
+    "action": "LANG6\r"
+  },
+  {
+    "byte": "460",
+    "ascii": "LANG7",
+    "action": "LANG7\r"
+  },
+  {
+    "byte": "461",
+    "ascii": "LANG8",
+    "action": "LANG8\r"
+  },
+  {
+    "byte": "462",
+    "ascii": "LANG9",
+    "action": "LANG9\r"
+  },
+  {
+    "byte": "463",
+    "ascii": "ALTERASE",
+    "action": "Alternate Erase\r"
+  },
+  {
+    "byte": "464",
+    "ascii": "SYSREQATTENTION",
+    "action": "SysReq/Attention\r"
+  },
+  {
+    "byte": "465",
+    "ascii": "CANCEL",
+    "action": "Cancel\r"
+  },
+  {
+    "byte": "466",
+    "ascii": "CLEAR",
+    "action": "Clear\r"
+  },
+  {
+    "byte": "467",
+    "ascii": "PRIOR",
+    "action": "Prior\r"
+  },
+  {
+    "byte": "468",
+    "ascii": "RETURN",
+    "action": "Return\r"
+  },
+  {
+    "byte": "469",
+    "ascii": "SEPARATOR",
+    "action": "Separator\r"
+  },
+  {
+    "byte": "470",
+    "ascii": "OUT",
+    "action": "Out\r"
+  },
+  {
+    "byte": "471",
+    "ascii": "OPER",
+    "action": "Oper\r"
+  },
+  {
+    "byte": "472",
+    "ascii": "CLEAR/AGAIN",
+    "action": "Clear/Again\r"
+  },
+  {
+    "byte": "473",
+    "ascii": "CRSEL/PROPS",
+    "action": "CrSel/Props\r"
+  },
+  {
+    "byte": "474",
+    "ascii": "EXSEL",
+    "action": "ExSel\r"
+  },
+  {
+    "byte": "475",
+    "ascii": "THOUSANDSSEPARATOR",
+    "action": "Thousands Separator\r"
+  },
+  {
+    "byte": "476",
+    "ascii": "DECIMALSEPARATOR",
+    "action": "Decimal Separator\r"
+  },
+  {
+    "byte": "477",
+    "ascii": "CURRENCYUNIT",
+    "action": "Currency Unit\r"
+  },
+  {
+    "byte": "478",
+    "ascii": "CURRENCYSUBUNIT",
+    "action": "Currency Sub-unit\r"
+  },
+  {
+    "byte": "479",
+    "ascii": "KPMSTORE",
+    "action": "Keypad Memory Store\r"
+  },
+  {
+    "byte": "480",
+    "ascii": "KPMRECALL",
+    "action": "Keypad Memory Recall\r"
+  },
+  {
+    "byte": "481",
+    "ascii": "KPMCLEAR",
+    "action": "Keypad Memory Clear\r"
+  },
+  {
+    "byte": "482",
+    "ascii": "KPMADD",
+    "action": "Keypad Memory Add\r"
+  },
+  {
+    "byte": "483",
+    "ascii": "KPMSUBTRACT",
+    "action": "Keypad Memory Subtract\r"
+  },
+  {
+    "byte": "484",
+    "ascii": "KPMMULTIPLY",
+    "action": "Keypad Memory Multiply\r"
+  },
+  {
+    "byte": "485",
+    "ascii": "KPMDIVIDE",
+    "action": "Keypad Memory Divide\r"
+  },
+  {
+    "byte": "486",
+    "ascii": "KP+/-",
+    "action": "Keypad +/-\r"
+  },
+  {
+    "byte": "487",
+    "ascii": "KPCLEAR",
+    "action": "Keypad Clear\r"
+  },
+  {
+    "byte": "488",
+    "ascii": "KPCLEARENTRY",
+    "action": "Keypad Clear Entry\r"
+  },
+  {
+    "byte": "489",
+    "ascii": "KPBINARY",
+    "action": "Keypad Binary\r"
+  },
+  {
+    "byte": "490",
+    "ascii": "KPOCTAL",
+    "action": "Keypad Octal\r"
+  },
+  {
+    "byte": "491",
+    "ascii": "KPDECIMAL",
+    "action": "Keypad Decimal\r"
+  },
+  {
+    "byte": "492",
+    "ascii": "KPHEXADECIMAL",
+    "action": "Keypad Hexadecimal\r"
+  },
+  {
+    "byte": "493",
+    "ascii": "MEDIAPLAYPAUSE",
+    "action": "KEY_MEDIA_PLAYPAUSE\r"
+  },
+  {
+    "byte": "494",
+    "ascii": "MEDIASTOP",
+    "action": "KEY_MEDIA_STOPCD\r"
+  },
+  {
+    "byte": "495",
+    "ascii": "MEDIAPREVIOUS",
+    "action": "KEY_MEDIA_PREVIOUSSONG\r"
+  },
+  {
+    "byte": "496",
+    "ascii": "MEDIANEXTSONG",
+    "action": "KEY_MEDIA_NEXTSONG\r"
+  },
+  {
+    "byte": "497",
+    "ascii": "MEDIAEJECT",
+    "action": "KEY_MEDIA_EJECTCD\r"
+  },
+  {
+    "byte": "498",
+    "ascii": "MEDIAVOLUMEUP",
+    "action": "KEY_MEDIA_VOLUMEUP\r"
+  },
+  {
+    "byte": "499",
+    "ascii": "MEDIAVOLUMEDOWN",
+    "action": "KEY_MEDIA_VOLUMEDOWN\r"
+  },
+  {
+    "byte": "500",
+    "ascii": "MEDIAMUTE",
+    "action": "KEY_MEDIA_MUTE\r"
+  },
+  {
+    "byte": "501",
+    "ascii": "MEDIAWWW",
+    "action": "KEY_MEDIA_WWW\r"
+  },
+  {
+    "byte": "502",
+    "ascii": "MEDIABACK",
+    "action": "KEY_MEDIA_BACK\r"
+  },
+  {
+    "byte": "503",
+    "ascii": "MEDIAFORWARD",
+    "action": "KEY_MEDIA_FORWARD\r"
+  },
+  {
+    "byte": "504",
+    "ascii": "MEDIASTOP",
+    "action": "KEY_MEDIA_STOP\r"
+  },
+  {
+    "byte": "505",
+    "ascii": "MEDIAFIND",
+    "action": "KEY_MEDIA_FIND\r"
+  },
+  {
+    "byte": "506",
+    "ascii": "MEDIASCROLLUP",
+    "action": "KEY_MEDIA_SCROLLUP\r"
+  },
+  {
+    "byte": "507",
+    "ascii": "MEDIASCROLLDOWN",
+    "action": "KEY_MEDIA_SCROLLDOWN\r"
+  },
+  {
+    "byte": "508",
+    "ascii": "MEDIAEDIT",
+    "action": "KEY_MEDIA_EDIT\r"
+  },
+  {
+    "byte": "509",
+    "ascii": "MEDIASLEEP",
+    "action": "KEY_MEDIA_SLEEP\r"
+  },
+  {
+    "byte": "510",
+    "ascii": "MEDIACOFFEE",
+    "action": "KEY_MEDIA_COFFEE\r"
+  },
+  {
+    "byte": "511",
+    "ascii": "MEDIAREFRESH",
+    "action": "KEY_MEDIA_REFRESH\r"
+  },
+  {
+    "byte": "512",
+    "ascii": "",
+    "action": ""
+  }
+]

@@ -1,0 +1,1352 @@
+[
+  {
+    "layer": "A1",
+    "switchInput": "0",
+    "value": "600"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "1",
+    "value": "47"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "2",
+    "value": "45"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "3",
+    "value": "515"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "4",
+    "value": "297"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "5",
+    "value": "601"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "6",
+    "value": "119"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "7",
+    "value": "562"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "8",
+    "value": "103"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "9",
+    "value": "122"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "10",
+    "value": "602"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "11",
+    "value": "107"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "12",
+    "value": "118"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "13",
+    "value": "109"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "14",
+    "value": "99"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "15",
+    "value": "603"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "16",
+    "value": "114"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "17",
+    "value": "298"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "18",
+    "value": "32"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "19",
+    "value": "101"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "20",
+    "value": "604"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "21",
+    "value": "105"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "22",
+    "value": "127"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "23",
+    "value": "46"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "24",
+    "value": "111"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "25",
+    "value": "605"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "26",
+    "value": "39"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "27",
+    "value": "512"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "28",
+    "value": "44"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "29",
+    "value": "117"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "30",
+    "value": "552"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "31",
+    "value": "513"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "32",
+    "value": "514"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "33",
+    "value": "550"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "34",
+    "value": "540"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "35",
+    "value": "607"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "36",
+    "value": "335"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "37",
+    "value": "338"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "38",
+    "value": "336"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "39",
+    "value": "337"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "40",
+    "value": "608"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "41",
+    "value": "565"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "42",
+    "value": "568"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "43",
+    "value": "566"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "44",
+    "value": "567"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "45",
+    "value": "609"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "46",
+    "value": "563"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "47",
+    "value": "63"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "48",
+    "value": "519"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "49",
+    "value": "297"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "50",
+    "value": "610"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "51",
+    "value": "98"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "52",
+    "value": "120"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "53",
+    "value": "536"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "54",
+    "value": "113"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "55",
+    "value": "611"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "56",
+    "value": "102"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "57",
+    "value": "112"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "58",
+    "value": "104"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "59",
+    "value": "100"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "60",
+    "value": "612"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "61",
+    "value": "97"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "62",
+    "value": "296"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "63",
+    "value": "544"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "64",
+    "value": "116"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "65",
+    "value": "613"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "66",
+    "value": "108"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "67",
+    "value": "299"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "68",
+    "value": "106"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "69",
+    "value": "110"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "70",
+    "value": "614"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "71",
+    "value": "121"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "72",
+    "value": "516"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "73",
+    "value": "59"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "74",
+    "value": "115"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "75",
+    "value": "553"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "76",
+    "value": "517"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "77",
+    "value": "518"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "78",
+    "value": "551"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "79",
+    "value": "542"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "80",
+    "value": "616"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "81",
+    "value": "336"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "82",
+    "value": "338"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "83",
+    "value": "335"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "84",
+    "value": "337"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "85",
+    "value": "617"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "86",
+    "value": "566"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "87",
+    "value": "568"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "88",
+    "value": "565"
+  },
+  {
+    "layer": "A1",
+    "switchInput": "89",
+    "value": "567"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "0",
+    "value": "0"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "1",
+    "value": "47"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "2",
+    "value": "45"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "3",
+    "value": "515"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "4",
+    "value": "297"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "5",
+    "value": "0"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "6",
+    "value": "119"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "7",
+    "value": "562"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "8",
+    "value": "91"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "9",
+    "value": "93"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "10",
+    "value": "0"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "11",
+    "value": "55"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "12",
+    "value": "56"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "13",
+    "value": "57"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "14",
+    "value": "48"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "15",
+    "value": "0"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "16",
+    "value": "49"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "17",
+    "value": "298"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "18",
+    "value": "51"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "19",
+    "value": "50"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "20",
+    "value": "0"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "21",
+    "value": "52"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "22",
+    "value": "127"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "23",
+    "value": "54"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "24",
+    "value": "53"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "25",
+    "value": "0"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "26",
+    "value": "96"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "27",
+    "value": "512"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "28",
+    "value": "61"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "29",
+    "value": "124"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "30",
+    "value": "0"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "31",
+    "value": "513"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "32",
+    "value": "514"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "33",
+    "value": "550"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "34",
+    "value": "272"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "35",
+    "value": "0"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "36",
+    "value": "335"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "37",
+    "value": "338"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "38",
+    "value": "336"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "39",
+    "value": "337"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "40",
+    "value": "0"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "41",
+    "value": "569"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "42",
+    "value": "572"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "43",
+    "value": "570"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "44",
+    "value": "571"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "45",
+    "value": "0"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "46",
+    "value": "563"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "47",
+    "value": "63"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "48",
+    "value": "519"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "49",
+    "value": "297"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "50",
+    "value": "0"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "51",
+    "value": "98"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "52",
+    "value": "120"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "53",
+    "value": "91"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "54",
+    "value": "93"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "55",
+    "value": "0"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "56",
+    "value": "55"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "57",
+    "value": "56"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "58",
+    "value": "57"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "59",
+    "value": "48"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "60",
+    "value": "0"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "61",
+    "value": "49"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "62",
+    "value": "296"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "63",
+    "value": "51"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "64",
+    "value": "50"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "65",
+    "value": "0"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "66",
+    "value": "52"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "67",
+    "value": "299"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "68",
+    "value": "54"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "69",
+    "value": "53"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "70",
+    "value": "0"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "71",
+    "value": "121"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "72",
+    "value": "516"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "73",
+    "value": "59"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "74",
+    "value": "115"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "75",
+    "value": "0"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "76",
+    "value": "517"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "77",
+    "value": "518"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "78",
+    "value": "551"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "79",
+    "value": "273"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "80",
+    "value": "0"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "81",
+    "value": "336"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "82",
+    "value": "338"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "83",
+    "value": "335"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "84",
+    "value": "337"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "85",
+    "value": "0"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "86",
+    "value": "570"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "87",
+    "value": "572"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "88",
+    "value": "569"
+  },
+  {
+    "layer": "A2",
+    "switchInput": "89",
+    "value": "571"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "0",
+    "value": "0"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "1",
+    "value": "47"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "2",
+    "value": "45"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "3",
+    "value": "515"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "4",
+    "value": "297"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "5",
+    "value": "0"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "6",
+    "value": "119"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "7",
+    "value": "324"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "8",
+    "value": "325"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "9",
+    "value": "122"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "10",
+    "value": "0"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "11",
+    "value": "320"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "12",
+    "value": "321"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "13",
+    "value": "322"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "14",
+    "value": "323"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "15",
+    "value": "0"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "16",
+    "value": "314"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "17",
+    "value": "298"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "18",
+    "value": "316"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "19",
+    "value": "315"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "20",
+    "value": "0"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "21",
+    "value": "317"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "22",
+    "value": "127"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "23",
+    "value": "319"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "24",
+    "value": "318"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "25",
+    "value": "0"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "26",
+    "value": "39"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "27",
+    "value": "512"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "28",
+    "value": "44"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "29",
+    "value": "117"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "30",
+    "value": "552"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "31",
+    "value": "513"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "32",
+    "value": "514"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "33",
+    "value": "0"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "34",
+    "value": "540"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "35",
+    "value": "0"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "36",
+    "value": "335"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "37",
+    "value": "338"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "38",
+    "value": "336"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "39",
+    "value": "337"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "40",
+    "value": "0"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "41",
+    "value": "569"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "42",
+    "value": "572"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "43",
+    "value": "570"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "44",
+    "value": "571"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "45",
+    "value": "0"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "46",
+    "value": "563"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "47",
+    "value": "63"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "48",
+    "value": "519"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "49",
+    "value": "297"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "50",
+    "value": "0"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "51",
+    "value": "98"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "52",
+    "value": "324"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "53",
+    "value": "325"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "54",
+    "value": "113"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "55",
+    "value": "0"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "56",
+    "value": "320"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "57",
+    "value": "321"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "58",
+    "value": "322"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "59",
+    "value": "323"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "60",
+    "value": "0"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "61",
+    "value": "314"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "62",
+    "value": "296"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "63",
+    "value": "316"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "64",
+    "value": "315"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "65",
+    "value": "0"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "66",
+    "value": "317"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "67",
+    "value": "299"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "68",
+    "value": "319"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "69",
+    "value": "318"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "70",
+    "value": "0"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "71",
+    "value": "121"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "72",
+    "value": "516"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "73",
+    "value": "59"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "74",
+    "value": "115"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "75",
+    "value": "553"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "76",
+    "value": "517"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "77",
+    "value": "518"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "78",
+    "value": "0"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "79",
+    "value": "542"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "80",
+    "value": "0"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "81",
+    "value": "336"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "82",
+    "value": "338"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "83",
+    "value": "335"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "84",
+    "value": "337"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "85",
+    "value": "0"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "86",
+    "value": "570"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "87",
+    "value": "572"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "88",
+    "value": "569"
+  },
+  {
+    "layer": "A3",
+    "switchInput": "89",
+    "value": "571"
+  }
+]

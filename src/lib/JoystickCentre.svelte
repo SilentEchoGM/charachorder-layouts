@@ -40,6 +40,8 @@
     position: relative;
     width: 100%;
     height: 100%;
+    max-width: 2em;
+    max-height: 2em;
     color: white;
     border-radius: 50%;
     background-color: black;

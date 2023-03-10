@@ -6,7 +6,7 @@
     type Half,
     type JoystickInput,
     type Stick,
-  } from "./schema/v1";
+  } from "./schema/v2";
 
   export let right = false;
   export let half: Half;
@@ -54,6 +54,8 @@
     position: absolute;
     top: 0;
     left: 0;
+    width: 520px;
+    height: 620px;
   }
   .right svg {
     transform: scaleX(-1);

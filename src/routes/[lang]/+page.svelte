@@ -19,6 +19,8 @@
       <option value={language}>{language}</option>
     {/each}
   </select>
+
+  <button on:click={() => goto(`/custom`)}> Custom </button>
 </div>
 <div class="flex">
   <img src="/images/{data.lang}--character-entry.png" alt="" />

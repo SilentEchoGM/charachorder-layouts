@@ -20188,4 +20188,4 @@ export const langMap: Record<
     "\\": "\\",
     "Shift + \\": "|",
   },
-};
+}
