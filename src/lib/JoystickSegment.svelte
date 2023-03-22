@@ -103,7 +103,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 1.5em;
+    font-size: 0.1em;
     font-weight: bold;
     text-align: center;
     font-family: "Arial";
