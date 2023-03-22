@@ -40,7 +40,7 @@
     }
   ): SvelteActionReturnType => {
     const resize = () => {
-      if (!node.parentElement) return;
+      if (!node || !node.parentElement) return;
 
       const { width: parentWidth } = node.parentElement.getBoundingClientRect();
 
@@ -101,7 +101,8 @@
   }
 
   .half-name {
-    max-width: 200px;
+    max-width: 210px;
+    white-space: pre-line;
   }
 
   .half div:hover {
