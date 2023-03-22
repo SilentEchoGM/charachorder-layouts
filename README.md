@@ -1,6 +1,6 @@
 Layout editor and reference for the CharaChorder One.
 
-Built with [SvelteKit](http://kit.svelte.dev) and [FP-TS](https://gcanti.github.io/fp-ts/), project is manually deployed to [Vercel](https://vercel.com/) at https://charachorder-layouts.vercel.app by SilentEcho#0001.
+Built with [SvelteKit](http://kit.svelte.dev) and [FP-TS](https://gcanti.github.io/fp-ts/), deployed to [Vercel](https://vercel.com/)
 
 ## Developing
 

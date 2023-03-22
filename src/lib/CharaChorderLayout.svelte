@@ -3,8 +3,12 @@
   import CharaChorderHalf from "./CharaChorderHalf.svelte";
 
   import type { DefaultLayer, JoystickInput, Layout, Stick } from "./schema/v2";
+  import { useViewportSize } from "@svelteuidev/composables";
 
   export let layoutLayer: Layout[DefaultLayer];
+  export let label = "";
+
+  const viewport = useViewportSize();
 
   const emit = createEventDispatcher();
 
@@ -17,35 +21,21 @@
         half,
       });
     };
-
-  const handleResize = (node: HTMLElement) => {
-    const resize = () => {
-      if (!node.parentElement) return;
-      const { width: parentWidth, height: parentHeight } =
-        node.parentElement.getBoundingClientRect();
-      const { width, height } = node.getBoundingClientRect();
-      const scale = Math.min(parentWidth / width, parentHeight / height);
-
-      node.style.transform = `scale(${scale})`;
-    };
-    resize();
-    return {
-      update() {
-        resize();
-      },
-    };
-  };
 </script>
 
 {#if layoutLayer}
-  <div class="chara" use:handleResize>
+  <div
+    class="chara"
+    style:flex-wrap={$viewport.width > 1060 ? "nowrap" : "wrap"}>
     <CharaChorderHalf
       half={layoutLayer.left}
-      on:edit-input={handleEditInput("left")} />
+      on:edit-input={handleEditInput("left")}
+      {label} />
     <CharaChorderHalf
       right
       half={layoutLayer.right}
-      on:edit-input={handleEditInput("right")} />
+      on:edit-input={handleEditInput("right")}
+      {label} />
   </div>
 {/if}
 
@@ -54,7 +44,10 @@
     position: relative;
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    width: 100%;
+    gap: 10px;
     margin-top: 2em;
+    max-width: 1051px;
+    height: max-content;
   }
 </style>
