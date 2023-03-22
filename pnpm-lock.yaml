@@ -5,6 +5,7 @@ specifiers:
   '@sveltejs/adapter-auto': 1.0.0
   '@sveltejs/adapter-vercel': 1.0.0
   '@sveltejs/kit': 1.0.1
+  '@svelteuidev/composables': ^0.10.0
   '@types/fs-extra': ^9.0.13
   '@types/marked': ^4.0.8
   '@types/node': ^18.11.17
@@ -30,6 +31,7 @@ specifiers:
 
 dependencies:
   '@leveluptuts/svelte-fit': 1.0.3
+  '@svelteuidev/composables': 0.10.0
   fp-ts: 2.13.1
   localforage: 1.10.0
   parse-markdown-table: 0.0.6
@@ -426,6 +428,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@svelteuidev/composables/0.10.0:
+    resolution: {integrity: sha512-6fmwFX9BSsF5jbEdrGqBloC0Knx5lyj7HjjZyD/hT6iKKeP/xDbNMfOLwIBqcBu4HN2EIWnLzvKBVeqoVKonWA==}
+    dev: false
 
   /@tsconfig/node10/1.0.9:
     resolution: {integrity: sha512-jNsYVVxU8v5g43Erja32laIDHXeoNvFEpX33OK4d6hljo3jDhCBDhx5dhCCTMWUojscpAagGiRkBKxpdl9fxqA==}
