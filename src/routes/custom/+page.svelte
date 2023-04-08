@@ -17,10 +17,8 @@
   import { editModal } from "$lib/stores";
   import { derived, writable, type Readable } from "svelte/store";
 
-  import { dev } from "$app/environment";
   import { goto } from "$app/navigation";
   import { isLanguage, langMap } from "$lib/data/languages";
-  import { parseLanguage } from "$lib/langUtils";
   import { migrateLayoutData } from "$lib/schema/migrations";
   import { record as R } from "fp-ts";
   import { getItem } from "localforage";
@@ -142,7 +140,7 @@
           {
             index: 0,
             modifiedOn: new Date().toISOString(),
-            state: parseLanguage($selectedLanguage),
+            state: defaultLayout,
           },
         ],
         migration: {
@@ -155,11 +153,6 @@
 
 <div class="container">
   <div class="data">
-    <select bind:value={$selectedLanguage}>
-      {#each R.keys(langMap) as lang}
-        <option value={lang}>{lang}</option>
-      {/each}
-    </select>
     <button on:click={restoreDefault}>Restore Default</button>
     <button on:click={() => importData("self", customData)}
       >Import CC-Layouts File</button>
