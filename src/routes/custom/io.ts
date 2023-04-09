@@ -8,12 +8,14 @@ import {
   type LayoutData,
   type Stick,
 } from "$lib/schema/v2";
+import { getLatest } from "$lib/utils";
+import { option as O } from "fp-ts";
 import { get, type Writable } from "svelte/store";
 
 export const exportData = (
   type: "self" | "dot-io",
   customData: LayoutData,
-  latest: LayoutData["history"][number] | null
+  latest = getLatest(customData)
 ) => {
   const a = document.createElement("a");
   if (type === "self") {
@@ -22,10 +24,11 @@ export const exportData = (
       encodeURIComponent(JSON.stringify(customData, null, 2));
     a.download = "cc-layouts-export.json";
   } else {
-    if (!latest) return;
+    if (O.isNone(latest)) return;
+    console.log("Exporting", latest.value.state);
     a.href =
       "data:text/csv;charset=utf-8," +
-      encodeURIComponent(exportDotIoCSV(latest.state));
+      encodeURIComponent(exportDotIoCSV(latest.value.state));
     a.download = "cc-layouts-export.csv";
   }
   a.click();
