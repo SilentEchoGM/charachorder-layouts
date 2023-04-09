@@ -1,6 +1,9 @@
 import { compareTwoStrings } from "string-similarity";
 import { default as merge } from "ts-deepmerge";
 import type { z } from "zod";
+import type { LayoutData } from "./schema/v2";
+
+import { option as O } from "fp-ts";
 
 type IObject = Record<string, any>;
 
@@ -33,3 +36,8 @@ export const memoize = <T extends (...args: any[]) => any>(fn: T) => {
 };
 
 export const mCompareTwoStrings = memoize(compareTwoStrings);
+
+export const getLatest = (layout: LayoutData) => {
+  if (layout.history.length === 0) return O.none;
+  return O.some(layout.history[layout.history.length - 1]);
+};
