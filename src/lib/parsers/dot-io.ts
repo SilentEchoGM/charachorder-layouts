@@ -12,10 +12,10 @@ import {
 } from "$lib/schema/v2";
 
 import {
-  function as f,
   ord as Ord,
-  readonlyArray as RA,
   record as R,
+  readonlyArray as RA,
+  function as f,
 } from "fp-ts";
 
 import type { z } from "zod";
@@ -78,43 +78,46 @@ export const parseDotIoImportCSV = (
     v2Layout.safeParse
   );
 
-export const exportDotIoCSV = (layout: Layout): string => {
-  let out = "";
-
+const collect = <A extends Record<string, string>>(a: A) =>
   f.pipe(
-    layout,
-    R.reduceWithIndex(Ord.trivial)("", (layer: DefaultLayer, _, value) =>
-      layer.includes("shift")
-        ? ""
-        : f.pipe(
-            value,
-            R.reduceWithIndex(Ord.trivial)(
-              "",
-              (half: "left" | "right", _, value) =>
-                f.pipe(
-                  value,
-                  R.reduceWithIndex(Ord.trivial)("", (stick, _, value) =>
-                    f.pipe(
-                      value,
-                      R.reduceWithIndex(Ord.trivial)(
-                        "",
-                        (input, _, value) =>
-                          (out +=
-                            getCSVEntry({
-                              layer,
-                              half,
-                              stick,
-                              input,
-                              value,
-                            }) + "\n")
-                      )
-                    )
-                  )
-                )
-            )
-          )
-    )
+    a,
+    R.collect(Ord.trivial)((_, b) => b)
   );
 
-  return out;
-};
+export const exportDotIoCSV = (layout: Layout) =>
+  f.pipe(
+    layout,
+    R.filterWithIndex((key, _) => !key.includes("shift")),
+    R.mapWithIndex((layerName: keyof Layout, layer) =>
+      f.pipe(
+        layer,
+        R.mapWithIndex((hand: keyof typeof layer, half) =>
+          f.pipe(
+            half,
+            R.mapWithIndex((stickName: keyof typeof half, stick) =>
+              f.pipe(
+                stick,
+                R.mapWithIndex((input: keyof typeof stick, value) =>
+                  getCSVEntry({
+                    layer: layerName,
+                    half: hand,
+                    stick: stickName,
+                    input,
+                    value,
+                  })
+                ),
+                collect,
+                (str) => str.join("\n")
+              )
+            ),
+            collect,
+            (str) => str.join("\n")
+          )
+        ),
+        collect,
+        (str) => str.join("\n")
+      )
+    ),
+    collect,
+    (str) => str.join("\n")
+  );
