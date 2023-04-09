@@ -22,7 +22,7 @@
   import { option as O } from "fp-ts";
   import { getItem } from "localforage";
   import { onMount } from "svelte";
-  import { exportData, handleSave, importData } from "./io";
+  import { exportData, handleSave, importData } from "../lib/io";
 
   import { function as f } from "fp-ts";
 
