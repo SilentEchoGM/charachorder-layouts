@@ -1,7 +1,6 @@
 <script lang="ts">
   import CharaChorderLayout from "$lib/CharaChorderLayout.svelte";
   import { persistent, storePrefix } from "$lib/createPersistentStore";
-  import type { Language } from "$lib/data/languages";
   import EditInputModal from "$lib/EditInputModal.svelte";
   import {
     defaultLayout,
@@ -18,12 +17,14 @@
   import { derived, writable, type Readable } from "svelte/store";
 
   import { goto } from "$app/navigation";
-  import { isLanguage, langMap } from "$lib/data/languages";
   import { migrateLayoutData } from "$lib/schema/migrations";
-  import { record as R } from "fp-ts";
+  import { getLatest } from "$lib/utils";
+  import { option as O } from "fp-ts";
   import { getItem } from "localforage";
   import { onMount } from "svelte";
   import { exportData, handleSave, importData } from "./io";
+
+  import { function as f } from "fp-ts";
 
   const customData = persistent<LayoutData>(
     "v2:customLayout",
@@ -73,10 +74,12 @@
 
   const latest = derived<typeof customData, null | LayoutHistoryData>(
     customData,
-    ($customData, set) => {
-      if (!$customData.history.length) set(null);
-      set($customData.history[$customData.history.length - 1]);
-    }
+    ($customData) =>
+      f.pipe(
+        $customData,
+        getLatest,
+        O.getOrElseW(() => null)
+      )
   );
 
   $: if ($customData.history.length === 0) {
@@ -101,10 +104,6 @@
     }
   );
 
-  const selectedLanguage = persistent<Language>("selectedLanguage", "US", {
-    generic: isLanguage,
-  });
-
   const handleEditInput = ({
     detail,
   }: CustomEvent<{
@@ -126,28 +125,20 @@
   };
 
   const restoreDefault = () => {
-    if (
-      confirm(
-        `Are you sure you want to load the default layout for ${$selectedLanguage}?`
-      )
-    )
+    if (confirm(`Are you sure you want to load the default layout?`)) {
       $customData = {
-        _apiVersion: 2,
-        createdBy: "",
-        createdOn: new Date().toISOString(),
-        name: "Custom",
+        ...$customData,
         history: [
+          ...$customData.history,
           {
-            index: 0,
+            index: $customData.history.length,
             modifiedOn: new Date().toISOString(),
-            state: defaultLayout,
+            state: { ...defaultLayout },
           },
         ],
-        migration: {
-          migrated: true,
-          meta: "user restored to default",
-        },
       };
+      console.log("restored default", $customData);
+    }
   };
 </script>
 
@@ -156,11 +147,11 @@
     <button on:click={restoreDefault}>Restore Default</button>
     <button on:click={() => importData("self", customData)}
       >Import CC-Layouts File</button>
-    <button on:click={() => exportData("self", $customData, $latest)}
+    <button on:click={() => exportData("self", $customData)}
       >Export CC-Layouts File</button>
     <button on:click={() => importData("dot-io", customData)}
       >Import CCOS CSV File</button>
-    <button on:click={() => exportData("dot-io", $customData, $latest)}
+    <button on:click={() => exportData("dot-io", $customData)}
       >Export CCOS CSV File</button>
     <button
       on:click={() => {
@@ -187,23 +178,6 @@
         $selectedModifiers = new Set();
       }}>Fn</button>
   </div>
-  <!-- <div class="divider" />
-  <div class="layer-select">
-    {#if $selectedKeymap !== "A3"}
-      <button
-        class:active={$selectedModifiers.has("shift")}
-        on:click={() => {
-          if ($selectedModifiers.has("shift")) {
-            $selectedModifiers.delete("shift");
-          } else {
-            $selectedModifiers.add("shift");
-          }
-
-          $selectedModifiers = $selectedModifiers;
-        }}>Shift</button
-      >{:else}
-      <div />{/if}
-  </div> -->
 
   {#if $latest}
     {#key $latest}
