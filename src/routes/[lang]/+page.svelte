@@ -24,7 +24,7 @@
     {/each}
   </select>
 
-  <button on:click={() => goto(`/custom`)}> Custom </button>
+  <button on:click={() => goto(`/`)}> Custom </button>
 </div>
 <div class="flex">
   <CharaChorderLayout

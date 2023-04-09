@@ -206,7 +206,7 @@
 
     <button
       on:click={() => {
-        goto("/");
+        goto("/US");
       }}>View Default Layouts</button>
   {/if}
 </div>
