@@ -7186,5 +7186,8 @@ export const getCodeFromUTF8 = (utf8: string) =>
     ccosCodeIds,
     RA.findFirst((c) => c.utf8 === utf8),
     O.map((c) => parseInt(c.codeId)),
-    O.getOrElse(() => 0)
+    O.getOrElse(() => {
+      console.warn(`no code found for ${utf8}`);
+      return 0;
+    })
   );
