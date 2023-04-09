@@ -140,23 +140,16 @@
       console.log("restored default", $customData);
     }
   };
+
+  const footerOpen = writable(false);
 </script>
 
 <div class="container">
   <div class="data">
-    <button on:click={restoreDefault}>Restore Default</button>
-    <button on:click={() => importData("self", customData)}
-      >Import CC-Layouts File</button>
-    <button on:click={() => exportData("self", $customData)}
-      >Export CC-Layouts File</button>
     <button on:click={() => importData("dot-io", customData)}
       >Import CCOS CSV File</button>
     <button on:click={() => exportData("dot-io", $customData)}
       >Export CCOS CSV File</button>
-    <button
-      on:click={() => {
-        goto("/");
-      }}>View Default Layouts</button>
   </div>
   <div class="divider" />
   <div class="layer-select">
@@ -164,19 +157,19 @@
       class:active={$selectedKeymap === "A1"}
       on:click={() => {
         $selectedKeymap = "A1";
-      }}>Alpha</button>
+      }}>Alpha - A1</button>
     <button
       class:active={$selectedKeymap === "A2"}
       on:click={() => {
         $selectedKeymap = "A2";
-      }}>Num</button>
+      }}>Num - A2</button>
 
     <button
       class:active={$selectedKeymap === "A3"}
       on:click={() => {
         $selectedKeymap = "A3";
         $selectedModifiers = new Set();
-      }}>Fn</button>
+      }}>Fn - A3</button>
   </div>
 
   {#if $latest}
@@ -184,7 +177,8 @@
       {#key $selectedLayer}
         <CharaChorderLayout
           on:edit-input={handleEditInput}
-          layoutLayer={$latest.state[$selectedLayer]} />
+          layoutLayer={$latest.state[$selectedLayer]}
+          label={$selectedLayer} />
       {/key}
     {/key}
   {/if}
@@ -194,16 +188,48 @@
       on:save={(detail) => handleSave(detail, customData, $selectedLayer)} />
   {/if}
 </div>
+<div class="footer">
+  <button
+    class="footer-toggle"
+    on:click={() => {
+      $footerOpen = !$footerOpen;
+    }}>{$footerOpen ? "Hide" : "Show"} Options</button>
+</div>
+<div class="footer">
+  {#if $footerOpen}
+    <button on:click={() => importData("self", customData)}
+      >Import CC-Layouts File</button>
+    <button on:click={() => exportData("self", $customData)}
+      >Export CC-Layouts File</button>
 
-<!-- <Joystick /> -->
+    <button on:click={restoreDefault}>Restore Default</button>
+
+    <button
+      on:click={() => {
+        goto("/");
+      }}>View Default Layouts</button>
+  {/if}
+</div>
+
 <style>
+  .footer-toggle {
+    width: 100%;
+    max-width: 250px;
+  }
+  .footer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    flex-flow: row wrap;
+    margin-bottom: 10px;
+  }
   :global(html) {
     font-weight: bold;
     font-family: "Consolas";
   }
   .container {
     position: relative;
-    min-width: 1100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -221,6 +247,7 @@
     display: flex;
     gap: 1rem;
     justify-content: center;
+    flex-wrap: wrap;
   }
   .layer-select {
     z-index: 100;
