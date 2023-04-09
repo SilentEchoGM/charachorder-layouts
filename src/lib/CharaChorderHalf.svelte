@@ -1,5 +1,6 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
+  import { writable } from "svelte/store";
   import Joystick from "./Joystick.svelte";
   import {
     sticks,
@@ -7,9 +8,14 @@
     type JoystickInput,
     type Stick,
   } from "./schema/v2";
-
+  export let label = "";
   export let right = false;
   export let half: Half;
+
+  import { useViewportSize } from "@svelteuidev/composables";
+
+  const viewport = useViewportSize();
+  $: ({ width: viewportWidth, height: viewportHeight } = $viewport);
 
   const emit = createEventDispatcher();
 
@@ -21,49 +27,81 @@
         input: detail.input,
       });
     };
+
+  const handleResize = (
+    node: HTMLElement,
+    {
+      viewportSize,
+    }: {
+      viewportSize: {
+        width: number;
+        height: number;
+      };
+    }
+  ): SvelteActionReturnType => {
+    const resize = () => {
+      if (!node.parentElement) return;
+
+      const { width: parentWidth } = node.parentElement.getBoundingClientRect();
+
+      const scale = parentWidth / 520;
+
+      node.style.transform = `scale(${scale > 1 ? 1 : scale})`;
+      node.parentElement.style.height = `${620 * (scale > 1 ? 1 : scale)}px`;
+    };
+
+    resize();
+    return {
+      update(viewportSize) {
+        resize();
+      },
+    };
+  };
 </script>
 
-<div class="half" class:right>
-  <svg viewBox="0 0 98 52" width={520} height={620}>
-    <path
-      d="M 5 -20
-    A 34 36 0 0 1 70 84 
-  "
-      stroke="white"
-      stroke-width="1"
-      opacity="0.5"
-      fill="rgba(50,50,50,0.5)" />
-    <path
-      d="M 90 10
-      A 30 50 0 0 0 62 84
-    "
-      stroke="white"
-      stroke-width="1"
-      opacity="0.5"
-      fill="none" />
-  </svg>
-  {#each sticks as stick}
-    <div class={stick} class:right>
-      <Joystick data={half[stick]} on:edit-input={handleEditInput(stick)} />
+<div class="half-container" class:right>
+  <div class="half" use:handleResize={{ viewportSize: $viewport }}>
+    <div class="half-name-container">
+      <div class="half-name">
+        {right ? "R" : "L"}{label.length ? `: ${label}` : ""}
+      </div>
     </div>
-  {/each}
+    {#each sticks as stick}
+      <div class={stick} class:right>
+        <Joystick data={half[stick]} on:edit-input={handleEditInput(stick)} />
+      </div>
+    {/each}
+  </div>
 </div>
 
 <style>
-  svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 520px;
-    height: 620px;
-  }
-  .right svg {
-    transform: scaleX(-1);
+  .half-container {
+    width: 100%;
+    position: relative;
   }
   .half {
     position: relative;
     width: 520px;
     height: 620px;
+    transform-origin: 0 0;
+  }
+
+  .half-name-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    text-align: center;
+    font-family: "Arial";
+    font-size: xx-large;
+    color: #fff;
+  }
+
+  .half-name {
+    max-width: 200px;
   }
 
   .half div:hover {
