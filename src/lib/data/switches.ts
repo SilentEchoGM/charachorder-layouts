@@ -115,10 +115,6 @@ export const getSwitchNumber = (location: SwitchLocation) =>
   f.pipe(
     [getStickStartNumber, getHandStartNumber, getStickInputNumber],
     RA.map((f) => f(location)),
-    (v) => {
-      console.log(v);
-      return v;
-    },
     E.sequenceArray,
     E.map(RA.reduce(0, (a, b) => a + b)),
     E.getOrElseW((e) => {
