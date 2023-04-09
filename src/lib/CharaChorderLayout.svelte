@@ -5,7 +5,7 @@
   import type { DefaultLayer, JoystickInput, Layout, Stick } from "./schema/v2";
 
   export let layoutLayer: Layout[DefaultLayer];
-
+  export let label = "";
   const emit = createEventDispatcher();
 
   const handleEditInput =
@@ -41,11 +41,13 @@
   <div class="chara" use:handleResize>
     <CharaChorderHalf
       half={layoutLayer.left}
-      on:edit-input={handleEditInput("left")} />
+      on:edit-input={handleEditInput("left")}
+      {label} />
     <CharaChorderHalf
       right
       half={layoutLayer.right}
-      on:edit-input={handleEditInput("right")} />
+      on:edit-input={handleEditInput("right")}
+      {label} />
   </div>
 {/if}
 
