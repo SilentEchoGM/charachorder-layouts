@@ -78,6 +78,8 @@
   .half-container {
     width: 100%;
     position: relative;
+    display: flex;
+    justify-content: center;
   }
   .half {
     position: relative;
