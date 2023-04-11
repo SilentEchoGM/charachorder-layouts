@@ -12,37 +12,39 @@
   let currentLayout: Layout = parseLanguage(data.lang);
 </script>
 
-<div class="flex">
-  <span>Language:</span>
-  <select
-    bind:value={currentLang}
-    on:change={() => {
-      goto(`/${currentLang}`);
-    }}>
-    {#each languages as language}
-      <option value={language}>{language}</option>
-    {/each}
-  </select>
+<div class="container">
+  <div class="flex">
+    <div class="language">Language:</div>
+    <select
+      bind:value={currentLang}
+      on:change={() => {
+        goto(`/${currentLang}`);
+      }}>
+      {#each languages as language}
+        <option value={language}>{language}</option>
+      {/each}
+    </select>
 
-  <button on:click={() => goto(`/`)}> Custom </button>
-</div>
-<div class="flex">
-  <CharaChorderLayout
-    layoutLayer={currentLayout.A1}
-    label={`Alpha
+    <button on:click={() => goto(`/`)}> Custom Layouts</button>
+  </div>
+  <div class="flex">
+    <CharaChorderLayout
+      layoutLayer={currentLayout.A1}
+      label={`Alpha
   (A1)`} />
-  <CharaChorderLayout
-    layoutLayer={currentLayout.A2}
-    label={`Num
+    <CharaChorderLayout
+      layoutLayer={currentLayout.A2}
+      label={`Num
   (A2)`} />
-  <CharaChorderLayout
-    layoutLayer={currentLayout.A2_shift}
-    label="Shift + {`NumShift
+    <CharaChorderLayout
+      layoutLayer={currentLayout.A2_shift}
+      label="Shift + {`NumShift
     (Shift-A2)`}" />
-  <CharaChorderLayout
-    layoutLayer={currentLayout.A3}
-    label={`Fn
+    <CharaChorderLayout
+      layoutLayer={currentLayout.A3}
+      label={`Fn
   (A3)`} />
+  </div>
 </div>
 
 <style>
@@ -52,5 +54,18 @@
     max-width: 82em;
     flex-wrap: wrap;
     margin-bottom: 0.5em;
+    justify-content: center;
+  }
+  .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .language {
+    color: white;
+    align-self: center;
+    font-size: large;
   }
 </style>
