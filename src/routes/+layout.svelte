@@ -24,8 +24,10 @@
 
     <button use:clipboard={"SilentEcho#0001"} on:click={onCopy}
       ><i class="fa-brands fa-discord" />
-      {#if copied}
-        Copied!{:else}SilentEcho#0001{/if}</button>
+      <span>
+        {#if copied}
+          Copied!{:else}SilentEcho#0001{/if}
+      </span></button>
   </div>
 </div>
 
@@ -49,5 +51,11 @@
   button {
     all: unset;
     cursor: pointer;
+  }
+
+  button {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 20px 150px;
   }
 </style>
