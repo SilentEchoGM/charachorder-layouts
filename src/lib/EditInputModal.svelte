@@ -14,6 +14,7 @@
   import { ccosCodeIds } from "./data/ccosCodeIds";
   import { editModal } from "./stores";
   import { mCompareTwoStrings } from "./utils";
+  import { includes, toLowerCase } from "fp-ts/lib/string";
 
   const emit = createEventDispatcher();
 
@@ -31,7 +32,14 @@
       ccosCodeIds,
       RA.map((code) => ({
         ...code,
-        sort: mCompareTwoStrings(code.utf8.toLowerCase(), value.toLowerCase()),
+        sort: Math.max(
+          mCompareTwoStrings(code.utf8.toLowerCase(), value.toLowerCase()),
+          mCompareTwoStrings(code.codeId, value.toLowerCase()),
+          code.description.toLowerCase().includes(value.toLowerCase())
+            ? 0.52
+            : 0,
+          code.notes.toLowerCase().includes(value.toLowerCase()) ? 0.51 : 0
+        ),
       })),
       RA.filter(
         (code) =>
@@ -106,7 +114,11 @@
               on:click={() => {
                 editModal.set({ ...$editModal, value: suggestion.utf8 });
               }}>
-              {suggestion.utf8}
+              <span class="suggestion-utf8">{suggestion.utf8}</span>
+              <br />
+              {#if suggestion.utf8.toLowerCase().includes("ksc")}
+                <span class="suggestion-other">{suggestion.description}</span>
+              {/if}
             </button>
           {/each}{/if}
       </div>
@@ -115,6 +127,10 @@
 </div>
 
 <style>
+  .suggestion-other {
+    font-size: medium;
+    font-weight: 300;
+  }
   .container,
   .modal-bg {
     justify-content: center;
