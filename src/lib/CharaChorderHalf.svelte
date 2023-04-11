@@ -61,16 +61,18 @@
 
 <div class="half-container" class:right>
   <div class="half" use:handleResize={{ viewportSize: $viewport }}>
-    <div class="half-name-container">
-      <div class="half-name">
-        {right ? "R" : "L"}{label.length ? `: ${label}` : ""}
-      </div>
-    </div>
     {#each sticks as stick}
       <div class={stick} class:right>
         <Joystick data={half[stick]} on:edit-input={handleEditInput(stick)} />
       </div>
     {/each}
+  </div>
+  <div
+    class="half-name-container"
+    use:handleResize={{ viewportSize: $viewport }}>
+    <div class="half-name">
+      {right ? "R" : "L"}{label.length ? `: ${label}` : ""}
+    </div>
   </div>
 </div>
 
@@ -86,6 +88,7 @@
     width: 520px;
     height: 620px;
     transform-origin: 0 0;
+    z-index: 1;
   }
 
   .right .half {
