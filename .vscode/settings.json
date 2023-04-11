@@ -9,5 +9,6 @@
     "**/.svelte-kit": true,
     "**/node_modules": false
   },
-  "svg.preview.background": "white"
+  "svg.preview.background": "white",
+  "cSpell.words": ["useclipboard"]
 }
