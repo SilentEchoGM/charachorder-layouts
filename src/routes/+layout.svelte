@@ -36,7 +36,7 @@
     display: flex;
     flex-direction: column;
     min-height: calc(100dvh - 16px);
-    min-width: calc(100vh - 16px);
+    min-height: calc(100vh - 16px);
     box-sizing: border-box;
   }
   .footer {
@@ -45,6 +45,8 @@
     gap: 1rem;
     margin-top: auto;
     color: rgb(138, 138, 138);
+    flex-wrap: wrap;
+    max-width: 100%;
   }
 
   a,
