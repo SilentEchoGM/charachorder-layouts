@@ -88,6 +88,10 @@
     transform-origin: 0 0;
   }
 
+  .right .half {
+    transform-origin: 100% 0;
+  }
+
   .half-name-container {
     position: absolute;
     width: 100%;
