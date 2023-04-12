@@ -125,7 +125,7 @@
         </strong>
       </div>
       <div class="edit">
-        Edit: <input
+        Filter Possible Mappings: <input
           bind:this={input}
           type="text"
           bind:value={$editModal.value} />
