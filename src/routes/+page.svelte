@@ -1,52 +1,28 @@
 <script lang="ts">
   import CharaChorderLayout from "$lib/CharaChorderLayout.svelte";
-  import { persistent, storePrefix } from "$lib/createPersistentStore";
+  import { storePrefix } from "$lib/createPersistentStore";
   import EditInputModal from "$lib/EditInputModal.svelte";
   import {
     defaultLayout,
     v2Both,
-    v2LayoutData,
-    type DefaultLayer,
     type JoystickInput,
-    type Layout,
-    type LayoutData,
-    type LayoutHistoryData,
     type Stick,
   } from "$lib/schema/v2";
-  import { editModal } from "$lib/stores";
-  import { derived, writable, type Readable } from "svelte/store";
+  import {
+    customData,
+    editModal,
+    latest,
+    selectedKeymap,
+    selectedLayer,
+    selectedModifiers,
+  } from "$lib/stores";
+  import { writable } from "svelte/store";
 
   import { goto } from "$app/navigation";
   import { migrateLayoutData } from "$lib/schema/migrations";
-  import { getLatest } from "$lib/utils";
-  import { option as O } from "fp-ts";
   import { getItem } from "localforage";
   import { onMount } from "svelte";
   import { exportData, handleSave, importData } from "../lib/io";
-
-  import { function as f } from "fp-ts";
-
-  const customData = persistent<LayoutData>(
-    "v2:customLayout",
-    {
-      _apiVersion: 2,
-      createdBy: "",
-      createdOn: new Date().toISOString(),
-      name: "Custom",
-      history: [
-        {
-          index: 0,
-          modifiedOn: new Date().toISOString(),
-          state: { ...defaultLayout } as Layout,
-        },
-      ],
-      migration: {
-        migrated: false,
-        meta: "default",
-      },
-    },
-    { zod: v2LayoutData.safeParse }
-  );
 
   onMount(async () => {
     await customData.load();
@@ -72,16 +48,6 @@
     window.manualMigrate = migrate;
   });
 
-  const latest = derived<typeof customData, null | LayoutHistoryData>(
-    customData,
-    ($customData) =>
-      f.pipe(
-        $customData,
-        getLatest,
-        O.getOrElseW(() => null)
-      )
-  );
-
   $: if ($customData.history.length === 0) {
     $customData.history.push({
       index: 0,
@@ -89,20 +55,6 @@
       state: { ...defaultLayout },
     });
   }
-
-  const selectedKeymap = writable<DefaultLayer>("A1");
-  const selectedModifiers = writable<Set<"shift" | "alt-gr">>(new Set());
-
-  const selectedLayer: Readable<DefaultLayer> = derived(
-    [selectedModifiers, selectedKeymap],
-    ([$mods, $map]) => {
-      if ($mods.has("shift")) {
-        return ($map + "_shift") as DefaultLayer;
-      } else {
-        return $map;
-      }
-    }
-  );
 
   const handleEditInput = ({
     detail,
@@ -141,7 +93,7 @@
     }
   };
 
-  const footerOpen = writable(false);
+  const optionsOpen = writable(false);
 </script>
 
 <div class="container">
@@ -188,15 +140,15 @@
       on:save={(detail) => handleSave(detail, customData, $selectedLayer)} />
   {/if}
 </div>
-<div class="footer">
+<div class="options">
   <button
-    class="footer-toggle"
+    class="options-toggle"
     on:click={() => {
-      $footerOpen = !$footerOpen;
-    }}>{$footerOpen ? "Hide" : "Show"} Options</button>
+      $optionsOpen = !$optionsOpen;
+    }}>{$optionsOpen ? "Hide" : "Show"} Options</button>
 </div>
-<div class="footer">
-  {#if $footerOpen}
+<div class="options">
+  {#if $optionsOpen}
     <button on:click={() => importData("self", customData)}
       >Import CC-Layouts File</button>
     <button on:click={() => exportData("self", $customData)}
@@ -212,11 +164,11 @@
 </div>
 
 <style>
-  .footer-toggle {
+  .options-toggle {
     width: 100%;
     max-width: 250px;
   }
-  .footer {
+  .options {
     display: flex;
     justify-content: center;
     gap: 1rem;
