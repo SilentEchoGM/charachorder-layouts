@@ -4,6 +4,8 @@ import type { v1 } from "./v1";
 
 import { array as A, record as R, function as f } from "fp-ts";
 
+import { ord as Ord } from "fp-ts";
+
 export const v2Joystick = z.object({
   top: z.string(),
   left: z.string(),
@@ -871,3 +873,95 @@ export const mergeLayoutData = (
     return v2LayoutData.safeParse(a);
   }
 };
+
+export const mapLayoutWithPath =
+  (
+    fn: (
+      value: string,
+      path: { layer: DefaultLayer } & SwitchLocation
+    ) => string
+  ) =>
+  (layout: Layout): Layout =>
+    f.pipe(
+      layout,
+      R.mapWithIndex((layer: DefaultLayer, a) =>
+        f.pipe(
+          a,
+          R.mapWithIndex((half, b) =>
+            f.pipe(
+              b,
+              R.mapWithIndex((stick, c) =>
+                f.pipe(
+                  c,
+                  R.mapWithIndex((input, value) =>
+                    fn(value, { layer, half, stick, input })
+                  )
+                )
+              )
+            )
+          )
+        )
+      )
+    );
+
+export const mapLayout =
+  (fn: (value: string) => string) =>
+  (layout: Layout): Layout =>
+    mapLayoutWithPath((value) => fn(value))(layout);
+
+type SwitchValueWithPath = {
+  layer: DefaultLayer;
+  value: string;
+} & SwitchLocation;
+
+export const layoutToArray = (layout: Layout) =>
+  f.pipe(
+    layout,
+    R.reduceWithIndex(Ord.trivial)(
+      [] as SwitchValueWithPath[][][][],
+      (layer: DefaultLayer, acc, a) => [
+        ...acc,
+        f.pipe(
+          a,
+          R.reduceWithIndex(Ord.trivial)(
+            [] as SwitchValueWithPath[][][],
+            (half, acc, b) => [
+              ...acc,
+              f.pipe(
+                b,
+                R.reduceWithIndex(Ord.trivial)(
+                  [] as SwitchValueWithPath[][],
+                  (stick, acc, c) => [
+                    ...acc,
+                    f.pipe(
+                      c,
+                      R.reduceWithIndex(Ord.trivial)(
+                        [] as SwitchValueWithPath[],
+                        (input, acc, value) => [
+                          ...acc,
+                          {
+                            layer,
+                            half,
+                            stick,
+                            input,
+                            value,
+                          },
+                        ]
+                      )
+                    ),
+                  ]
+                )
+              ),
+            ]
+          )
+        ),
+      ]
+    ),
+    A.flatten,
+    A.flatten,
+    A.flatten
+  );
+
+export const getSwitchValueByLocation =
+  (location: { layer: DefaultLayer } & SwitchLocation) => (layout: Layout) =>
+    layout[location.layer][location.half][location.stick][location.input];
