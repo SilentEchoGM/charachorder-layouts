@@ -20,9 +20,7 @@
     <select
       bind:value={currentLang}
       on:change={() => {
-        goto(`/${currentLang}`, {
-          replaceState: true,
-        });
+        goto(`/${currentLang}`);
       }}>
       {#each languages as language}
         <option value={language}>{language}</option>
