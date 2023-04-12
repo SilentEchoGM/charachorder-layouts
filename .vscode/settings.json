@@ -10,5 +10,5 @@
     "**/node_modules": false
   },
   "svg.preview.background": "white",
-  "cSpell.words": ["useclipboard"]
+  "cSpell.words": ["Keymap", "useclipboard"]
 }
