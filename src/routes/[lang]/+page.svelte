@@ -10,6 +10,8 @@
 
   let currentLang = data.lang;
   let currentLayout: Layout = parseLanguage(data.lang);
+
+  $: currentLayout = parseLanguage(currentLang);
 </script>
 
 <div class="container">
@@ -18,7 +20,9 @@
     <select
       bind:value={currentLang}
       on:change={() => {
-        goto(`/${currentLang}`);
+        goto(`/${currentLang}`, {
+          replaceState: true,
+        });
       }}>
       {#each languages as language}
         <option value={language}>{language}</option>
