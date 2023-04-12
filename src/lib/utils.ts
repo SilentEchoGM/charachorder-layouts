@@ -1,9 +1,15 @@
 import { compareTwoStrings } from "string-similarity";
 import { default as merge } from "ts-deepmerge";
 import type { z } from "zod";
-import type { LayoutData } from "./schema/v2";
+import {
+  defaultLayout,
+  getSwitchValueByLocation,
+  layoutToArray,
+  type Layout,
+  type LayoutData,
+} from "./schema/v2";
 
-import { option as O } from "fp-ts";
+import { array as A, option as O, function as f } from "fp-ts";
 
 type IObject = Record<string, any>;
 
@@ -41,3 +47,14 @@ export const getLatest = (layout: LayoutData) => {
   if (layout.history.length === 0) return O.none;
   return O.some(layout.history[layout.history.length - 1]);
 };
+
+export const compareLayoutToDefault = (layout: Layout) =>
+  f.pipe(
+    layout,
+    layoutToArray,
+    A.map(({ value, ...location }) => ({
+      ...location,
+      isDefault: value === getSwitchValueByLocation(location)(defaultLayout),
+      value,
+    }))
+  );

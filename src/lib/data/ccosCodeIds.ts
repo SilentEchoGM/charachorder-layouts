@@ -2177,7 +2177,7 @@ export const ccosCodeIds = [
     codeId: "310",
     type: "Raw Scancode",
     utf8: "KSC_36",
-    description: '"Keyboard ',
+    description: "Keyboard , and < (US English)",
     notes: ' and < (US English)"',
   },
   {

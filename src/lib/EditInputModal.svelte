@@ -12,7 +12,8 @@
   } from "fp-ts";
 
   import { ccosCodeIds } from "./data/ccosCodeIds";
-  import { editModal } from "./stores";
+  import { defaultLayout, getSwitchValueByLocation } from "./schema/v2";
+  import { editModal, latest, selectedKeymap } from "./stores";
   import { mCompareTwoStrings } from "./utils";
 
   const emit = createEventDispatcher();
@@ -27,27 +28,36 @@
   }
 
   const suggestions = derived(editModal, ({ value }) =>
-    f.pipe(
-      ccosCodeIds,
-      RA.map((code) => ({
-        ...code,
-        sort: mCompareTwoStrings(code.utf8.toLowerCase(), value.toLowerCase()),
-      })),
-      RA.filter(
-        (code) =>
-          code.sort > 0.5 ||
-          code.utf8.toLowerCase().includes(value.toLowerCase())
-      ),
-      RA.sortBy([
-        Ord.contramap((code: { sort: number; codeId: string }) => code.sort)(
-          FNumber.Ord
-        ),
-        Ord.contramap((code: { codeId: string; sort: number }) =>
-          parseInt(code.codeId)
-        )(FNumber.Ord),
-      ]),
-      RA.reverse
-    )
+    value.trim().length
+      ? f.pipe(
+          ccosCodeIds,
+          RA.map((code) => ({
+            ...code,
+            sort: Math.max(
+              mCompareTwoStrings(code.utf8.toLowerCase(), value.toLowerCase()),
+              mCompareTwoStrings(code.codeId, value.toLowerCase()),
+              code.description.toLowerCase().includes(value.toLowerCase())
+                ? 0.52
+                : 0,
+              code.notes.toLowerCase().includes(value.toLowerCase()) ? 0.51 : 0
+            ),
+          })),
+          RA.filter(
+            (code) =>
+              code.sort > 0.5 ||
+              code.utf8.toLowerCase().includes(value.toLowerCase())
+          ),
+          RA.sortBy([
+            Ord.contramap(
+              (code: { sort: number; codeId: string }) => code.sort
+            )(FNumber.Ord),
+            Ord.contramap((code: { codeId: string; sort: number }) =>
+              parseInt(code.codeId)
+            )(FNumber.Ord),
+          ]),
+          RA.reverse
+        )
+      : []
   );
 </script>
 
@@ -77,13 +87,6 @@
         ({getSwitchNumber($editModal)})
       </div>
 
-      <div>
-        Edit: <input
-          bind:this={input}
-          type="text"
-          bind:value={$editModal.value} />
-      </div>
-
       <div class="buttons">
         <button
           on:click={() => {
@@ -96,6 +99,38 @@
             editModal.set({ ...$editModal, open: false });
           }}>Cancel</button>
       </div>
+      <button
+        class="default"
+        on:click={() => {
+          emit("save", {
+            ...$editModal,
+            value:
+              defaultLayout[$selectedKeymap][$editModal.half][$editModal.stick][
+                $editModal.input
+              ],
+          });
+          editModal.set({ ...$editModal, open: false });
+        }}
+        >Reset to Default: ({defaultLayout[$selectedKeymap][$editModal.half][
+          $editModal.stick
+        ][$editModal.input]})</button>
+      <div class="current">
+        Current Mapping: <strong
+          >{$latest
+            ? getSwitchValueByLocation({
+                ...$editModal,
+                layer: $selectedKeymap,
+              })($latest.state)
+            : ""}
+        </strong>
+      </div>
+      <div class="edit">
+        Filter Possible Mappings: <input
+          bind:this={input}
+          type="text"
+          bind:value={$editModal.value} />
+      </div>
+
       <div class="suggestions">
         {#if $editModal.value.length > 0}
           {#each $suggestions as suggestion (suggestion.codeId)}
@@ -106,7 +141,11 @@
               on:click={() => {
                 editModal.set({ ...$editModal, value: suggestion.utf8 });
               }}>
-              {suggestion.utf8}
+              <span class="suggestion-utf8">{suggestion.utf8}</span>
+              <br />
+              {#if suggestion.utf8.toLowerCase().includes("ksc")}
+                <div class="suggestion-other">{suggestion.description}</div>
+              {/if}
             </button>
           {/each}{/if}
       </div>
@@ -115,6 +154,11 @@
 </div>
 
 <style>
+  .suggestion-other {
+    font-size: medium;
+    font-weight: 300;
+    word-wrap: break-word;
+  }
   .container,
   .modal-bg {
     justify-content: center;
@@ -144,8 +188,15 @@
     font-size: large;
     align-items: baseline;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 2em 2em 1fr;
+    grid-template-rows: auto auto auto auto auto 1fr;
     justify-content: center;
+  }
+  .buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    grid-column: 1 / span 2;
+    justify-self: center;
   }
   .path {
     background-color: darkgray;
@@ -179,15 +230,31 @@
   .suggestions {
     grid-column: 1 / span 2;
     display: grid;
+    gap: 1px;
     grid-template-columns: repeat(3, 1fr);
     overflow-y: auto;
     max-height: 100%;
   }
   button.suggestion {
+    width: 9em;
+  }
+  .default {
     width: unset;
-    min-width: 2em;
+    min-width: 12em;
+    grid-column: 1 / span 2;
+    justify-self: center;
+    word-wrap: break-word;
+    background-color: rgb(54, 54, 54);
   }
   .cancel {
     background-color: hsl(0, 100%, 25%);
+  }
+  .edit {
+    justify-self: center;
+    grid-column: 1 / span 2;
+  }
+  .current {
+    justify-self: center;
+    grid-column: 1 / span 2;
   }
 </style>

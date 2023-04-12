@@ -24,8 +24,10 @@
 
     <button use:clipboard={"SilentEcho#0001"} on:click={onCopy}
       ><i class="fa-brands fa-discord" />
-      {#if copied}
-        Copied!{:else}SilentEcho#0001{/if}</button>
+      <span>
+        {#if copied}
+          Copied!{:else}SilentEcho#0001{/if}
+      </span></button>
   </div>
 </div>
 
@@ -34,7 +36,7 @@
     display: flex;
     flex-direction: column;
     min-height: calc(100dvh - 16px);
-    min-width: calc(100vh - 16px);
+    min-height: calc(100vh - 16px);
     box-sizing: border-box;
   }
   .footer {
@@ -43,11 +45,19 @@
     gap: 1rem;
     margin-top: auto;
     color: rgb(138, 138, 138);
+    flex-wrap: wrap;
+    max-width: 100%;
   }
 
   a,
   button {
     all: unset;
     cursor: pointer;
+  }
+
+  button {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 20px 150px;
   }
 </style>
