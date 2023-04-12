@@ -5482,7 +5482,7 @@ export const langMap: Record<
     "5": "5",
     "Shift + 5": "%",
     "6": "6",
-    "Shift + 6": "&",
+    "Shift + 6": "^",
     "7": "7",
     "Shift + 7": "/",
     "8": "8",
