@@ -117,7 +117,7 @@
               <span class="suggestion-utf8">{suggestion.utf8}</span>
               <br />
               {#if suggestion.utf8.toLowerCase().includes("ksc")}
-                <span class="suggestion-other">{suggestion.description}</span>
+                <div class="suggestion-other">{suggestion.description}</div>
               {/if}
             </button>
           {/each}{/if}
@@ -130,6 +130,7 @@
   .suggestion-other {
     font-size: medium;
     font-weight: 300;
+    word-wrap: break-word;
   }
   .container,
   .modal-bg {
@@ -195,13 +196,13 @@
   .suggestions {
     grid-column: 1 / span 2;
     display: grid;
+    gap: 1px;
     grid-template-columns: repeat(3, 1fr);
     overflow-y: auto;
     max-height: 100%;
   }
   button.suggestion {
-    width: unset;
-    min-width: 2em;
+    width: 9em;
   }
   .cancel {
     background-color: hsl(0, 100%, 25%);
